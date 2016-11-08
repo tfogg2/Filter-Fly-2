@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Product Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Handle</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_types.each do |product_type| %>
+      <tr>
+        <td><%= product_type.category.title %></td>
+        <td><%= product_type.title %></td>
+        <td><%= product_type.handle %></td>
+        <td><%= link_to 'Tags', category_product_type_tags_path(@category, product_type) %></td>
+        <td><%= link_to 'Show', category_product_type_path(@category, product_type) %></td>
+        <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
+        <td><%= link_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "Categories", categories_path %> | 
+<%= link_to 'New Product Type', new_category_product_type_path(@category) %>
