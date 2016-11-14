@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107211832) do
+ActiveRecord::Schema.define(version: 20161108004521) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20161107211832) do
     t.datetime "updated_at",         null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["product_type_id"], name: "index_products_on_product_type_id"
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string   "shopify_domain", null: false
+    t.string   "shopify_token",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
   end
 
   create_table "tags", force: :cascade do |t|

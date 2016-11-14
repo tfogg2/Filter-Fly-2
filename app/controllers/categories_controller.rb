@@ -4,9 +4,16 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.where(shopify_collection_id: params[:shopify_collection_id])
+    Rails.logger.debug("set_shopify_collection_id: #{session[:shopify_collection_id]}")
+
+    if session[:shopify_collection_id].blank?
+      @categories = []
+    else
+      @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+    end
   end
 
+  
   # GET /categories/1
   # GET /categories/1.json
   def show
@@ -14,7 +21,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
 
   # GET /categories/1/edit
@@ -28,7 +35,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_path(@category), notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -64,7 +71,7 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.find(params[:category_id] || params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

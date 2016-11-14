@@ -18,6 +18,13 @@ class ProductTypesController < ApplicationController
     @product_type = @category.product_types.new
   end
 
+  # def populate_type_select
+  #   category_id = params[:category_id]
+  #   @product_type = ProductTypes.find_by category_id: category_id
+  #   respond_to do |format|
+  #     format.json { render json: @product_type }
+  #   end
+  # end
   # GET /product_types/1/edit
   def edit
   end

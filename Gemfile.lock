@@ -159,6 +159,9 @@ GEM
       omniauth-shopify-oauth2 (~> 1.1.11)
       rails (>= 4.2.6)
       shopify_api (>= 4.2.2)
+    simple_form (3.3.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -206,6 +209,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   shopify_api
   shopify_app (= 7.2.0)
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

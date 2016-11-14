@@ -1,32 +1,31 @@
-<%= form_for(product) do |f| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for([ @category, @product_type, @tags, product]) do |f| %>
+    <%= f.input :shopify_product_id, label: false do %>
+        <td><%= f.select :shopify_product_id, @products.map { |c| [c.title, c.id] }%></td>
+    <% end %>
+    <%= f.input :category, label: false  do %>
+	   <td class="categorySelect"><%= f.select :category_id, Category.all.map { |c| [c.title, c.id] }, { :class=>"product_category_id" }   %></td>
+    <% end %>
+    <%= f.input :product_type, label: false do %>
+	   <td class="typeSelect"><%= f.select :product_type_id, ProductType.all.map { |c| [c.title, c.id] }, { :class=>"product_product_type_id" }  %></td>
+    <% end %>
+    <%= f.input :tags, label: false, input_html: { class: 'multiselecttag', :multiple => true}  do %>
+        <td class="select3"><%= f.select :tags, Tag.all.map { |c| [c.title] }  %></td>
+    <% end %>
+    <td><%= f.button :submit %></td>
 
-  <div class="field">
-    <%= f.label :product_type_id %>
-    <%= f.text_field :product_type_id %>
-  </div>
 
-  <div class="field">
-    <%= f.label :category_id %>
-    <%= f.text_field :category_id %>
-  </div>
 
-  <div class="field">
-    <%= f.label :shopify_product_id %>
-    <%= f.text_field :shopify_product_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<td class="select3"><%# f.select :tags, Tag.all.map { |c| [c.title] }  %></td>
+	<%# f.input :category, label: false  do %>
+    	<td class="select1"><%# f.select :category, Category.all.map { |c| [c.title] } %></td>
+    <%# end %>
+    <%# f.input :product_type, label: false do %>
+    	<td class="select2"><%# f.select :product_type, ProductType.all.map { |c| [c.title] } %></td>
+    <%# end %>
+    <%# f.input :tags, label: false, input_html: { class: 'multiselecttag', :multiple => true}  do %>
+    	<td class="select3"><%# f.select :tags, Tag.all.map { |c| [c.title] }  %></td>
+    <%# end %>
+    
 <% end %>
+

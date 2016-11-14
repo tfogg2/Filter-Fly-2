@@ -1,3 +1,5 @@
+<%= render 'shared/breadcrumb' %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Tags</h1>
@@ -5,28 +7,26 @@
 <table>
   <thead>
     <tr>
-      <th>Product type</th>
       <th>Title</th>
       <th>Handle</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tags.each do |tag| %>
       <tr>
-        <td><%= tag.product_type.title %></td>
-        <td><%= tag.title %></td>
+        <td><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></td>
         <td><%= tag.handle %></td>
-        <td><%= link_to 'Show', category_product_type_tag_path(@category, @product_type, tag) %></td>
         <td><%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, tag) %></td>
         <td><%= link_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<% @tags.each do |tag| %>
+    <option class="product_tag_select"><%= tag.title %></option>
+<% end %>
 
-<br>
+<div id="newTag"></div>
 
-<%= link_to "Product Types", category_product_types_path(@category) %> | 
-<%= link_to 'New Tag', new_category_product_type_tag_path(@category, @product_type) %>

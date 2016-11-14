@@ -10,11 +10,6 @@
   <%= @category.handle %>
 </p>
 
-<p>
-  <strong>Shopify collection:</strong>
-  <%= @category.shopify_collection_id %>
-</p>
-
 <%= link_to 'Product Types', category_product_types_path(@category) %> | 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

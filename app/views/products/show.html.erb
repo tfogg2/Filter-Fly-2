@@ -2,18 +2,19 @@
 
 <p>
   <strong>Product type:</strong>
-  <%= @product.product_type %>
+  <%= @product.product_type.title %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @product.category %>
+  <%= @product.category.title %>
 </p>
 
 <p>
-  <strong>Shopify product:</strong>
+  <strong>Shopify product id:</strong>
   <%= @product.shopify_product_id %>
 </p>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
