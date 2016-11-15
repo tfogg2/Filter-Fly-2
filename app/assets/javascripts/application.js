@@ -71,14 +71,14 @@ $(document).ready(function () {
 		      	success: function(data) {
 		      		$typeSelect.children().remove();
 		      		$(".product_type_select").each(function(){
-		      			$typeSelect.append( $(this) );
-		      		}).stop();
+		      			$typeSelect.append( $(this) ).stop();;
+		      		})
 		      		$('#productTypeShow').html('<div> '+ data + '</div>');
-
+		      		$('#productTypeShow').hide();
 				  	}
 				});
  	  		
- 	  		$.ajaxstop();
+ 	  		
  	  		
  	});
 	$('.categorySelect').children().on('change', function() {
@@ -93,12 +93,12 @@ $(document).ready(function () {
 	      			$typeSelect.append( $(this) );
 	      		}).stop();
 	      		$('#productTypeShow').html('<div> '+ data + '</div>');
-
+	      		$('#productTypeShow').hide();
 			  	}
 
-			});
+			});$.ajaxstop();
  	  		
-	  $.ajaxstop();
+	  
  	  		
  	});
 	
@@ -156,6 +156,11 @@ $(document).ready(function () {
 	//   });
 	// });
 	
+
+
+	
+	// $chosen = $('#chosen');
+	// $chosen.append( $('#test-chosen'));
 	
 
 
@@ -201,7 +206,9 @@ $(document).ready(function () {
 // 	  $('.select2').html(options);
 
 
-
+$(function(){
+	$(".chosen-select").chosen();
+});
 
 
 
@@ -248,6 +255,9 @@ $(document).ready(function () {
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require chosen-jquery
+//= require scaffold
+//= require multi-select
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks

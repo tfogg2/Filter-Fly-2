@@ -10,6 +10,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
       @products = []
     else
       @products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:session[:shopify_collection_id] })
+      
     end
     @product = Product.new(shopify_product_id: session[:shopify_collection_id])
 
@@ -18,7 +19,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
   # GET /products/1
   # GET /products/1.json
   def show
-  end
+  end 
 
   # GET /products/new
   def new
@@ -36,7 +37,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to products_path(@product), notice: 'Navigation was successfully added.' }
+        format.html { redirect_to products_path(@product), notice: 'Navigation successfully added.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -77,6 +78,6 @@ class ProductsController < ShopifyApp::AuthenticatedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :handle, :shopify_collection_id, :category_id, :product_type_id, :shopify_product_id )
+      params.require(:product).permit(:title, :handle, :shopify_collection_id, :category_id, :product_type_id, :shopify_product_id, :tags =>[] )
     end
 end

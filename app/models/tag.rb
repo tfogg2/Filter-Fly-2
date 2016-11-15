@@ -3,4 +3,10 @@ class Tag < ApplicationRecord
 
   has_many :product_tags, :dependent => :destroy
   has_many :products, :through => :product_tags
+
+  before_save :update_handle
+
+	def update_handle
+    	self.handle = title.parameterize
+  	end
 end

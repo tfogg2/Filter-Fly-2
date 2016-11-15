@@ -4,28 +4,28 @@
         <td><%= f.select :shopify_product_id, @products.map { |c| [c.title, c.id] }%></td>
     <% end %>
     <%= f.input :category, label: false  do %>
-	   <td class="categorySelect"><%= f.select :category_id, Category.all.map { |c| [c.title, c.id] }, { :class=>"product_category_id" }   %></td>
+	   <td class="categorySelect"><%= f.select :category_id, Category.all.map { |c| [c.title, c.id] }, {class: 'chosen-select' }   %></td>
     <% end %>
     <%= f.input :product_type, label: false do %>
-	   <td class="typeSelect"><%= f.select :product_type_id, ProductType.all.map { |c| [c.title, c.id] }, { :class=>"product_product_type_id" }  %></td>
+	   <td class="typeSelect"><%= f.select :product_type_id, ProductType.all.map { |c| [c.title, c.id] }, { class: 'chosen-select' } %></td>
     <% end %>
-    <%= f.input :tags, label: false, input_html: { class: 'multiselecttag', :multiple => true}  do %>
-        <td class="select3"><%= f.select :tags, Tag.all.map { |c| [c.title] }  %></td>
+    <%= f.input :tags, label: false do %>
+        <td class="select3" ><%= f.select :tags, Tag.all.map { |c| [c.title] } %></td>
     <% end %>
+
+    <td><%# f.association :tags, collection: Tag.all, include_blank: true, input_html: { class: 'chosen-select' } %></td>
+  
     <td><%= f.button :submit %></td>
 
+	   
 
-
-	<td class="select3"><%# f.select :tags, Tag.all.map { |c| [c.title] }  %></td>
-	<%# f.input :category, label: false  do %>
-    	<td class="select1"><%# f.select :category, Category.all.map { |c| [c.title] } %></td>
-    <%# end %>
-    <%# f.input :product_type, label: false do %>
-    	<td class="select2"><%# f.select :product_type, ProductType.all.map { |c| [c.title] } %></td>
-    <%# end %>
-    <%# f.input :tags, label: false, input_html: { class: 'multiselecttag', :multiple => true}  do %>
-    	<td class="select3"><%# f.select :tags, Tag.all.map { |c| [c.title] }  %></td>
-    <%# end %>
-    
 <% end %>
 
+<%# simple_form_for([ @category, @product_type, @tags, product]) do |f| %>
+
+    <%# f.association :category, collection: Category.all, include_blank: false, input_html: { class: 'chosen-select' } %>
+    <%# f.association :product_type, collection: ProductType.all, include_blank: false, input_html: { class: 'chosen-select' } %>
+    <%# f.association :tags, collection: Tag.all, include_blank: false, input_html: { class: 'chosen-select' } %>
+
+
+<%# end %>

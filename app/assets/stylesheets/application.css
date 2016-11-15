@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require multi-select
+ *= require chosen
+ *= require chosen-compass
  */

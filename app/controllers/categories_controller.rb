@@ -30,6 +30,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories
   # POST /categories.json
+
+
   def create
     @category = Category.new(category_params)
 
