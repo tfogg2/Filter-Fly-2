@@ -9,20 +9,53 @@ class ProductsController < ShopifyApp::AuthenticatedController
     if session[:shopify_collection_id].blank? 
       @products = []
     else
-      @products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:session[:shopify_collection_id] })
+      @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:session[:shopify_collection_id] })
       
+      #creating product for each shopify product
+      @shopify_products.each do |shopify_product|
+        @product = Product.find_or_create_by(shopify_product_id: shopify_product.id )
+        @products = Product.all
+         #Rails.logger.debug("product: #{product.errors.inspect}")
+      end
+    end 
+      
+
+      # Rails.logger.debug("@shopify_products: #{@shopify_products.inspect}")
+      # Rails.logger.debug("---")
+      # Rails.logger.debug("@products: #{@products.inspect}")
+      # Get the available categories
+    if session[:shopify_collection_id].blank?
+      @categories = []
+    else
+      @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
     end
+
+    if session[:shopify_collection_id].blank?
+      @product_types = []
+    else
+      @product_types = ProductType.where(category_id: @categories.ids)
+    end
+
+    if session[:shopify_collection_id].blank?
+      @tags = []
+    else
+      @tags = Tag.where(product_type_id: @product_types.ids)
+    end
+
+    #@product_types = @category.product_types.all
+
     @product = Product.new(shopify_product_id: session[:shopify_collection_id])
 
-  end
+ end
 
   # GET /products/1
   # GET /products/1.json
   def show
-  end 
+  end
 
   # GET /products/new
   def new
+
     @product = Product.new(shopify_product_id: session[:shopify_collection_id])
   end
 
@@ -58,6 +91,10 @@ class ProductsController < ShopifyApp::AuthenticatedController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def select_change
+    @product = Product.find_by_id(params[:product_id])
   end
 
   # DELETE /products/1

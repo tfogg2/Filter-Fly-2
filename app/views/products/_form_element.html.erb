@@ -1,0 +1,43 @@
+<tr id="form-element-<%= product ? product.id : "nil" %>" class='selectable' data-product-id='<%= product.id %>' >
+	<td>
+		<select class="sel">
+			<%- @categories.each do |cat| %>
+
+				<%- if product && cat.id == product.category_id %>
+					<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
+				<%- else %>
+					<option value="<%= cat.id %>"><%= cat.title %></option>
+				<%- end %>
+
+
+			<%- end %>
+		</select>
+	</td>
+	<td>
+		<select class="sel">
+			<%- @product_types.each do |type| %>
+				<p><%= type.category_id %></p>
+				<%- if product && type.id == product.product_type_id %>
+
+					<option value="<%= type.id %>" selected="selected"><%= type.title %></option>
+				<%- else %>
+					<option value="<%= type.id %>"><%= type.title %></option>
+				<%- end %>
+
+			<%- end %>
+		</select>
+	</td>
+	<td>
+		<select class="sel", multiple>
+			<%- @tags.each do |tag| %>
+				<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
+				<option value="<%= tag.id %>"><%= tag.title %></option>
+			<%- end %>
+		</select>
+	</td>
+	<td><%= shopify_product.id %></td>
+
+	<%# @product_types.each do |type| %>
+		<p><%# type.category_id %></p>
+	<%# end %>
+</tr>

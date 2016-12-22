@@ -7,6 +7,8 @@ class TagsController < ApplicationController
   # GET /tags.json
   def index
     @tags = @product_type.tags.all
+    @product_types = @category.product_types.all
+    @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
   end
 
   # GET /tags/1
@@ -66,7 +68,7 @@ class TagsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:category_id])
+      @category = Category.find(params[:category_id] || params[:id])
     end
 
     def set_product_type

@@ -1,3 +1,4 @@
+
 <%= simple_form_for([@category, @product_type, tag]) do |f| %>
   <% if tag.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,7 @@
     </div>
   <% end %>
 
-  <%= f.input :title %>
+  <%= f.input :title, label: false, :placeholder => "Title" %>
   <%# f.input :handle %>
   <%= f.button :submit %>
 <% end %>

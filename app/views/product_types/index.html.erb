@@ -1,34 +1,38 @@
-<%= render 'shared/breadcrumb' %>
+<div id="productType">
+  <%= render 'shared/breadcrumb' %>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h1>Product Types</h1>
+  <div id="navbar">
+    <%= render 'shared/navbar' %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Handle</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+  <div id="index">
+    <h1>Product Types</h1>
 
-  <tbody>
-    <% @product_types.each do |product_type| %>
-      <tr>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
 
-        <td><%= link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" } %></td>
-        <td><%= product_type.handle %></td>
-        <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
-        <td><%= link_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    
-  </tbody>
-</table>
-<% @product_types.each do |product_type| %>
-    <option class="product_type_select"><%= product_type.id  %></option>
-<% end %>
-<div id="newType"></div>
+      <tbody >
+        <% @product_types.each do |product_type| %>
+          <tr>
 
-
+            <td><%= link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" } %></td>
+            <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
+            <td><%= link_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+    <%# @product_types.each do |product_type| %>
+        <option class="product_type_select"><%# product_type.id  %></option>
+    <%# end %>
+    <div id="newType"></div>
+  </div>
+</div>

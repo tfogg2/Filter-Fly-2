@@ -1,3 +1,94 @@
+
+
+
+
+/* TEST */
+
+
+.hover{
+	color: #ff0000;
+}
+a{
+	text-decoration: none;
+}
+/*
+.product_btn{
+	background: url('product_btn.png');
+	box-shadow: none;
+	border: 1px solid #979797 ;
+	border-radius: 4px;
+	width:60px;
+	height:18px;
+	text-align: center;
+}
+.nav_btn{
+	background: url('edit_nav_btn.png');
+	box-shadow: none;
+	border: 1px solid #979797 ;
+	border-radius: 5px;
+	width:95px;
+	height:18px;
+	text-align: center;
+}
+
+*/
+
+
+/* TEST */
+
+/*Index */
+#index {
+	margin: 0px auto;
+	max-width: 600px;
+	text-align: center;
+	background: white;
+}
+#index table {
+	margin:0px auto;
+}
+#index td {
+	min-width: 50px;
+}
+#index tr {
+	border-bottom: 1pt solid black;
+}
+#index h1 {
+	margin: 10px auto;
+}
+#categoryForm {
+	margin-top: 40px;
+}
+
+/* Collection Index */
+#index li {
+	list-style: none;
+	margin: 15px auto 5px auto ;
+}
+#index ul {
+	-webkit-padding-start:0px;
+}
+
+
+/* Index */
+
+
+/* NAVBAR */
+#navbar{
+	width: 150px;
+	float:left;
+
+}
+
+.bold{
+	font-weight: bold;
+}
+
+
+
+/* NAVBAR */
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +101,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
- *= require multi-select
  *= require chosen
  *= require chosen-compass
+ *= require_tree .
+ *= require multi-select
+ *= require jquery.ui.all
+ *= require jquery.modal
  */
+ 

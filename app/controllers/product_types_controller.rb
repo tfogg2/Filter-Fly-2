@@ -6,6 +6,8 @@ class ProductTypesController < ApplicationController
   # GET /product_types.json
   def index
     @product_types = @category.product_types.all
+    
+    @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
   end
 
   # GET /product_types/1

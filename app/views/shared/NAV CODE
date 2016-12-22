@@ -1,33 +1,16 @@
-<% content_for :javascript do %>
-  <script type="text/javascript">
-    ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({
-        title: "Home",
-        icon: "<%= asset_path('favicon.ico') %>"
-      });
-    });
-  </script>
-<% end %>
-<div id="navbar">
-  <%= render 'shared/navbar' %>
-</div>
-<div id="index">
-  <h2>Custom Collections</h2>
+NAV CODE
 
-  <%- if @customCollections.any? or @smartCollections.any? %>
-    <ul>
+<ul >
     <% @customCollections.each do |collection| %>
       <li><%= collection.title %></li>
       <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+
        <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <br>
+    <ul id="collect"></ul>
     <% end %>
     </ul>
-  
-
-
-  <h2>Smart Collections</h2>
-
+ 
     <ul>
     <% @smartCollections.each do |collection| %>
       <li><%= collection.title %></li>
@@ -36,10 +19,11 @@
       <br>
     <% end %>
     </ul>
-  <%- else %>
-    <p>You should create these on shopify and then return</p>
-  <%- end %>
 
-
-</div>
-
+    <%- if @categories.any?  %>
+      <%- @categories.each do |category| %>
+        <li class="categoryNav"><%= link_to category.title, category_product_types_path(category) %></li>
+      <%- end %>
+    <% else %> 
+   
+    <% end %>

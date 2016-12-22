@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedController -> Trying nav 
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
@@ -11,6 +11,12 @@ class CategoriesController < ApplicationController
     else
       @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
     end
+
+
+    # Trying Nav  
+    #@customCollections = ShopifyAPI::CustomCollection.find(:all, params: { limit: 10 },shopify_collection_id: session[:shopify_collection_id])
+    #@smartCollections = ShopifyAPI::SmartCollection.find(:all, params: { limit: 10 }, shopify_collection_id: session[:shopify_collection_id])
+
   end
 
   

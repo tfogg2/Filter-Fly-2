@@ -1,21 +1,5 @@
-<% content_for :javascript do %>
-  <script type="text/javascript">
-    ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({
-        title: "Home",
-        icon: "<%= asset_path('favicon.ico') %>"
-      });
-    });
-  </script>
-<% end %>
-<div id="navbar">
-  <%= render 'shared/navbar' %>
-</div>
-<div id="index">
-  <h2>Custom Collections</h2>
 
-  <%- if @customCollections.any? or @smartCollections.any? %>
-    <ul>
+	<ul>
     <% @customCollections.each do |collection| %>
       <li><%= collection.title %></li>
       <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
@@ -23,11 +7,7 @@
       <br>
     <% end %>
     </ul>
-  
-
-
-  <h2>Smart Collections</h2>
-
+ 
     <ul>
     <% @smartCollections.each do |collection| %>
       <li><%= collection.title %></li>
@@ -36,10 +16,4 @@
       <br>
     <% end %>
     </ul>
-  <%- else %>
-    <p>You should create these on shopify and then return</p>
-  <%- end %>
-
-
-</div>
 

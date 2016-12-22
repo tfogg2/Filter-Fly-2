@@ -1,31 +1,30 @@
+<form id='myform' action="/">
 
-<%= simple_form_for([ @category, @product_type, @tags, product]) do |f| %>
-    <%= f.input :shopify_product_id, label: false do %>
-        <td><%= f.select :shopify_product_id, @products.map { |c| [c.title, c.id] }%></td>
-    <% end %>
-    <%= f.input :category, label: false  do %>
-	   <td class="categorySelect"><%= f.select :category_id, Category.all.map { |c| [c.title, c.id] }, {class: 'chosen-select' }   %></td>
-    <% end %>
-    <%= f.input :product_type, label: false do %>
-	   <td class="typeSelect"><%= f.select :product_type_id, ProductType.all.map { |c| [c.title, c.id] }, { class: 'chosen-select' } %></td>
-    <% end %>
-    <%= f.input :tags, label: false do %>
-        <td class="select3" ><%= f.select :tags, Tag.all.map { |c| [c.title] } %></td>
-    <% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-    <td><%# f.association :tags, collection: Tag.all, include_blank: true, input_html: { class: 'chosen-select' } %></td>
-  
-    <td><%= f.button :submit %></td>
+  <tbody>
+    <%- if @shopify_products.any? %>
+      <%- @shopify_products.each do |shopify_product| %>
+          <%- product = @products.select{|p| p.shopify_product_id == shopify_product.id.to_s }[0] %>
+      
+          <%= render 'products/form_element', {shopify_product: shopify_product, product: product } %>
+      <%- end %>
+    <%- else %>
+      <p>You should create these on shopify and then return</p>
+    <%- end %> 
+    
 
-	   
+  </tbody>
+</table>
 
-<% end %>
+</form>
 
-<%# simple_form_for([ @category, @product_type, @tags, product]) do |f| %>
-
-    <%# f.association :category, collection: Category.all, include_blank: false, input_html: { class: 'chosen-select' } %>
-    <%# f.association :product_type, collection: ProductType.all, include_blank: false, input_html: { class: 'chosen-select' } %>
-    <%# f.association :tags, collection: Tag.all, include_blank: false, input_html: { class: 'chosen-select' } %>
+<%# LINE 15, ADD PRODUCT TYPES IF @CATEGORY HAS ANY ----> product_types: if @category.product_types.any? == @category.product_types else product_types == [] end} %>
 
 
-<%# end %>

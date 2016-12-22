@@ -8,9 +8,16 @@ $(document).ready(function () {
 	$categorySelect = $('#product_category_id');
 	$typeSelect = $('#product_product_type_id');
 	$tagSelect = $('#product_tags');
+	//$formSelect = $('#formSelect');
 
+	$('a').hover( function(){
+		$(this).addClass("hover");
+		}, function() {
+	    $( this ).removeClass( "hover" );
+	  	}
 
-
+	);
+	
 
 
 	$(function(){
@@ -45,80 +52,168 @@ $(document).ready(function () {
       	$newTag.html('<div> '+ tag + '</div>');
       	
 	  	}
-		});
+		});$.ajaxstop();
 		
 	});
 
-	$(function(){
+	// $("#formSelect").children(".sel1").on('change', function(){
+	// 	var sel = $(this).val();
+	// 	alert(this.value);
+	// 	// $.ajax({
+ //  //        type: 'POST'
+
+	// });
+
+	$(".selectable select").on('change', function(){
+		var sel = $(this).closest("tr");
+		
 		$.ajax({
-      type: 'GET',
-      url: "products/:id",//:category_id/product_types.json",
-      success: function(data) {
-      	$productShow.html('<div> '+ data + '</div>');
-      	
-	  	}
+			type: 'GET',
+			url: '/select_change?product_id=' + sel.data("product-id"),
+			success: function(data){
+				alert('Success');
+			}
 		});
-		$.ajaxstop();
 	});
 
-	$categorySelect.on('change', function() {
- 	  		
- 	  		$category = $(this).val();
 
- 	  		$.ajax({
-	      		type: 'GET',
-	      		url: "/categories/" + $(this).val() + "/product_types",//:category_id/product_types.json"
-		      	success: function(data) {
-		      		$typeSelect.children().remove();
-		      		$(".product_type_select").each(function(){
-		      			$typeSelect.append( $(this) ).stop();;
-		      		})
-		      		$('#productTypeShow').html('<div> '+ data + '</div>');
-		      		$('#productTypeShow').hide();
-				  	}
-				});
+
+	$(".category-selectable").on('click', function(){
+
+		
+		var categoryNav = $(this).data("category-id");
+		alert(categoryNav);
+		//$('#productType').hide();
+
+		
+		$(this).addClass("bold");
+
+
+
+
+
+
+		// $.ajax({
+		// 	type: 'GET',
+		// 	url: '/categories/' + categoryNav + '/product_types', 
+		// 	success: function(data){
+				
+		// 		$('#productType').html(data);
+				
+		// 	}
+		// });
+		// $.ajax({
+		// 	type: 'GET',
+		// 	url: '/navbar_select?category_id=' + categoryNav, 
+		// 	success: function(data){
+				
+		// 		alert('success');
+		// 	}
+		// });
+
+	});
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// $(".selectable select").on('change', function(){
+	// 	var sel = $(this).val();
+	// 	alert(sel);
+	// 	$.ajax({
+	// 		type: 'GET',
+	// 		url: '/categories/' + $(this).val() + '/product_types.json',
+	// 		success: function(data){
+	// 			alert('Success');
+	// 		}
+	// 	});
+	// });
+
+
+	// $(function(){
+	// 	$.ajax({
+ //      type: 'GET',
+ //      url: "products/:id",//:category_id/product_types.json",
+ //      success: function(data) {
+ //      	$productShow.html('<div> '+ data + '</div>');
+      	
+	//   	}
+	// 	});
+		
+	// });
+
+	// $categorySelect.on('change', function() {
+ 	  		
+ // 	  		$category = $(this).val();
+
+ // 	  		$.ajax({
+	//       		type: 'GET',
+	//       		url: "/categories/" + $(this).val() + "/product_types",//:category_id/product_types.json"
+	// 	      	success: function(data) {
+	// 	      		$typeSelect.children().remove();
+	// 	      		$(".product_type_select").each(function(){
+	// 	      			$typeSelect.append( $(this) ).stop();;
+	// 	      		})
+	// 	      		$('#productTypeShow').html('<div> '+ data + '</div>');
+	// 	      		$('#productTypeShow').hide();
+	// 			  	}
+	// 			});
  	  		
  	  		
  	  		
- 	});
-	$('.categorySelect').children().on('change', function() {
+ // 	});
+	// $('.categorySelect').children().on('change', function() {
 	  		
-	  		//$category = $(this).val();
-	  		$.ajax({
-      		type: 'GET',
-      		url: "/categories/" + $(this).val() + "/product_types",//:category_id/product_types.json"
-	      	success: function(data) {
-	      		$typeSelect.children().remove();
-	      		$(".product_type_select").each(function(){
-	      			$typeSelect.append( $(this) );
-	      		}).stop();
-	      		$('#productTypeShow').html('<div> '+ data + '</div>');
-	      		$('#productTypeShow').hide();
-			  	}
+	//   		//$category = $(this).val();
+	//   		$.ajax({
+ //      		type: 'GET',
+ //      		url: "/categories/" + $(this).val() + "/product_types",//:category_id/product_types.json"
+	//       	success: function(data) {
+	//       		$typeSelect.children().remove();
+	//       		$(".product_type_select").each(function(){
+	//       			$typeSelect.append( $(this) );
+	//       		}).stop();
+	//       		$('#productTypeShow').html('<div> '+ data + '</div>');
+	//       		$('#productTypeShow').hide();
+	// 		  	}
 
-			});$.ajaxstop();
+	// 		});
  	  		
 	  
  	  		
- 	});
+ // 	});
 	
-	$typeSelect.on('change', function() {
+	// $typeSelect.on('change', function() {
  	  		
- 	  		$typeId = $(this).val();
+ // 	  		$typeId = $(this).val();
 
- 	  		$.ajax({
-	      		type: 'GET',
-	      		url: "/categories/" + $category + "/product_types/" + $(this).val() + "/tags",//:category_id/product_types.json"
-		      	success: function(data) {
-		      		$tagSelect.children().remove();
-		      		$(".product_tag_select").each(function(){
-		      			$tagSelect.append( $(this) );
-		      		}).stop();
-		      		$('#productTypeShow').html('<div> '+ data + '</div>');
-				  	}
-				});
- 	  	$.ajaxstop();
- 		});
+ // 	  		$.ajax({
+	//       		type: 'GET',
+	//       		url: "/categories/" + $category + "/product_types/" + $(this).val() + "/tags",//:category_id/product_types.json"
+	// 	      	success: function(data) {
+	// 	      		$tagSelect.children().remove();
+	// 	      		$(".product_tag_select").each(function(){
+	// 	      			$tagSelect.append( $(this) );
+	// 	      		}).stop();
+	// 	      		$('#productTypeShow').html('<div> '+ data + '</div>');
+	// 			  	}
+	// 			});
+ 	  	
+ // 		});
 
 
 
@@ -155,7 +250,7 @@ $(document).ready(function () {
 	//       }
 	//   });
 	// });
-	
+
 
 
 	
@@ -206,10 +301,6 @@ $(document).ready(function () {
 // 	  $('.select2').html(options);
 
 
-$(function(){
-	$(".chosen-select").chosen();
-});
-
 
 
 
@@ -219,7 +310,13 @@ $(function(){
 });
 
 
-
+// $(document).ready(function(){
+//     $('#product_tags').chosen({
+//         allow_single_deselect: true,
+//         no_results_text: 'No results matched',
+//         width: '400px'
+//     });
+// });
 // $categorySelect.on('change', function() {
  	  		
 //  	  		//$category = $(this).val();
@@ -255,10 +352,11 @@ $(function(){
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require chosen-jquery
-//= require scaffold
-//= require multi-select
 //= require jquery
 //= require jquery_ujs
+//= require chosen-jquery
+//= require scaffold
 //= require turbolinks
 //= require_tree .
+//= require jquery.ui.all
+//= require jquery.modal

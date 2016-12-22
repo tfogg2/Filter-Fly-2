@@ -1,18 +1,19 @@
-<%= simple_form_for(category) do |f| %>
-  <% if category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="new">
+  <%= simple_form_for(category) do |f| %>
+    <% if category.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-      <ul>
-      <% category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+        <% category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= f.hidden_field :shopify_collection_id %>
+      <%= f.input :title, label: false, :placeholder => "Title" %>
+      <%# f.input :handle %>
+      <%= f.button :submit %>
   <% end %>
-    <%= f.hidden_field :shopify_collection_id %>
-    <%= f.input :title %>
-    <%# f.input :handle %>
-    <%= f.button :submit %>
-<% end %>
-
+</div>
