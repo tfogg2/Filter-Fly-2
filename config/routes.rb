@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root :to => 'collections#index'
-  mount ShopifyApp::Engine, at: '/'
+  mount ShopifyApp::Engine, at: '/filterfly2.herokuapp.com/'
   resources :products
   
   
