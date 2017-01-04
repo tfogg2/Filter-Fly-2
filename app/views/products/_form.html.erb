@@ -1,4 +1,4 @@
-<%# simple_form_for @product, :remote => true do |f| %>
+<%= simple_form_for @product, :remote => true do |f| %>
 
   <table>
     <thead>
@@ -39,7 +39,7 @@
     </tbody>
   </table>
 
-<%# end %>
+<%- end %>
 
 <%# LINE 15, ADD PRODUCT TYPES IF @CATEGORY HAS ANY ----> product_types: if @category.product_types.any? == @category.product_types else product_types == [] end} %>
 
