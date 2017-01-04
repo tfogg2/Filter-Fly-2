@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161108004521) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.string   "handle"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 20161108004521) do
     t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_tags_on_product_id"
-    t.index ["tag_id"], name: "index_product_tags_on_tag_id"
+    t.index ["product_id"], name: "index_product_tags_on_product_id", using: :btree
+    t.index ["tag_id"], name: "index_product_tags_on_tag_id", using: :btree
   end
 
   create_table "product_types", force: :cascade do |t|
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 20161108004521) do
     t.string   "handle"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_product_types_on_category_id"
+    t.index ["category_id"], name: "index_product_types_on_category_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -44,8 +47,8 @@ ActiveRecord::Schema.define(version: 20161108004521) do
     t.string   "shopify_product_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["product_type_id"], name: "index_products_on_product_type_id"
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
+    t.index ["product_type_id"], name: "index_products_on_product_type_id", using: :btree
   end
 
   create_table "shops", force: :cascade do |t|
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20161108004521) do
     t.string   "shopify_token",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
+    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true, using: :btree
   end
 
   create_table "tags", force: :cascade do |t|
@@ -62,7 +65,13 @@ ActiveRecord::Schema.define(version: 20161108004521) do
     t.string   "handle"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["product_type_id"], name: "index_tags_on_product_type_id"
+    t.index ["product_type_id"], name: "index_tags_on_product_type_id", using: :btree
   end
 
+  add_foreign_key "product_tags", "products"
+  add_foreign_key "product_tags", "tags"
+  add_foreign_key "product_types", "categories"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "product_types"
+  add_foreign_key "tags", "product_types"
 end
