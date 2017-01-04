@@ -101,7 +101,7 @@ $(document).ready(function () {
 	// 	alert(this.value);
 	// });
 	$(document).on('change', ".selectable select", function(){
-		$(this).options[1].setAttribute("selected", "selected");
+		$(this).option[1].setAttribute("selected", "selected");
 		var sel = $(this).closest("tr");
 		console.log(sel.data("product-id"));
 		var category_id = sel.find("select.category").val();
