@@ -41,7 +41,8 @@
 		<%- if product_type %>
 
 			 <td class="tag_select">
-			 	<%= f.association :tags, 
+			 	<%= f.association :tags,
+			 		   collection: product_type.tags.map { |g| [g.title, g.id]}, 
 				       include_blank: true,
 				       input_html: { class: 'chosen-select sel tag', multiple: true} 
 				%>
