@@ -90,20 +90,25 @@ $(document).ready(function () {
 	
 
 //_SELECT_CHANGE.JS.ERB //
-	$(document).on('change', ".category_select select", function(){
-		alert(this.value);
-		var categroy_id = $(this).val()
-	});
-	$(document).on('change', ".product_type_select select", function(){
-		alert(this.value);
-	});
-	$(document).on('change', ".tag_select select", function(){
-		alert(this.value);
-	});
+	// $(document).on('change', ".category_select select", function(){
+	// 	alert(this.value);
+	// 	var categroy_id =
+	// });
+	// $(document).on('change', ".product_type_select select", function(){
+	// 	alert(this.value);
+	// });
+	// $(document).on('change', ".tag_select select", function(){
+	// 	alert(this.value);
+	// });
 	$(document).on('change', ".selectable select", function(){
 		var sel = $(this).closest("tr");
-		alert(sel.data("product-id"));
-		
+		console.log(sel.data("product-id"));
+		var category_id = sel.find("select.category").val();
+		console.log(category_id);
+		var product_type_id = sel.find("select.product_type").val();
+		console.log(product_type_id)
+		var tag = sel.find("select.tag").val();
+		console.log(tag)
 
 		
 		
@@ -128,14 +133,7 @@ $(document).ready(function () {
 
 	// form_element url //
 
-		// var sel = $(this).closest("tr");
-		// 	console.log(sel);
-		// 	var category_id = sel.find("select.category").val();
-		// 	console.log(category_id);
-		// 	var product_type_id = sel.find("select.product_type").val();
-		// 	console.log(product_type_id)
-		// 	var tag = sel.find("select.tag").val();
-		// 	console.log(tag)
+		
 	// form_element url //
 
 
