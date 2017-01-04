@@ -8,11 +8,7 @@
 
 	<tr id="form-element-<%= product ? product.id : "nil" %>" class='selectable' data-product-id='<%= product.id %>' >
 		<%# shopify_product.title %>
-	<%= simple_form_for @product, :remote => true do |f| %>
-		<%- category = category || product.category %>
-		<%- product_type = product_type || product.product_type %>
-		<%- shopify_product = shopify_product  %>
-		<%- tags = tags || product.tags %>
+
 		<p class="product-id"><%# product.id %></p>
 
 		 <td class="category_select">
@@ -52,10 +48,6 @@
 
 
 		<td><%= f.button :submit %></td>
-
-
-	<%- end %>
-
 
 
 
