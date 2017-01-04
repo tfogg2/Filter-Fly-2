@@ -94,8 +94,42 @@ class ProductsController < ShopifyApp::AuthenticatedController
   end
 
   def select_change
+    if session[:shopify_collection_id].blank?
+      @categories = []
+    else
+      @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+    end
+
+    if session[:shopify_collection_id].blank?
+      @product_types = []
+    else
+      @product_types = ProductType.where(category_id: @categories.ids)
+    end
+
+    if session[:shopify_collection_id].blank?
+      @tags = []
+    else
+      @tags = Tag.where(product_type_id: @product_types.ids)
+    end
+
     @product = Product.find_by_id(params[:product_id])
+    @category = Category.find_by_id(params[:category_id])
+
+    @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:session[:shopify_collection_id] })
+
+
+    
+    # if !params[:product_type_id].blank?
+    #   @product_type = @category.product_types.find_by_id(params[:product_type_id])
+    #   @tags = @product_type.tags if @product_type
+    # end
+
+    # Rails.logger.debug("@category: #{@category.inspect}")
+    # Rails.logger.debug("@category.product_types: #{@category.product_types.inspect}")
+    # Rails.logger.debug("@product_type: #{@product_type.inspect}")
   end
+
+
 
   # DELETE /products/1
   # DELETE /products/1.json
@@ -114,7 +148,8 @@ class ProductsController < ShopifyApp::AuthenticatedController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #    -> Took out
     def product_params
-      params.require(:product).permit(:title, :handle, :shopify_collection_id, :category_id, :product_type_id, :shopify_product_id, :tags =>[] )
+      params.require(:product).permit(:title, :handle, :shopify_collection_id, :category_id, :product_type_id, :shopify_product_id, :tags )
     end
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   	end
   end
 
+
   get 'select_change', to: "products#select_change"
   get 'navbar_select', to: "shared#navbar_select"
   #get 'navbar', to: 'collections#navbar'

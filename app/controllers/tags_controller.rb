@@ -14,6 +14,9 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
+     @tags = @product_type.tags.all
+    @product_types = @category.product_types.all
+    @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
   end
 
   # GET /tags/new

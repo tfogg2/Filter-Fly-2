@@ -1,38 +1,52 @@
-<div id="productType">
-  <%= render 'shared/breadcrumb' %>
+<div class="page">
+  <div id="productType">
+    <%= render 'shared/breadcrumb' %>
 
-  <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-  <div id="navbar">
-    <%= render 'shared/navbar' %>
-  </div>
+    <div id="navbar">
+      <%= render 'shared/navbar' %>
+    </div>
 
-  <div id="index">
-    <h1>Product Types</h1>
+    <div id="index">
+      <%- if @product_types.any? %>
+        <h1>Product Types</h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th colspan="1"></th>
-        </tr>
-      </thead>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th colspan="1"></th>
+            </tr>
+          </thead>
 
-      <tbody >
-        <% @product_types.each do |product_type| %>
-          <tr>
+          <tbody >
+            <% @product_types.each do |product_type| %>
+              <tr>
 
-            <td><%= link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" } %></td>
-            <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
-            <td><%= link_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-        
-      </tbody>
-    </table>
-    <%# @product_types.each do |product_type| %>
-        <option class="product_type_select"><%# product_type.id  %></option>
-    <%# end %>
-    <div id="newType"></div>
+                <td><%= link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" } %></td>
+                <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
+                <td><%= button_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+            
+          </tbody>
+        </table>
+        <%# @product_types.each do |product_type| %>
+            <option class="product_type_select"><%# product_type.id  %></option>
+        <%# end %>
+      <%- end %>
+      <button class="modalBtn">New Product Type</button>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content  <div id="newCategory"></div> <div id="newType"></div> -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="newType"></div>
+        </div>
+
+      </div>
+      
+    </div>
   </div>
 </div>

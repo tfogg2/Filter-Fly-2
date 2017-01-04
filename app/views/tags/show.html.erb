@@ -1,21 +1,27 @@
-<%= render 'shared/breadcrumb' %>
+<div class="page">
+	<%= render 'shared/breadcrumb' %>
+<div id="navbar">
+	<%= render 'shared/navbar' %>
+</div>
+	<div id="index">
+		<p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+		<p>
+		  <strong>Product type:</strong>
+		  <%= @tag.product_type.title %>
+		</p>
 
-<p>
-  <strong>Product type:</strong>
-  <%= @tag.product_type.title %>
-</p>
+		<p>
+		  <strong>Title:</strong>
+		  <%= @tag.title %>
+		</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tag.title %>
-</p>
+		<p>
+		  <strong>Handle:</strong>
+		  <%= @tag.handle %>
+		</p>
 
-<p>
-  <strong>Handle:</strong>
-  <%= @tag.handle %>
-</p>
-
-<%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, @tag) %> |
-<%= link_to 'Back', category_product_type_tags_path(@category, @product_type) %>
+		<%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, @tag) %> |
+		<%= link_to 'Back', category_product_type_tags_path(@category, @product_type) %>
+	</div>
+</div>

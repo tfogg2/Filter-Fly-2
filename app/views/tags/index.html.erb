@@ -1,38 +1,51 @@
-<%= render 'shared/breadcrumb' %>
 
-<p id="notice"><%= notice %></p>
+<div class="page">
+  <%= render 'shared/breadcrumb' %>
 
-<div id="navbar">
-  <%= render 'shared/navbar' %>
-</div>
+  <p id="notice"><%= notice %></p>
 
-<div id="index">
-  <%- if @tags.any? %>
-    <h1>Tags</h1>
+  <div id="navbar">
+    <%= render 'shared/navbar' %>
+  </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th colspan="1"></th>
-        </tr>
-      </thead>
+  <div id="index">
+    <%- if @tags.any? %>
+      <h1>Tags</h1>
 
-      <tbody>
-        <% @tags.each do |tag| %>
+      <table>
+        <thead>
           <tr>
-            <td><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></td>
-            <td><%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, tag) %></td>
-            <td><%= link_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Title</th>
+            <th colspan="1"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <%# @tags.each do |tag| %>
-        <option class="product_tag_select"><%# tag.title %></option>
-    <%# end %>
-  <%- end %>
+        </thead>
 
-  <div id="newTag"></div>
+        <tbody>
+          <% @tags.each do |tag| %>
+            <tr>
+              <td><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></td>
+              <td><%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, tag) %></td>
+              <td><%= button_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%# @tags.each do |tag| %>
+          <option class="product_tag_select"><%# tag.title %></option>
+      <%# end %>
+    <%- end %>
+    <button class="modalBtn">New Tag</button>
+      <div id="myModal" class="modal">
 
+        <!-- Modal content  <div id="newCategory"></div> <div id="newType"></div>   <div id="newTag"></div>-->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="newTag"></div>
+        </div>
+
+      </div>
+
+   
+
+  </div>
 </div>

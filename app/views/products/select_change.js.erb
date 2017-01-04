@@ -1,3 +1,23 @@
-$("#form-element-<%= @product ?  @product.id : 'nil' %>").css('background', "#ff0000");
-//$("#form-element-<%= @product ?  @product.id : 'nil' %>").append("<%= j render(:partial => 'products/test') %>")
+
+// alert("<%= @category.inspect %>")
+// DESELCT .TAGS        --> aelect back 
+$("#form-element-<%= @product ?  @product.id : 'nil' %>").replaceWith("<%= j render('products/simple_form_element', {shopify_product: @shopify_product, product: @product, category: @category, product_type: @product_type, tags: @tags, f: @f}) %>")
+// $("#form-element-<%= @product ?  @product.id : 'nil' %>").css('background', "#ff0000");
 //$("#form-element-<%# @product.id %>").replace("<%# render 'product/form_element', {} %>")
+
+$('.chosen-select').chosen({
+    no_results_text: 'No results matched',
+    width: '120px',
+    allow_single_deselect: true,
+    overflow_hidden: false
+
+});
+
+
+
+
+//$('tag')[0].options[1].setAttribute('selected','selected');
+
+// $('.tags').on('click', function(){
+// 	$(this).setAttribute('selected','selected');
+// });

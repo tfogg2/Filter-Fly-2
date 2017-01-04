@@ -1,24 +1,29 @@
-<%= render 'shared/breadcrumb' %>
 
-<p id="notice"><%= notice %></p>
+<div class="page">
+	<%= render 'shared/breadcrumb' %>
 
-<div id="index">
-	<h1>Products</h1>
+	<p id="notice"><%= notice %></p>
+	<div id="navbar">
+	  <%= render 'shared/navbar' %>
+	</div>
+	<div id="index">
+		<h1>Products</h1>
 
-	<%# @shopify_products.each do |shopify_product| %>
-	  <%# shopify_product.title %>
-	  <%# shopify_product.id %>
-	  <br>
-	  <%# @this_product = @products.select{|p| p.shopify_product_id == shopify_product.id }[0] %>
-	<%# end %>
+		<%# @shopify_products.each do |shopify_product| %>
+		  <%# shopify_product.title %>
+		  <%# shopify_product.id %>
+		  <br>
+		  <%# @this_product = @products.select{|p| p.shopify_product_id == shopify_product.id }[0] %>
+		<%# end %>
 
-	<%= render 'products/form' %>
+		<%= render 'products/form' %>
 
-	<%# render 'products/productNavigation' %>
-	<div id="productShow"></div>
-	<div id="productTypeShow"></div>
-	<div id="chosen"></div>
+		<%# render 'products/productNavigation' %>
+		<div id="productShow"></div>
+		<div id="productTypeShow"></div>
+		<div id="chosen"></div>
 
+	</div>
 </div>
 
 

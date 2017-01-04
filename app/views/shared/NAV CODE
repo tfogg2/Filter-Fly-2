@@ -27,3 +27,30 @@ NAV CODE
     <% else %> 
    
     <% end %>
+
+
+
+
+
+
+
+
+    <ul >
+    <% @customCollections.each do |collection| %>
+      <li><%= collection.title %></li>
+      <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+
+       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+      <br>
+    <ul id="collect"></ul>
+    <% end %>
+    </ul>
+ 
+    <ul>
+    <% @smartCollections.each do |collection| %>
+      <li><%= collection.title %></li>
+      <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+      <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+      <br>
+    <% end %>
+  </ul>
