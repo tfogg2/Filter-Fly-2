@@ -102,7 +102,6 @@ $(document).ready(function () {
 	// });
 	$(document).on('change', ".selectable select", function(){
 		var sel = $(this).closest("tr");
-		$(this).html("selected='selected'");
 		console.log(sel.data("product-id"));
 		var category_id = sel.find("select.category").val();
 		sel.find("select.category").attr('selected');
