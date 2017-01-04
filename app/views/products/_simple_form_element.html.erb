@@ -20,7 +20,7 @@
 				<%= f.association :category, 
 					collection: @categories.map { |g| [g.title, g.id]}, 
 		       		include_blank: true,
-		       		input_html: { class: 'chosen-select sel category', selected: "selected" } 
+		       		input_html: { class: 'chosen-select sel category' } 
 		    	%>
 		    <%- end %>
 		</td>
@@ -29,7 +29,7 @@
 			<td class="product_type_select"><%= f.association :product_type, 
 		    	collection: category.product_types.map { |g| [g.title, g.id]}, 
 		       include_blank: true,
-		       input_html: { class: 'chosen-select sel product_type', selected: "selected" } 
+		       input_html: { class: 'chosen-select sel product_type' } 
 			%></td>
 		<%- else %>
 
@@ -39,9 +39,8 @@
 
 
 		<%- if product_type %>
-
 			 <td class="tag_select">
-			 	<%= f.association :tags,
+			 	<%= f.association :tag,
 			 		   collection: product_type.tags.map { |g| [g.title, g.id]}, 
 				       include_blank: true,
 				       input_html: { class: 'chosen-select sel tag', multiple: true} 
