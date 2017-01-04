@@ -103,13 +103,13 @@ class ProductsController < ShopifyApp::AuthenticatedController
     if session[:shopify_collection_id].blank?
       @product_types = []
     else
-      @product_types = ProductType.where(category_id: @categories.ids)
+      @product_types = ProductType.where(category_id: @category.id)
     end
 
     if session[:shopify_collection_id].blank?
       @tags = []
     else
-      @tags = Tag.where(product_type_id: @product_types.ids)
+      @tags = Tag.where(product_type_id: @product_type.id)
     end
 
     @product = Product.find_by_id(params[:product_id])
