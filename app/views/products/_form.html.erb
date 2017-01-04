@@ -29,7 +29,7 @@
             <div id="newFormElement"></div>
             <%# render 'products/form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags, f: f} %>
 
-          <%= render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tag: product.tags } %>
+          <%= render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags } %>
         <% end %>
       <%- else %>
         <p>You should create these on shopify and then return</p>
