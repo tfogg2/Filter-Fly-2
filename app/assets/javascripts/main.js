@@ -104,13 +104,13 @@ $(document).ready(function () {
 		var sel = $(this).closest("tr");
 		console.log(sel.data("product-id"));
 		var category_id = sel.find("select.category").val();
-		sel.find("select.category").setAttribute('selected', 'selected');
+		sel.find("select.category").attr('selected');
 		console.log(category_id);
 		var product_type_id = sel.find("select.product_type").val();
-		sel.find("select.product_type").setAttribute('selected', 'selected');
+		sel.find("select.product_type").attr('selected');
 		console.log(product_type_id)
 		var tag = sel.find("select.tag").val();
-		sel.find("select.tag").setAttribute('selected', 'selected');
+		sel.find("select.tag").attr('selected');
 		console.log(tag)
 
 		
