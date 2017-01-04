@@ -103,13 +103,13 @@ class ProductsController < ShopifyApp::AuthenticatedController
     if session[:shopify_collection_id].blank?
       @product_types = []
     else
-      @product_types = ProductType.where(category_id: @category.id)
+      @product_types = ProductType.where(category_id: @categories.ids)
     end
 
     if session[:shopify_collection_id].blank?
       @tags = []
     else
-      @tags = Tag.where(product_type_id: @product_type.id)
+      @tags = Tag.where(product_type_id: @product_types.ids)
     end
 
     @product = Product.find_by_id(params[:product_id])
@@ -119,10 +119,10 @@ class ProductsController < ShopifyApp::AuthenticatedController
 
 
     
-    # if !params[:product_type_id].blank?
-    #   @product_type = @category.product_types.find_by_id(params[:product_type_id])
-    #   @tags = @product_type.tags if @product_type
-    # end
+    if !params[:product_type_id].blank?
+      @product_type = @category.product_types.find_by_id(params[:product_type_id])
+      @tags = @product_type.tags if @product_type
+    end
 
     # Rails.logger.debug("@category: #{@category.inspect}")
     # Rails.logger.debug("@category.product_types: #{@category.product_types.inspect}")
