@@ -8,5 +8,8 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 		@customCollections = ShopifyAPI::CustomCollection.find(:all, params: { limit: 10 })
 		@smartCollections = ShopifyAPI::SmartCollection.find(:all, params: { limit: 10 })
 		@categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+
+		@customCollections = CustomCollection.page(params[:page]).per(10)
+		@smartCollections = SmartCollection.page(params[:page]).per(10)
 	end
 end
