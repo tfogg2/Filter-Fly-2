@@ -22,7 +22,7 @@
        <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <br>
     <% end %>
-    <%= paginate @customCollections  %>
+    <%# paginate @customCollections  %>
     </ul>
 
     <ul>
@@ -32,7 +32,7 @@
       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <br>
     <% end %>
-    <%= paginate @smartCollections  %>
+    <%# paginate @smartCollections  %>
 
     </ul>
   <%- else %>
