@@ -23,8 +23,7 @@
 			    <%= f.association :category, 
 					collection: @categories.map { |g| [g.title, g.id]}, 
 		       		include_blank: true,
-		       		:selected => selected_category,
-		       		input_html: { class: 'chosen-select sel category' } 
+		       		input_html: { class: 'chosen-select sel category' selected: => selected} 
 			    %>
 		    <%- end %>
 
