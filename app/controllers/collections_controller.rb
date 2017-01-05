@@ -4,9 +4,9 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 	def index
 		# Rails.logger.debug("set_shopify_collection_id: #{session[:shopify_collection_id]}")
 
-		@products = ShopifyAPI::Product.find(:all, params: { limit: 10 })  #, params: { limit: 10 }
-		@customCollections = ShopifyAPI::CustomCollection.find(:all)  #, params: { limit: 10 }
-		@smartCollections = ShopifyAPI::SmartCollection.find(:all)
+		@products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+		@customCollections = ShopifyAPI::CustomCollection.find(:all, params: { limit: 10 })
+		@smartCollections = ShopifyAPI::SmartCollection.find(:all, params: { limit: 10 })
 		@categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
 
 
