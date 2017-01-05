@@ -31,6 +31,8 @@
       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <br>
     <% end %>
+    <%= paginate @customCollections && @smartCollections %>
+
     </ul>
   <%- else %>
     <p>You should create these on shopify and then return</p>
