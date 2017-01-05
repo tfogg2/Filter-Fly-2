@@ -19,12 +19,6 @@
 		       		include_blank: true,
 		       		input_html: { class: 'chosen-select sel category' } 
 		    	%>
-		    <%- else %>
-			    <%= f.association :category, 
-					collection: @categories.map { |g| [g.title, g.id]}, 
-		       		include_blank: true,
-		       		input_html: { class: 'chosen-select sel category' selected: => selected} 
-			    %>
 		    <%- end %>
 
 		</td>
