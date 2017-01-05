@@ -13,7 +13,7 @@
 		<p class="product-id"><%# product.id %></p>
 
 		 <td class="category_select">
-		 	<%- if @categories.any? && !category %>
+		 	<%- if @categories.any? %>
 				<%= f.association :category, 
 					collection: @categories.map { |g| [g.title, g.id]}, 
 		       		include_blank: true,
