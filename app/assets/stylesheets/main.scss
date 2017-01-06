@@ -11,7 +11,8 @@ body{
 	background: #E4F3FF;
 }
 #home{
-	background: url('filterfly.png');
+	background: url('filterfly.png') no-repeat center center fixed ;
+	background-size: 100% ;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
