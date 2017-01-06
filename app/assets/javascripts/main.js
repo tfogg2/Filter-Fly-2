@@ -132,7 +132,7 @@ $(document).ready(function () {
 
 
 
-	$('#home').on("load", function(){
+	$('#home').ready(function(){
 		 window.setTimeout(function(){
 
         	// Move to a new location or you can do something else
