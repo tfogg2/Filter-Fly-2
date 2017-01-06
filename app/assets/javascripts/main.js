@@ -138,7 +138,7 @@ $(document).ready(function () {
         	// Move to a new location or you can do something else
         	window.location.href = "https://filterfly2.herokuapp.com/index";
 
-    	}, 5000);
+    	}, 3000);
 	});
 
 
