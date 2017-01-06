@@ -130,11 +130,8 @@ $(document).ready(function () {
 
 	});
 
-	$('#home').load(function(){
- 		//Your delay in milliseconds
-		setTimeout(function(){ window.location = "https://filterfly2.herokuapp.com/index"; }, 3000);
+	$('#home').setTimeout(function(){ window.location = "https://filterfly2.herokuapp.com/index"; }, 3000);
 
-	});
 
 	
 
