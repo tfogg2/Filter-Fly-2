@@ -51,6 +51,9 @@ $(document).ready(function () {
 	});
 
 
+
+
+
 	$('.modalBtn').click( function(){
 		$.ajax({
 	      type: 'GET',

@@ -21,6 +21,22 @@ body{
     height: 100%; /* Full height */
 
 }
+.continueBtn {
+	background: url('continueBtn.png') no-repeat center center fixed ;
+	width: 137px;
+	height: 72px;
+	right:20px;
+	margin: 10px;
+	bottom: 20px;
+}
+.tutorialBtn{
+	background: url('tutorialBtn.png') no-repeat center center fixed ;
+	width: 137px;
+	height: 72px;
+	right:20px;
+	margin: 10px;
+	bottom: 20px;
+}
 // #box{
 // 	float: left;
 // 	width: 200px;
