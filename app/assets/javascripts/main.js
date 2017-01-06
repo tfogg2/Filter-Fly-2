@@ -130,7 +130,7 @@ $(document).ready(function () {
 
 	});
 
-	$(document).ready('#home', function(){
+	$(document).on('change', "#home", function(){
 		setTimeout(function()
 			{ window.location.href = "https://filterfly2.herokuapp.com/index"; 
 		}, 3000);
