@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   	end
   end
 
-
+  get 'index', to: "collections#index" 
   get 'select_change', to: "products#select_change"
   get 'navbar_select', to: "shared#navbar_select"
   #get 'tutorial', to: "shared#_tutorial"
