@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'collections#index'
+  root :to => 'collections#home'
   mount ShopifyApp::Engine, at: '/'
   resources :products
   
