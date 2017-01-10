@@ -106,10 +106,10 @@ $(document).ready(function () {
 	$(document).on('change', ".selectable select", function(){
 		var sel = $(this).closest("tr");
 		console.log(sel.data("product-id"));
-		var category_id = sel.find("select.category").val();
+		var category_id = $("#product_category_id").val();
 		sel.find("select.category").attr('selected');
 		console.log(category_id);
-		var product_type_id = sel.find("select.product_type").val();
+		var product_type_id = $('#product_product_type_id').val();
 		sel.find("select.product_type").attr('selected');
 		console.log(product_type_id)
 		var tag = sel.find("select.tag").val();
@@ -137,9 +137,8 @@ $(document).ready(function () {
 
 	// });
 
-	//var category_id = $("#product_category_id").val();
+	
 	//var product_type_id = sel.find("select.product_type").val();
-	//var product_type_id = $('#product_product_type_id').val();
 	//var category_id = sel.find("select.category").val();
 
 

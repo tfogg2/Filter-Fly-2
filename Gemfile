@@ -10,6 +10,7 @@ gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'pg'
 
 gem 'kaminari'
 gem 'simple_form'
@@ -58,7 +59,6 @@ end
 
 group :production do 
 	gem 'rails_12factor'
-	gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
