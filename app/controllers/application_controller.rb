@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_shopify_collection_id
 
-  before_action :logger
+  #before_action :logger
 
   
 
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   	session[:shopify_collection_title] = nil
   end
   
-  def logger
-    Rails.logger.debug("///set_shopify_collection_id: #{session[:shopify_collection_id]}")
-  end
+  #def logger
+   # Rails.logger.debug("///set_shopify_collection_id: #{session[:shopify_collection_id]}")
+  #end
 end
