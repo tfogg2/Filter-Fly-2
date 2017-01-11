@@ -111,7 +111,7 @@ $(document).ready(function () {
 		alert(category_id);
 		var product_type_id = $('#product_product_type_id').val();
 		$(product_type_id).parent().attr('selected');
-		alert.log(product_type_id);
+		alert(product_type_id);
 		var tag = sel.find("#product_tags_ids").val();
 		$(tag).parent().attr('selected');
 		alert(tag);
