@@ -3,8 +3,8 @@
 	<%- product_type = product_type || product.product_type %>
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
-	<form action="#" class='ajax-form'>
-		<tr id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>' >
+	<form action="#" class='ajax-form' id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
+		<tr>
 			<%- if @categories.any? %>
 				<td>
 					<select class="sel selectable category chosen-select">
