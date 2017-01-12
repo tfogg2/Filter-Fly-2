@@ -3,7 +3,7 @@
 	<%- product_type = product_type || product.product_type %>
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
-	<form id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
+	<form class='ajax-form' id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
 		<div>
 			<%- if @categories.any? %>
 				<div>
