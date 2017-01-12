@@ -2,6 +2,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
   layout "application"
   
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:update, :select_change]
 
  def index
     Rails.logger.debug("set_shopify_product_id: #{session[:shopify_collection_id]}")
@@ -90,24 +91,6 @@ class ProductsController < ShopifyApp::AuthenticatedController
   end
 
   def select_change
-    if session[:shopify_collection_id].blank?
-      @categories = []
-    else
-      @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
-    end
-
-    if session[:shopify_collection_id].blank?
-      @product_types = []
-    else
-      @product_types = ProductType.where(category_id: @categories.ids)
-    end
-
-    if session[:shopify_collection_id].blank?
-      @tags = []
-    else
-      @tags = Tag.where(product_type_id: @product_types.ids)
-    end
-
     @product = Product.find_by_id(params[:product_id])
     @category = Category.find_by_id(params[:category_id])
 
@@ -119,10 +102,6 @@ class ProductsController < ShopifyApp::AuthenticatedController
       @product_type = @category.product_types.find_by_id(params[:product_type_id])
       @tags = @product_type.tags if @product_type
     end
-
-    # Rails.logger.debug("@category: #{@category.inspect}")
-    # Rails.logger.debug("@category.product_types: #{@category.product_types.inspect}")
-    # Rails.logger.debug("@product_type: #{@product_type.inspect}")
   end
 
 
@@ -141,6 +120,26 @@ class ProductsController < ShopifyApp::AuthenticatedController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:product_id] || params[:id])
+    end
+
+    def set_categories
+      if session[:shopify_collection_id].blank?
+        @categories = []
+      else
+        @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+      end
+
+      if session[:shopify_collection_id].blank?
+        @product_types = []
+      else
+        @product_types = ProductType.where(category_id: @categories.ids)
+      end
+
+      if session[:shopify_collection_id].blank?
+        @tags = []
+      else
+        @tags = Tag.where(product_type_id: @product_types.ids)
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
