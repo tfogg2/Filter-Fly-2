@@ -105,16 +105,16 @@ $(document).ready(function () {
 	// });
 	$(document).on('change', ".selectable select", function(){
 		var sel = $(this).closest("tr");
-
-		var category_id = $("#product_category_id").val();
-		$(category_id).parent().attr('selected');
-
-		var product_type_id = $('#product_product_type_id').val();
-		$(product_type_id).parent().attr('selected');
-
-		var tag = sel.find("#product_tags_ids").val();
-		$(tag).parent().attr('selected');
-
+		console.log(sel.data("product-id"));
+		var category_id = sel.find("select.category").val();
+		sel.find("select.category").attr('selected');
+		console.log(category_id);
+		var product_type_id = sel.find("select.product_type").val();
+		sel.find("select.product_type").attr('selected');
+		console.log(product_type_id)
+		var tag = sel.find("select.tag").val();
+		sel.find("select.tag").attr('selected');
+		console.log(tag)
 
 		
 		
@@ -130,16 +130,12 @@ $(document).ready(function () {
 
 	});
 
-	// $('#home').ready(function(){
-	// 	setTimeout(function()
-	// 		{ window.location.href = "https://filterfly2.herokuapp.com/index"; 
-	// 	}, 3000);
+	$('#home').ready(function(){
+		setTimeout(function()
+			{ window.location.href = "https://filterfly2.herokuapp.com/index"; 
+		}, 3000);
 
-	// });
-
-	
-	//var product_type_id = sel.find("select.product_type").val();
-	//var category_id = sel.find("select.category").val();
+	});
 
 
 	
