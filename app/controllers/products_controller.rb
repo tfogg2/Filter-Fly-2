@@ -82,14 +82,10 @@ class ProductsController < ShopifyApp::AuthenticatedController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.update(product_params)
+      Rails.logger.debug("Updated Product: #{@product.inspect}")
+    else
+      Rails.logger.debug("Failed to update product... fml: #{@product.inspect}")
     end
   end
 

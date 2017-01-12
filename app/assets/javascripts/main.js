@@ -98,7 +98,7 @@ $(document).ready(function () {
 		console.log("Submitting form with values!", form_values);
 
 		$.ajax({
-			type: 'POST',
+			type: 'PUT',
 			data: form_values,
 			url: '/products/'+$(this).data("product-id"),
 			success: function(data){
