@@ -131,7 +131,7 @@ $(document).ready(function () {
 		var product_type_id = sel.find("select.product_type").val();
 		//sel.find("select.product_type").attr('selected');
 		console.log(product_type_id)
-		var tag = sel.find("select.tag").val() + "";
+		var tag = sel.find("select.tag").text();
 		//sel.find("select.tag").attr('selected');
 		console.log(tag)
 
