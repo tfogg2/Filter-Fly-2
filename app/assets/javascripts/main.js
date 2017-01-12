@@ -126,13 +126,13 @@ $(document).ready(function () {
 		console.log("selector", sel);
 		console.log(sel.data("product-id"));
 		var category_id = sel.find("select.category").val();
-		sel.find("select.category").attr('selected');
+		//sel.find("select.category").attr('selected');
 		console.log(category_id);
 		var product_type_id = sel.find("select.product_type").val();
-		sel.find("select.product_type").attr('selected');
+		//sel.find("select.product_type").attr('selected');
 		console.log(product_type_id)
-		var tag = sel.find("select.tag").val();
-		sel.find("select.tag").attr('selected');
+		var tag = sel.find("select.tag").val() + "";
+		//sel.find("select.tag").attr('selected');
 		console.log(tag)
 
 		
