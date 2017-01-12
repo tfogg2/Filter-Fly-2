@@ -99,7 +99,7 @@ $(document).ready(function () {
 
 		$.ajax({
 			type: 'PUT',
-			data: {product: form_values},
+			data: form_values,
 			url: '/products/'+$(this).data("product-id"),
 			success: function(data){
 				
