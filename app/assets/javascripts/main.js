@@ -131,10 +131,13 @@ $(document).ready(function () {
 		var product_type_id = sel.find("select.product_type").val();
 		//sel.find("select.product_type").attr('selected');
 		console.log(product_type_id)
-		var tag = sel.find("select.tag").text();
+		var tag = sel.find("select.tag").val();
 		//sel.find("select.tag").attr('selected');
 		console.log(tag)
-
+		var foo = [];
+			$(tag).each(function(i, selected){
+  			foo[i] = $(selected).val();
+		});
 		
 		
 
