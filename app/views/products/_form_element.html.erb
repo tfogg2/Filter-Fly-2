@@ -2,7 +2,7 @@
 	<%- category = category || product.category %>
 	<%- product_type = product_type || product.product_type %>
 	<%- shopify_product = shopify_product  %>
-	<%- tags = tags || product.tags %>
+	<%- tags = product.tags %>
 
 	<tr id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>' >
 		<%- if @categories.any? %>
