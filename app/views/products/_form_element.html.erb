@@ -3,81 +3,82 @@
 	<%- product_type = product_type || product.product_type %>
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
-
-	<tr id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>' >
-		<%- if @categories.any? %>
-			<td>
-				<select class="sel selectable category chosen-select">
-					<%- @categories.each do |cat| %>
-						<%- if category && cat.id == category.id %>
-							<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
-						<%- else %>
-							<option value="<%= cat.id %>"><%= cat.title %></option>
+	<form action="#" class='ajax-form'>
+		<tr id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>' >
+			<%- if @categories.any? %>
+				<td>
+					<select class="sel selectable category chosen-select">
+						<%- @categories.each do |cat| %>
+							<%- if category && cat.id == category.id %>
+								<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
+							<%- else %>
+								<option value="<%= cat.id %>"><%= cat.title %></option>
+							<%- end %>
 						<%- end %>
-					<%- end %>
-				</select>
-			</td>
-		<%- else %>
+					</select>
+				</td>
+			<%- else %>
 
-		<%- end %>
+			<%- end %>
 
-		<p><%= product_type.tags.ids.inspect if product_type %></p>
-		<%- if category %>
-			<td>
-				<select class="sel selectable product_type chosen-select">
-					<%- category.product_types.each do |type| %>
+			<p><%= product_type.tags.ids.inspect if product_type %></p>
+			<%- if category %>
+				<td>
+					<select class="sel selectable product_type chosen-select">
+						<%- category.product_types.each do |type| %>
+							
+							<%- if product_type && type.id == product_type.id %>
+								<option value="<%= type.id %>" selected="selected"><%= type.title %></option>
+							<%- else %>
+								<option value="<%= type.id %>"><%= type.title %></option>
+							<%- end %>
+
+						<%- end %>
+					</select>
+				</td>
+			<%- else %>
+				<td>
+					<select class="sel product_type chosen-select">
 						
-						<%- if product_type && type.id == product_type.id %>
-							<option value="<%= type.id %>" selected="selected"><%= type.title %></option>
-						<%- else %>
-							<option value="<%= type.id %>"><%= type.title %></option>
+
+
+					</select>
+				</td>
+
+			<%- end %>
+		
+			<%- if product_type %>
+				<!-- <div id="ProductType <%# product_type.id %>"> -->
+				<td>
+					<select class="sel tag chosen-select" multiple>
+						<%- product_type.tags.each do |tag| %>
+							<%- if !tags.blank? && tags.ids.include?(tag.id) %>
+								<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
+							<%- else %>
+								<option value="<%= tag.id %>"><%= tag.title %></option>
+							<%- end %>
 						<%- end %>
+					</select>
+				</td>
+				<!-- </div> -->
+			<% else %> 
+		
+				<td>
+					<select multiple class="sel tag chosen-select" >
+						
+					</select>
+				</td>
 
-					<%- end %>
-				</select>
-			</td>
-		<%- else %>
-			<td>
-				<select class="sel product_type chosen-select">
-					
+			<%- end %>
 
-
-				</select>
-			</td>
-
-		<%- end %>
-	
-		<%- if product_type %>
-			<!-- <div id="ProductType <%# product_type.id %>"> -->
-			<td>
-				<select class="sel tag chosen-select" multiple>
-					<%- product_type.tags.each do |tag| %>
-						<%- if !tags.blank? && tags.ids.include?(tag.id) %>
-							<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
-						<%- else %>
-							<option value="<%= tag.id %>"><%= tag.title %></option>
-						<%- end %>
-					<%- end %>
-				</select>
-			</td>
-			<!-- </div> -->
-		<% else %> 
-	
-			<td>
-				<select multiple class="sel tag chosen-select" >
-					
-				</select>
-			</td>
-
-		<%- end %>
-
-		<%- if @categories.any? %>
-			<td><%= submit_tag ("Save") %></td>
-		<%- end %>
-		<%# @product_types.each do |type| %>
-			<p><%# type.category_id %></p>
-		<%# end %>
-	</tr>
+			<%- if @categories.any? %>
+				<td><%= submit_tag ("Save") %></td>
+			<%- end %>
+			<%# @product_types.each do |type| %>
+				<p><%# type.category_id %></p>
+			<%# end %>
+		</tr>
+	</form>
 
 	
 

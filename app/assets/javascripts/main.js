@@ -89,7 +89,14 @@ $(document).ready(function () {
 	var $index = $('#index');
 
 	
-	 
+	//
+	// Ajax product form submission
+	//
+
+	$(document).on("submit", 'form.ajax-form', function(e){
+		console.log("Submitting form with values!", $(this).serializeArray());
+		return false;
+	});
 	
 
 //_SELECT_CHANGE.JS.ERB //
