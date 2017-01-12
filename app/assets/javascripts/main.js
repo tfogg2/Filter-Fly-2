@@ -130,7 +130,7 @@ $(document).ready(function () {
 
 		$.ajax({
 			type: 'GET',
-			url: '/select_change?product_id=' + "product_id="+product_id + "&category_id="+category_id + "&product_type_id="+product_type_id + "&tags_ids="+tag,
+			url: '/select_change?product_id=' + product_id + "&category_id="+category_id + "&product_type_id="+product_type_id + "&tags_ids="+tag,
 			success: function(data){
 				
 			}

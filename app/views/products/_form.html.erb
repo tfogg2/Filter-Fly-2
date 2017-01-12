@@ -1,45 +1,41 @@
-<%= form_for @product, :remote => true do |f| %>
-
-  <table>
-    <thead>
-      <tr>
-        <%- if @shopify_products.any? && @categories.any? %>
-          
-        <%- end %>
-        <%- if @categories.any? && @shopify_products.any? %>
-          <th>Category</th>
-        <%- else %>
-          <p>You can create Categories, Product Types and Tags by <%= link_to "editing navigation", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %> </p>
-        <%- end %>
-        <%- if @product_types.any? && @shopify_products.any? %>
-          <th>Product Types</th>
-        <%- end %>
-        <%- if @tags.any? && @shopify_products.any? %>
-          <th>Tags</th>
-        <%- end %>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <%- if @shopify_products.any? %>
-        <%- @shopify_products.each do |shopify_product| %>
-            <td class="bold"><%= shopify_product.title %></td>
-            <%- product = @products.select{|p| p.shopify_product_id == shopify_product.id.to_s }[0] %>
-            <div id="newFormElement"></div>
-            <%= render 'products/form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags, f: f} %>
-
-          <%# render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags } %>
-        <% end %>
+<table>
+  <thead>
+    <tr>
+      <%- if @shopify_products.any? && @categories.any? %>
+        
+      <%- end %>
+      <%- if @categories.any? && @shopify_products.any? %>
+        <th>Category</th>
       <%- else %>
-        <p>You should create these on shopify and then return</p>
-      <%- end %> 
-      
+        <p>You can create Categories, Product Types and Tags by <%= link_to "editing navigation", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %> </p>
+      <%- end %>
+      <%- if @product_types.any? && @shopify_products.any? %>
+        <th>Product Types</th>
+      <%- end %>
+      <%- if @tags.any? && @shopify_products.any? %>
+        <th>Tags</th>
+      <%- end %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-    </tbody>
-  </table>
+  <tbody>
+    <%- if @shopify_products.any? %>
+      <%- @shopify_products.each do |shopify_product| %>
+          <td class="bold"><%= shopify_product.title %></td>
+          <%- product = @products.select{|p| p.shopify_product_id == shopify_product.id.to_s }[0] %>
+          <div id="newFormElement"></div>
+          <%= render 'products/form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags, f: f} %>
 
-<%- end %>
+        <%# render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags } %>
+      <% end %>
+    <%- else %>
+      <p>You should create these on shopify and then return</p>
+    <%- end %> 
+    
+
+  </tbody>
+</table>
 
 <%# LINE 15, ADD PRODUCT TYPES IF @CATEGORY HAS ANY ----> product_types: if @category.product_types.any? == @category.product_types else product_types == [] end} %>
 
