@@ -4,10 +4,10 @@
 	<%- shopify_product = shopify_product  %>
 	<%- tags = tags || product.tags %>
 
-	<tr id="form-element-<%= product ? product.id : "nil" %>" class='selectable' data-product-id='<%= product.id %>' >
+	<tr id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>' >
 		<%- if @categories.any? %>
 			<td>
-				<select class="sel category chosen-select">
+				<select class="sel selectable category chosen-select">
 					<%- @categories.each do |cat| %>
 						<%- if category && cat.id == category.id %>
 							<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
@@ -24,7 +24,7 @@
 		<p><%= product_type.tags.ids.inspect if product_type %></p>
 		<%- if category %>
 			<td>
-				<select class="sel product_type chosen-select">
+				<select class="sel selectable product_type chosen-select">
 					<%- category.product_types.each do |type| %>
 						
 						<%- if product_type && type.id == product_type.id %>

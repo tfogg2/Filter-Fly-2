@@ -103,7 +103,7 @@ $(document).ready(function () {
 	// $(document).on('change', ".tag_select select", function(){
 	// 	alert(this.value);
 	// });
-	$(document).on('change', ".selectable select", function(){
+	$(document).on('change', "select.selectable", function(){
 		var sel = $(this).closest("tr");
 		console.log(sel.data("product-id"));
 		var category_id = sel.find("select.category").val();
