@@ -105,16 +105,16 @@ $(document).ready(function () {
 	// });
 	$(document).on('change', ".selectable select", function(){
 		var sel = $(this).closest("tr");
-		console.log(sel.data("product-id"));
+
 		var category_id = $("#product_category_id").val();
 		$(category_id).parent().attr('selected');
-		alert(category_id);
+
 		var product_type_id = $('#product_product_type_id').val();
 		$(product_type_id).parent().attr('selected');
-		alert(product_type_id);
+
 		var tag = sel.find("#product_tags_ids").val();
 		$(tag).parent().attr('selected');
-		alert(tag);
+
 
 		
 		
