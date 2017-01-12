@@ -130,12 +130,12 @@ $(document).ready(function () {
 
 	});
 
-	$('#home').ready(function(){
-		setTimeout(function()
-			{ window.location.href = "https://filterfly2.herokuapp.com/index"; 
-		}, 3000);
+	// $('#home').ready(function(){
+	// 	setTimeout(function()
+	// 		{ window.location.href = "https://filterfly2.herokuapp.com/index"; 
+	// 	}, 3000);
 
-	});
+	// });
 
 
 	
