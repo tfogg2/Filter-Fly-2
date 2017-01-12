@@ -1,7 +1,7 @@
 
 // alert("<%= @category.inspect %>")
 // DESELCT .TAGS        --> aelect back 
-$("#form-element-<%= @product ?  @product.id : 'nil' %>").replaceWith("<%= j render('products/form_element', {product: @product, category: @category, product_type: @product_type, tags: @tags, f: @f}) %>")
+$("#form-element-<%= @product ?  @product.id : 'nil' %>").replaceWith("<%= j render('products/form_element', {product: @product, category: @category, product_type: @product_type, tags: @tags}) %>")
 // $("#form-element-<%= @product ?  @product.id : 'nil' %>").css('background', "#ff0000");
 //$("#form-element-<%# @product.id %>").replace("<%# render 'product/form_element', {} %>")
 
