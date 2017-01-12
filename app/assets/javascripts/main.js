@@ -136,7 +136,7 @@ $(document).ready(function () {
 				tag[i] = $(selected).val();
 			})
 		//sel.find("select.tag").attr('selected');
-		console.log(tag)
+		console.log(tag).toString();
 		// var foo = [];
 		// 	$(tag).each(function(i, selected){
   // 			foo[i] = $(selected).val();
