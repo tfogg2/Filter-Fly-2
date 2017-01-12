@@ -132,11 +132,11 @@ $(document).ready(function () {
 		//sel.find("select.product_type").attr('selected');
 		console.log(product_type_id)
 		var tag = sel.find("select.tag").val();
-			$(tag).each(function(i, selected){
-				tag[i] = $(selected).val();
-			})
+			// $(tag).each(function(i, selected){
+			// 	tag[i] = $(selected).val();
+			// })
 		//sel.find("select.tag").attr('selected');
-		console.log(tag).toString();
+		console.log(tag);
 		// var foo = [];
 		// 	$(tag).each(function(i, selected){
   // 			foo[i] = $(selected).val();
