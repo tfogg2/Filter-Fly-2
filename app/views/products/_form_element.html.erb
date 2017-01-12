@@ -7,7 +7,7 @@
 		<div>
 			<%- if @categories.any? %>
 				<div>
-					<select class="sel selectable category chosen-select">
+					<select class="sel selectable category chosen-select" name="category">
 						<%- @categories.each do |cat| %>
 							<%- if category && cat.id == category.id %>
 								<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
@@ -24,7 +24,7 @@
 			<p><%= product_type.tags.ids.inspect if product_type %></p>
 			<%- if category %>
 				<div>
-					<select class="sel selectable product_type chosen-select">
+					<select class="sel selectable product_type chosen-select" name="product_type">
 						<%- category.product_types.each do |type| %>
 							
 							<%- if product_type && type.id == product_type.id %>
@@ -50,7 +50,7 @@
 			<%- if product_type %>
 				<!-- <div id="ProductType <%# product_type.id %>"> -->
 				<div>
-					<select class="sel tag chosen-select" multiple>
+					<select class="sel tag chosen-select" name="tags" multiple>
 						<%- product_type.tags.each do |tag| %>
 							<%- if !tags.blank? && tags.ids.include?(tag.id) %>
 								<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
