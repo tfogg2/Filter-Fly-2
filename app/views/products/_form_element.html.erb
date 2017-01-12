@@ -52,8 +52,8 @@
 				<div>
 					<select class="sel tag chosen-select" name="product[tags][]" multiple>
 						<%- product_type.tags.each do |tag| %>
-							<p>tag.inspect</p>
-							<p>tags.inspect</p>
+							<p><%= tag.inspect %></p>
+							<p><%= tags.inspect %></p>
 							<%- if !tags.blank? && tags.ids.include?(tag.id) %>
 								<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
 							<%- else %>
