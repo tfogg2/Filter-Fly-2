@@ -113,7 +113,6 @@ $(document).ready(function () {
 	$(document).on('change', "select.selectable", function(){
 		var sel = $(this).closest("form");
 		console.log("selector", sel);
-		var product_id = $(".product_form").data("product-id");
 		console.log(sel.data("product-id"));
 		var category_id = sel.find("select.category").val();
 		sel.find("select.category").attr('selected');
@@ -130,7 +129,7 @@ $(document).ready(function () {
 
 		$.ajax({
 			type: 'GET',
-			url: '/select_change?product_id=' + product_id + "&category_id="+category_id + "&product_type_id="+product_type_id + "&tags_ids="+tag,
+			url: '/select_change?product_id=' + sel.data("product-id") + "&category_id="+category_id + "&product_type_id="+product_type_id + "&tags_ids="+tag,
 			success: function(data){
 				
 			}
@@ -147,7 +146,6 @@ $(document).ready(function () {
 	// });
 
 
-	// sel.data("product-id")
 	
 
 
