@@ -27,9 +27,9 @@
             <td class="bold"><%= shopify_product.title %></td>
             <%- product = @products.select{|p| p.shopify_product_id == shopify_product.id.to_s }[0] %>
             <div id="newFormElement"></div>
-            <%# render 'products/form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags, f: f} %>
+            <%= render 'products/form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags, f: f} %>
 
-          <%= render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags } %>
+          <%# render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags } %>
         <% end %>
       <%- else %>
         <p>You should create these on shopify and then return</p>
