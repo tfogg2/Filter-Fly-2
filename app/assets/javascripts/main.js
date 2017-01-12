@@ -94,7 +94,18 @@ $(document).ready(function () {
 	//
 
 	$(document).on("submit", 'form.ajax-form', function(e){
-		console.log("Submitting form with values!", $(this).serializeArray());
+		var form_values = $(this).serializeArray();
+		console.log("Submitting form with values!", form_values);
+
+		$.ajax({
+			type: 'POST',
+			data: form_values,
+			url: '/products/'+$(this).data("product-id"),
+			success: function(data){
+				
+			}
+		});
+
 		return false;
 	});
 	
