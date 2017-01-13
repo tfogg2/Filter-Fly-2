@@ -17,7 +17,7 @@
   <%- if @customCollections.any? or @smartCollections.any? %>
     <ul>
     <% @customCollections.each do |collection| %>
-      <li><%= collection.title %></li>
+      <li class="collectionTitle"><%= collection.title %></li>
       <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
        <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <br>
@@ -27,7 +27,7 @@
 
     <ul>
     <% @smartCollections.each do |collection| %>
-      <li><%= collection.title %></li>
+      <li class="collectionTitle"><%= collection.title %></li>
       <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <br>
