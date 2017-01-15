@@ -12,7 +12,6 @@
   <%= render 'shared/navbar' %>
 </div>
 <div id="collection_index">
-  <div class="collection">
     <h1>Collections</h1>
     <table>
         <thead>
@@ -35,9 +34,9 @@
 
           <%# paginate @customCollections  %>
 
-      </div>
 
-      <div class="collection">
+
+
           <% @smartCollections.each do |collection| %>
           <tr>
               <td class="collectionTitle"><%= collection.title %></td>
@@ -52,7 +51,6 @@
         <%- end %>
       </tbody>
     </table>
-  </div>
 
 
 </div>
