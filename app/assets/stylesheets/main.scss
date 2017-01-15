@@ -114,12 +114,14 @@ body{
 #collection_index h1{
 	text-align: center;
 }
-.collection{
-	border-bottom: 1px thin black;
-}
 .collection ul li{
 	display: inline;
 	text-decoration: none;
+	margin-left: 20px;
+
+}
+.collection ul {
+	border-bottom: 1px thin black;
 }
 
 #index{
