@@ -19,8 +19,8 @@
       <ul>
       <% @customCollections.each do |collection| %>
         <li class="collectionTitle"><%= collection.title %></li>
-        <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>|
-         <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+        <li><button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></li>| 
+         <li><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></li>
         <br>
       <% end %>
       <%# paginate @customCollections  %>
@@ -31,8 +31,8 @@
       <ul>
       <% @smartCollections.each do |collection| %>
         <li class="collectionTitle"><%= collection.title %></li>
-        <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>|
-        <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+        <li><button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></li>| 
+        <li><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></li>
         <br>
       <% end %>
       <%# paginate @smartCollections  %>

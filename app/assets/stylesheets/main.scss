@@ -117,6 +117,10 @@ body{
 .collection{
 	border-bottom: 1px thin black;
 }
+.collection ul li{
+	display: inline;
+	text-decoration: none;
+}
 
 #index{
 	margin: 0px auto;
