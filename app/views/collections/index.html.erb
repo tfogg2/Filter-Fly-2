@@ -11,33 +11,37 @@
 <div id="navbar">
   <%= render 'shared/navbar' %>
 </div>
-<div id="index">
-  <h1>Collections</h1>
+<div id="collection_index">
+  <div class="collection">
+    <h1>Collections</h1>
 
-  <%- if @customCollections.any? or @smartCollections.any? %>
-    <ul>
-    <% @customCollections.each do |collection| %>
-      <li class="collectionTitle"><%= collection.title %></li>
-      <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
-       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
-      <br>
-    <% end %>
-    <%# paginate @customCollections  %>
-    </ul>
+    <%- if @customCollections.any? or @smartCollections.any? %>
+      <ul>
+      <% @customCollections.each do |collection| %>
+        <li class="collectionTitle"><%= collection.title %></li>
+        <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>|
+         <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+        <br>
+      <% end %>
+      <%# paginate @customCollections  %>
+      </ul>
+  </div>
 
-    <ul>
-    <% @smartCollections.each do |collection| %>
-      <li class="collectionTitle"><%= collection.title %></li>
-      <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
-      <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
-      <br>
-    <% end %>
-    <%# paginate @smartCollections  %>
+  <div class="collection">
+      <ul>
+      <% @smartCollections.each do |collection| %>
+        <li class="collectionTitle"><%= collection.title %></li>
+        <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>|
+        <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
+        <br>
+      <% end %>
+      <%# paginate @smartCollections  %>
 
-    </ul>
-  <%- else %>
-    <p>You should create these on shopify and then return</p>
-  <%- end %>
+      </ul>
+    <%- else %>
+      <p>You should create these on shopify and then return</p>
+    <%- end %>
+  </div>
 
 
 </div>

@@ -3,6 +3,7 @@ class Tag < ApplicationRecord
 
   has_many :product_tags, :dependent => :destroy
   has_many :products, :through => :product_tags
+  validates :title, presence: true
 
   before_save :update_handle
 

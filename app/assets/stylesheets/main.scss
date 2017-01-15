@@ -105,6 +105,19 @@ body{
 /* TEST */
 
 /*Index */
+#collection_index{
+	margin: 0px auto;
+	max-width: 900px;
+	min-height: 120px;
+	background: #fff;
+}
+#collection_index h1{
+	text-align: center;
+}
+.collection{
+	border-bottom: 1px thin black;
+}
+
 #index{
 	margin: 0px auto;
 	max-width: 900px;
