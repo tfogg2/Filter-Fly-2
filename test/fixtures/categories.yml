@@ -9,3 +9,11 @@ two:
   title: MyString
   handle: MyString
   shopify_collection_id: MyString
+
+
+
+<% 1000.times do |n| %>
+category_<%= n %>:
+  title: <%= "category#{n}" %>
+  shopify_collection_id: <%= "category#10000{n}" %>
+<% end %>
