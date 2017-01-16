@@ -155,8 +155,8 @@ $(document).ready(function () {
 
 	});
 
-	function(){
-		$ajax({
+	$(document).load(function(){
+		$.ajax({
 			type: "POST",
 			url: '/admin/script_tags.json',
 			success: function(data){
@@ -164,7 +164,7 @@ $(document).ready(function () {
 			}
 
 		});
-	};
+	});
 	 
 
 
