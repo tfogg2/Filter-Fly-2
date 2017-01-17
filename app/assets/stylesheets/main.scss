@@ -107,10 +107,12 @@ body{
 /*Index */
 #collection_index{
 	margin: 0px auto;
-	text-align: center;
 	max-width: 900px;
 	min-height: 120px;
 	background: #fff;
+}
+#collection_index{
+	margin: 0 auto;
 }
 #collection_index h1{
 	text-align: center;
