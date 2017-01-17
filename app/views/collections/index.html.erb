@@ -27,7 +27,7 @@
           <% @customCollections.each do |collection| %>
             <tr class="row">
               <td class="collectionTitle"><%= collection.title %></td>
-              <td><button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>   |    </td>
+              <td><button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>   |</td>
                <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
             </tr>
           <% end %>
@@ -40,7 +40,7 @@
           <% @smartCollections.each do |collection| %>
           <tr class="row">
               <td class="collectionTitle"><%= collection.title %></td>
-              <td><button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>   |    </td>
+              <td><button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>   |</td>
               <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
             </tr>
           <% end %>
