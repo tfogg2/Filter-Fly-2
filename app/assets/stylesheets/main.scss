@@ -57,7 +57,6 @@ body{
 	//padding-top: 100px;
 	padding-left: 150px;
 	padding-bottom: 100px;
-	margin-top: 100px;
 }
 #top_panel{
 	width: 100%;
@@ -66,7 +65,8 @@ body{
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-	background: #31373d;
+    background: #4d4d4d;
+	//background: #31373d;
 	color: #d3dbe2;
 }
 #left_panel{
@@ -78,7 +78,7 @@ body{
     left: 0;
     top: 0;
 	float: left;
-	background: #31373d;
+	background: #4d4d4d; //#31373d;
 	color: #d3dbe2;
 }
 // #leftNav{
@@ -139,16 +139,16 @@ body{
 
 }
 #collection_index table{
-	margin: 0 auto;
+	//margin: 0 auto;
 }
 #collection_index h1{
 	text-align: center;
 	margin-top: 0;
 }
 
-// #collection_index td {
-// 	border-bottom: 1px solid black;
-// }
+#collection_index td, table, tr{
+	border: 1px solid black;
+}
 .nav_btn{
 	margin-left: 40px;
 }
@@ -156,7 +156,7 @@ body{
 #index{
 	margin: 0px auto;
 	max-width: 900px;
-	text-align: center;
+	//text-align: center;
 	min-height: 120px;
 	background: #fff;
 
@@ -170,7 +170,7 @@ body{
 	color:#fff;
 }
 #index table {
-	margin:0px auto;
+	//margin:0px auto;
 }
 #index td {
 	min-width: 50px;
