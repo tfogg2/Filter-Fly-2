@@ -147,7 +147,10 @@ body{
 	margin-top: 0;
 }
 
-#collection_index td, tr, table{
+#collection_index td, th, table{
+	border: 1px solid black;
+}
+.row {
 	border: 1px solid black;
 }
 
