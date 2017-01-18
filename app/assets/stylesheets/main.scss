@@ -54,12 +54,11 @@ body{
 	display:block;
 	overflow:auto;
 	background: white;
-	padding-bottom: 100px;
-	padding-left: 150px;
+	padding: 65px 0 100px 150px;
 }
 #top_panel{
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
