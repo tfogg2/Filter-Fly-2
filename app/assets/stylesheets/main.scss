@@ -146,11 +146,14 @@ body{
 	text-align: center;
 	margin-top: 0;
 }
-
+#collection_index table{
+	border-collapse: collapse;
+}
 #collection_index td, th, table{
 	border: 1px solid black;
+	
 }
-tr.row td{
+tr.row {
 	border: 1px solid black;
 }
 
