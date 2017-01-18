@@ -212,7 +212,8 @@ body{
 #leftNav li{
 	list-style: none;
 	margin:3px 0;
-	text-align: center;
+	text-align: left;
+	float:left;
 }
 
 .navProductBtn {
@@ -224,7 +225,7 @@ body{
 	-webkit-padding-start: none;
 	-webkit-margin-before: none;
     -webkit-margin-after: none;
-    float:left;
+
 }
 
 /* NAVBAR */
