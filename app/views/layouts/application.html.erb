@@ -10,8 +10,10 @@
   </head>
 
   <body>
-  	<div id="left_panel"></div>
-  	<%# render "shared/navbar" %>
+  	<div id="left_panel">
+  		<%= render "shared/navbar" %>
+  	</div>
+  	
     <%= yield %>
   </body>
 </html>
