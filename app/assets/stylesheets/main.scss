@@ -65,8 +65,8 @@ body{
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    background: #4d4d4d;
-	//background: #31373d;
+    //background: #4d4d4d;
+	background: #31373d;
 	color: #d3dbe2;
 }
 #left_panel{
@@ -78,7 +78,7 @@ body{
     left: 0;
     top: 0;
 	float: left;
-	background: #4d4d4d; //#31373d;
+	background: #E2F0FF; //#31373d;
 	color: #d3dbe2;
 }
 // #leftNav{
@@ -132,10 +132,10 @@ body{
 
 /*Index */
 #collection_index{
-	margin: 0px auto;
+	margin: 0px 150px 0 0;
 	min-height: 120px;
 	background: #fff;
-	padding-top: 100px;
+	padding-top: 65px;
 
 }
 #collection_index table{
