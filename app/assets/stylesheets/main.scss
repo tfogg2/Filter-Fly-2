@@ -138,7 +138,8 @@ body{
 	padding-top: 65px;
 
 }
-#collection_index table{
+#collection_index table, button{
+	margin: 0 auto;
 	//margin: 0 auto;
 }
 #collection_index h1{
@@ -146,9 +147,10 @@ body{
 	margin-top: 0;
 }
 
-#collection_index td, table, tr, th{
+#collection_index td, tr, th{
 	border: 1px solid black;
 }
+
 .nav_btn{
 	margin-left: 40px;
 }
