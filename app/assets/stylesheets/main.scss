@@ -57,6 +57,16 @@ body{
 	padding-bottom: 100px;
 	padding-left: 150px;
 }
+#top_panel{
+	width: 100%;
+	height: 80px;
+	position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+	background: #4d4d4d;
+	color: white;
+}
 #left_panel{
 	width: 150px;
 	height: 100%;
@@ -66,7 +76,8 @@ body{
     left: 0;
     top: 0;
 	float: left;
-	background: #E2F0FF;
+	background: #4d4d4d;
+	color: white;
 }
 // #leftNav{
 // 	width: 20%;
@@ -201,8 +212,8 @@ body{
 	font-weight: bold;
 }
 #leftNav{
-	background: #E2F0FF;
-	color: #32374A;
+	background: #4d4d4d;
+	color: #fff;
 
 
 }
