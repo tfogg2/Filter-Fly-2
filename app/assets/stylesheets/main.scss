@@ -54,20 +54,20 @@ body{
 	display:block;
 	overflow:auto;
 	background: white;
-	padding-top: 100px;
+	//padding-top: 100px;
 	padding-left: 150px;
 	padding-bottom: 100px;
+	margin-top: 100px;
 }
 #top_panel{
 	width: 100%;
 	height: 60px;
-	position: fixed; /* Stay in place */
+	position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    float: left;
 	background: #31373d;
-	color: white;
+	color: #d3dbe2;
 }
 #left_panel{
 	width: 150px;
@@ -79,6 +79,7 @@ body{
     top: 0;
 	float: left;
 	background: #31373d;
+	color: #d3dbe2;
 }
 // #leftNav{
 // 	width: 20%;
@@ -214,7 +215,7 @@ body{
 }
 #leftNav{
 	background: #E2F0FF;
-	color: #32374A;
+	color: #d3dbe2;
 
 
 }
