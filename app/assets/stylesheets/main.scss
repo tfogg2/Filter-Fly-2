@@ -103,10 +103,15 @@ body{
 	background: #31373d;
 	// color: #d3dbe2;
 }
+#left_panel .selected a {
+	color:white;
+	opacity: 1;
+}
 #left_panel a{
 	color: white;
 	opacity: .45;
 }
+
 #left_panel p{
 	color: white;
 	font-size: 18px;
@@ -197,7 +202,7 @@ body{
 /* TEST DATA TABLE */
 
 table{
-  width:100%;
+  width:60%;
   table-layout: fixed;
 }
 .tbl-header{
