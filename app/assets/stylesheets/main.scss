@@ -69,6 +69,14 @@ body{
 	background: #31373d;
 	color: #d3dbe2;
 }
+.top_panel_nav{
+	float: right;
+	color: #d3dbe2;
+}
+.top_panel_nav a:hover{
+	background: none;
+	color: white;
+}
 #left_panel{
 	width: 150px;
 	height: 100%;
