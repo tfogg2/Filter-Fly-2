@@ -17,59 +17,64 @@
 
 
     </div>
-    <table class="table-fill">
-        <thead>
-          <tr>
-            <th>Collections</th>
-            <th>Filters</th>
-            <th>Categories</th>
-            <th>Types</th>
-            <th>Tags</th>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr>
+              <th>Collections</th>
+              <th>Filters</th>
+              <th>Categories</th>
+              <th>Types</th>
+              <th>Tags</th>
 
-            <th>Products</th>
-            <!-- <th colspan="3"></th> -->
+              <th>Products</th>
+              <!-- <th colspan="3"></th> -->
 
-          </tr>
-        </thead>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody >
 
-        <tbody >
+          <%- if @customCollections.any? or @smartCollections.any? %>
+            
+            <% @customCollections.each do |collection| %>
+              <tr class="row">
+                <td class="collectionTitle"><%= collection.title %></td>
+                <td><button class="nav_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
+                <td><%# collection.categories.count %>0</td>
+                <td><%# collection.categories.count %>0</td>
+                <td><%# collection.categories.count %>0</td>
+                 <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
+              </tr>
+            <% end %>
 
-        <%- if @customCollections.any? or @smartCollections.any? %>
-          
-          <% @customCollections.each do |collection| %>
+            <%# paginate @customCollections  %>
+
+
+
+
+            <% @smartCollections.each do |collection| %>
             <tr class="row">
-              <td class="collectionTitle"><%= collection.title %></td>
-              <td><button class="nav_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-              <td><%# collection.categories.count %>0</td>
-              <td><%# collection.categories.count %>0</td>
-              <td><%# collection.categories.count %>0</td>
-               <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-            </tr>
-          <% end %>
+                <td class="collectionTitle"><%= collection.title %></td>
+                <td><button class="nav_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
+                <td><%# collection.categories.count %>0</td>
+                <td><%# collection.categories.count %>0</td>
+                <td><%# collection.categories.count %>0</td>
+                <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
 
-          <%# paginate @customCollections  %>
+              </tr>
+            <% end %>
 
-
-
-
-          <% @smartCollections.each do |collection| %>
-          <tr class="row">
-              <td class="collectionTitle"><%= collection.title %></td>
-              <td><button class="nav_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-              <td><%# collection.categories.count %>0</td>
-              <td><%# collection.categories.count %>0</td>
-              <td><%# collection.categories.count %>0</td>
-              <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-
-            </tr>
-          <% end %>
-
-          <%# paginate @smartCollections  %>
-        <%- else %>
-          <p>You should create these on shopify and then return</p>
-        <%- end %>
-      </tbody>
-    </table>
+            <%# paginate @smartCollections  %>
+          <%- else %>
+            <p>You should create these on shopify and then return</p>
+          <%- end %>
+        </tbody>
+      </table>
+    </div>
 
 
 </div>
