@@ -69,7 +69,7 @@ body{
     top: 0;
     //background: #4d4d4d;
 	//background: #31373d;
-	background: black;
+	background: #31373d;
 	color: #d3dbe2;
 }
 .top_panel_nav{
@@ -97,12 +97,17 @@ body{
     left: 0;
     top: 0;
 	float: left;
-	background: black;
+	background: #31373d;
 	// color: #d3dbe2;
 }
 #left_panel a{
 	color: white;
 	opacity: .45;
+}
+#left_panel p{
+	color: white;
+	font-size: 18px;
+	
 }
 // #leftNav{
 // 	width: 20%;
@@ -363,10 +368,8 @@ tr.row {
 
 
 }
-#leftNav p{
+#leftNav {
 	color: white;
-	font-size: 16px;
-	
 }
 #leftNav a{
 	color: #767676;
