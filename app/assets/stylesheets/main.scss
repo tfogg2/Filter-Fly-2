@@ -73,6 +73,9 @@ body{
 	float: right;
 	color: #d3dbe2;
 }
+.top_panel_nav a{
+	color: #d3dbe2;
+}
 .top_panel_nav a:hover{
 	background: none;
 	color: white;
@@ -80,7 +83,7 @@ body{
 .top_panel_nav li{
 	display: inline;
 	list-style-type: none;
-	padding-right: 20px;
+	padding-right: 10px;
 }
 #left_panel{
 	width: 150px;
