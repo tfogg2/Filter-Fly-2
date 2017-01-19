@@ -121,11 +121,14 @@ body{
 }
 
 */
-
+.ul_nav{
+	margin: 0 0;
+	list-style: none;
+}
 .ul_nav li a{
 	display: block;
 	width: 150px;
-	margin: 0 0; 
+	 
 	
 }
 .ul_nav li{
