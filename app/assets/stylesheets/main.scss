@@ -127,6 +127,7 @@ body{
 	text-align: left;
 	padding: 0 0;
 	line-height: 20px;
+	font-size: 12.5px;
 
 	
 }
@@ -134,15 +135,18 @@ body{
 	display: block;
 	width: 150px;
 	color: #d3dbe2;
-	font-size: 1.4rem;
-	font-weight: 62.5%;
+	font-size: 12.5px;
 	 
 	
+}
+.ul_nav a:hover{
+	background: none;
+	color: white;
 }
 .ul_nav li{
 	text-align: left;
 	margin-top: 15px;
-	font-size: 1.4rem;
+	font-size: 12.5px;
 }
 
 
