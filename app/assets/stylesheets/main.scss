@@ -146,10 +146,12 @@ body{
 
 	//margin: 0 auto;
 }
-#collection_index button, a{
+button.nav_btn, a{
 	color: white;
 }
-
+button.product_btn, a{
+	color: white;
+}
 #collection_index h1{
 	text-align: center;
 	margin-top: 0;
@@ -163,6 +165,7 @@ body{
 }
 #collection_index td, th{
 	height: 50px;
+	min-width: 100px;
 	text-align: center;
 }
 tr.row {
