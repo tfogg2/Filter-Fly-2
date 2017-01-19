@@ -176,7 +176,11 @@ body{
 	margin-bottom: 15px;
 	font-size: 13.5px;
 }
-
+.selected{
+	background: #1F8DD6;
+	color: white;
+	opacity: 1;
+}
 
 .page{
 	overflow:visible;
