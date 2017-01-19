@@ -153,16 +153,13 @@ body{
 	border: 1px solid black;
 	
 }
-#collection_index th{
-	border: 2px solid black;
-}
 #collection_index td, th{
-	min-height: 50px;
+	height: 50px;
 	text-align: center;
 }
 tr.row {
 	border: 2px solid black;
-	min-height: 50px;
+	height: 50px;
 
 }
 
