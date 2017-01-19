@@ -45,7 +45,7 @@
           <tr class="row">
               <td class="collectionTitle"><%= collection.title %></td>
               <td><button class="nav_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-              <td><%= collection.categories.count %></td>
+              <td><%# collection.categories.count %>0</td>
               <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
 
             </tr>
