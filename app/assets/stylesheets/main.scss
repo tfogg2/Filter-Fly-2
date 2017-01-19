@@ -191,8 +191,8 @@ body{
 }
 .collection_search{
 	height: 50px;
-	position: absolute;
-	width: 100%;
+	position: fixed;
+	width: auto;
 }
 button.nav_btn, a{
 	color: white;
