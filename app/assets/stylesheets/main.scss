@@ -195,7 +195,7 @@ body{
 }
 .last_nav{
 	border-bottom: 1px solid #5C656D; 
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 
@@ -314,6 +314,9 @@ button.product_btn, a:visited{
 #collection_index h1{
 	text-align: center;
 	margin-top: 0;
+	font-size: 320%;
+	font-weight: 100;
+	letter-spacing: .05em;
 }
 #collection_index table{
 	border-collapse: collapse;
