@@ -20,13 +20,13 @@
     <table class="table-fill">
         <thead>
           <tr>
-            <th class="text-left">Collections</th>
-            <th class="text-left">Filters</th>
-            <th class="text-left">Categories</th>
-            <th class="text-left">Types</th>
-            <th class="text-left">Tags</th>
+            <th>Collections</th>
+            <th>Filters</th>
+            <th>Categories</th>
+            <th>Types</th>
+            <th>Tags</th>
 
-            <th class="text-left">Products</th>
+            <th>Products</th>
             <!-- <th colspan="3"></th> -->
 
           </tr>
@@ -38,7 +38,7 @@
           
           <% @customCollections.each do |collection| %>
             <tr class="row">
-              <td class="collectionTitle "><%= collection.title %></td>
+              <td class="collectionTitle"><%= collection.title %></td>
               <td><button class="nav_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
               <td><%# collection.categories.count %>0</td>
               <td><%# collection.categories.count %>0</td>
