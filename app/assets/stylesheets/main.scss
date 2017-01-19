@@ -141,9 +141,15 @@ body{
 #collection_index button{
 	margin: 0 auto;
 	background: #31373d;
-	color: white;
+	border-radius: 5px;
+	border: none;
+
 	//margin: 0 auto;
 }
+#collection_index button, a{
+	color: white;
+}
+
 #collection_index h1{
 	text-align: center;
 	margin-top: 0;
