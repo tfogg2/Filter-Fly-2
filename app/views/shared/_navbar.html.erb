@@ -28,7 +28,7 @@
           <% if @tags.any? %>
             <strong><label>Tag</label></strong>
             <% @tags.each do |tag| %>
-              <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="last_nav tag-selectable <%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
+              <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="tag-selectable <%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
             <% end %>
           <%- end %>
         <%- end %>
@@ -37,7 +37,7 @@
 
         <!-- <li><%# link_to "Types", index_path %></li> 
         <li class="last_nav"><%# link_to "Tags", index_path %></li> -->
-        <li><%= link_to "Get Started", index_path %></li>
+        <li class="lower_nav"><%= link_to "Get Started", index_path %></li>
         <li><%= link_to "Support", index_path %></li>
       </ul>
     </div> 
