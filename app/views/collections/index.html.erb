@@ -18,8 +18,9 @@
 
 
     </div>
-    <table cellpadding="0" cellspacing="0">
-      <div class="tbl-header">
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0">
+      
         <thead>
           <tr class="th-row">
             <th>Collections</th>
@@ -33,11 +34,13 @@
 
           </tr>
         </thead>
-      </div>
-    </table>
-
-    <table cellpadding="0" cellspacing="0">
-      <div class="tbl-content">
+      
+      </table>
+    </div>
+    
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0">
+      
         <tbody >
 
         <%- if @customCollections.any? or @smartCollections.any? %>
@@ -76,9 +79,8 @@
           <p>You should create these on shopify and then return</p>
         <%- end %>
       </tbody>
-    </div>
     </table>
-
+  </div>
 
 </div>
 
