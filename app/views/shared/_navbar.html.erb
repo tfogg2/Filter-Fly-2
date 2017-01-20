@@ -35,9 +35,10 @@
         <li class="last_nav"><%# link_to "Tags", index_path %></li> -->
         <li class="lower_nav"><%= link_to "Get Started", index_path %></li>
         <li><%= link_to "Support", index_path %></li>
+        <li><button class="modalBtn"><%= link_to "New Category", new_category_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button></li> 
       </ul>
     </div>
-    <button class="modalBtn"><%= link_to "New Category", new_category_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button> 
+
 
 
 
