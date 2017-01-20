@@ -1,9 +1,8 @@
 /* TEST */
 
 
-.hover{
-	color: #ff0000;
-}
+
+
 a{
 	text-decoration: none;
 }
@@ -285,6 +284,9 @@ table{
 	background: #fff;
 	padding-top: 15px;
 
+}
+#collection_index a:hover{
+	background: none;
 }
 #collection_index button{
 	margin: 0 auto;
