@@ -313,7 +313,7 @@ button.product_btn, a:visited{
 }
 #collection_index h1{
 	text-align: left;
-	margin-left: 20px;
+	margin-left: 100px;
 	margin-top: 5px;
 	font-size: 320%;
 	font-weight: 100;
@@ -321,7 +321,7 @@ button.product_btn, a:visited{
 }
 #collection_index table{
 	border-collapse: collapse;
-	margin-left: 20px;
+	margin-left: 100px;
 	border-width: 0 0 1px;
 	border: 1px solid #cbcbcb;
 	color: #777;
@@ -340,7 +340,8 @@ button.product_btn, a:visited{
 	text-align: center;
 }
 tr.row {
-	border: 1px solid black;
+	border-width: 0 0 1px;
+	border: 1px solid #cbcbcb;
 	height: 50px;
 
 }
@@ -372,7 +373,8 @@ tr.row {
 	min-width: 50px;
 }
 #index tr {
-	border-bottom: 1pt solid black;
+	border-width: 0 0 1px;
+	border: 1px solid #cbcbcb;
 }
 #index h1 {
 	margin: 10px auto;
