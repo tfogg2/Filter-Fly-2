@@ -3,7 +3,7 @@
       <p class="logo"><%= link_to "Filter Fly", root_path %></p>
       <ul class= "ul_nav top">
         <label>Collection</label>  
-        <li class="selected"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
+        <li><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
       </ul>
       <ul class="ul_nav">
         <%- if @categories.any?  %>

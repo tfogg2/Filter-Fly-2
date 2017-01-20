@@ -163,7 +163,7 @@ body{
 .ul_nav {
 	list-style: none;
 	text-align: left;
-	padding: 0 0;
+	padding: inherit;
 	line-height: 35px;
 }
 // .ul_nav .top{
@@ -176,6 +176,9 @@ body{
 	font-size: 14px;
 	 
 	
+}
+.ul_nav ul {
+	margin: 0 0;
 }
 // .ul_nav a:hover{
 // 	background: none;
