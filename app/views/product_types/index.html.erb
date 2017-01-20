@@ -11,31 +11,40 @@
     <div id="index">
       <%- if @product_types.any? %>
         <h1>Product Types</h1>
-
         <table>
           <thead>
             <tr>
               <th>Title</th>
               <th colspan="1"></th>
-            </tr>
-          </thead>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr class="th-row">
+                <th>Title</th>
 
-          <tbody >
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+          </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
             <% @product_types.each do |product_type| %>
-              <tr>
-
+              <tr class="tr-row">
                 <td><%= link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" } %></td>
                 <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
                 <td><%= button_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
-            
           </tbody>
-        </table>
+      </table>
+    </div>
         <%# @product_types.each do |product_type| %>
             <option class="product_type_select"><%# product_type.id  %></option>
         <%# end %>
       <%- end %>
+
       <button class="modalBtn">New Product Type</button>
       <div id="myModal" class="modal">
 
