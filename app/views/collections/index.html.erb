@@ -48,7 +48,7 @@
           <% @customCollections.each do |collection| %>
             <tr class="row">
               <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
-              <td><button class="product_btn"><%= link_to "Add Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button> 
+              <td><button class="product_btn"><%= link_to "Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button> 
               </td>
             <!--   <td><%# collection.categories.count %>0</td>
               <td><%# collection.categories.count %>0</td>
