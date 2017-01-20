@@ -185,7 +185,9 @@ body{
 	padding: 0.625em 0;
 }
 .selected{
-	background: #7AB55C;
+	//background: #7AB55C;
+	background: white;
+	opacity: .2;
 
 }
 .selected a{
@@ -227,7 +229,7 @@ body{
  }
 .tbl-content{
   overflow:auto;
-  height: 400px;
+  height: 350px;
   border: 1px solid rgba(255,255,255,0.3);
 }
 // th{
