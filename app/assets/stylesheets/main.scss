@@ -362,13 +362,38 @@ tr.row {
 	margin-left: 40px;
 }
 
-#index{
-	margin: 0px auto;
-	max-width: 900px;
-	//text-align: center;
-	min-height: 120px;
-	background: #fff;
 
+
+
+
+
+
+
+#index h1{
+	text-align: left;
+	margin-left: 20px;
+	margin-top: 25px;
+	font-size: 320%;
+	font-weight: 100;
+	letter-spacing: .05em;
+}
+#index table{
+	border-collapse: collapse;
+	margin: 0 auto;
+	border-width: 0 0 1px;
+	border: 1px solid #cbcbcb;
+	color: #777;
+	width: 100%;
+  	table-layout: fixed;
+}
+#index button{
+	margin: 0 auto;
+	background: #7AB55C;//#e0e0e0;
+	border-radius: 5px;
+	border: none;
+
+
+	//margin: 0 auto;
 }
 #index .product_btn{
 	background: #7AB562;
