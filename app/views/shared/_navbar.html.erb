@@ -4,13 +4,15 @@
       <ul class= "ul_nav">
         <label>Collection</label>  
         <li><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
-
+      </ul>
+      <ul class="ul_nav">
         <%- if @categories.any?  %>
           <label>Category</label>
           <% @categories.each do |category| %>
             <li id="category-nav-<%= category ? category.id : 'nil' %>" class="category-selectable <%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
           <% end %>
         <%- end %>
+      </ul>
         <% if @category %>
           <% if @product_types.any? %>
             <label>Product Type</label>
