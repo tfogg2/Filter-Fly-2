@@ -301,11 +301,9 @@ table{
 }
 button.nav_btn, a{
 	color: #000;
-	font-size: 1.2em;
 }
 button.product_btn, a{
 	color: #000;
-	font-size: 1.2em;
 }
 button.nav_btn, a:visited{
 	color: #000;
@@ -346,6 +344,7 @@ tr.row {
 	border-width: 0 0 1px;
 	border: 1px solid #cbcbcb;
 	height: 50px;
+	text-align: left;
 
 
 }
