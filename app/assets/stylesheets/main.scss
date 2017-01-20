@@ -196,13 +196,20 @@ body{
 	text-align: left;
 }
 .selected{
-	background: #7AB55C;
+	//background: #7AB55C;
+	box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
 	// background: white;
 	// opacity: .2;
 
 }
 .selected a{
 	color: white;
+	background-color: #565656;
+ 	color: transparent;
+  	text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+  	-webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
 
 }
 .lower_nav{
