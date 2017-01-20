@@ -74,7 +74,7 @@ $(document).ready(function () {
 		});
 		$.ajax({
 	      type: 'GET',
-	      url: "tags/new.html",//:category_id/product_types.json",
+	      url: "tags/new",//:category_id/product_types.json",
 	      success: function(tag) {
 	      	$newTag.html('<div> '+ tag + '</div>');
 	      	
