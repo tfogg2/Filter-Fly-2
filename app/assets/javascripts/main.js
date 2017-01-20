@@ -37,12 +37,12 @@ $(document).ready(function () {
 	    }
 	});
 
-	$('a').hover( function(){
-		$(this).addClass("hover");
-		}, function() {
-	    $( this ).removeClass( "hover" );
-	  	}
-	);
+	// $('a').hover( function(){
+	// 	$(this).addClass("hover");
+	// 	}, function() {
+	//     $( this ).removeClass( "hover" );
+	//   	}
+	// );
 
 	$('.chosen-select').chosen({
 	    allow_single_deselect: true,
