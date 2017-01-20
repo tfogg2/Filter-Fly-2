@@ -1,4 +1,51 @@
 <%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
+  <div id="left_panel">
+      <p>Filter Fly</p>
+      <ul class= "ul_nav">
+        <label>Collection</label>  
+        <li><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
+
+        <%- if @categories.any?  %>
+          <label>Category</label>
+          <% @categories.each do |category| %>
+            <li id="category-nav-<%= category ? category.id : 'nil' %>" class="category-selectable <%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
+          <% end %>
+        <%- end %>
+        <% if @category %>
+          <% if @product_types.any? %>
+            <label>Product Type</label>
+            <% @product_types.each do |type| %>
+              <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="last_nav product-type-selectable <%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
+            <% end %>
+          <%- end %>
+        <%- end %>
+        <% if @product_type %>
+          <% if @tags.any? %>
+            <strong><label>Tag</label></strong>
+            <% @tags.each do |tag| %>
+              <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="tag-selectable <%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
+            <% end %>
+          <%- end %>
+        <%- end %>
+
+
+
+
+        <li><%= link_to "Types", index_path %></li> 
+        <li class="last_nav"><%= link_to "Tags", index_path %></li>
+        <li><%= link_to "Get Started", index_path %></li>
+        <li><%= link_to "Support", index_path %></li>
+      </ul>
+    </div> 
+
+
+
+
+
+
+
+
+
   <div id="leftNav">
     <ul id="collect">
       <%- if ["products"].include?(params[:controller]) %>
