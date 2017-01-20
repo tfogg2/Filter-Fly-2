@@ -1,6 +1,6 @@
 <%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
   <div id="left_panel">
-      <p><%= link_to "Filter Fly", root_path %></p>
+      <p class="logo"><%= link_to "Filter Fly", root_path %></p>
       <ul class= "ul_nav top">
         <label>Collection</label>  
         <li><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
