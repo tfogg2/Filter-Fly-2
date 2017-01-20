@@ -177,7 +177,7 @@ body{
 	 
 	
 }
-ul.ul_nav{
+ul{
 	margin: 0px 0px;
 }
 // .ul_nav a:hover{
@@ -197,7 +197,7 @@ ul.ul_nav{
 }
 .selected{
 	//background: #7AB55C;
-	box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 0px 5px rgba(0,0,0,0.8);
 	// background: white;
 	// opacity: .2;
 
