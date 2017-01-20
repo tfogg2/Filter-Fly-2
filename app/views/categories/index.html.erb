@@ -33,7 +33,7 @@
       </table>
     </div>
     <%- end %>
-    <button class="products_btn modalBtn"><%= link_to "New Category", new_category_path %></button>
+    <button class="modalBtn"><%= link_to "New Category", new_categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
     <div id="myModal" class="modal">
 
     <!-- Modal content  <div id="newCategory"></div> -->
