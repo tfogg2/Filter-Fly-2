@@ -221,7 +221,7 @@ body{
 /* TEST DATA TABLE */
 
 table{
-  width:100%;
+  width:60%;
   table-layout: fixed;
 }
 .tbl-header{
@@ -327,7 +327,7 @@ button.product_btn, a:visited{
 	border-width: 0 0 1px;
 	border: 1px solid #cbcbcb;
 	color: #777;
-
+  	table-layout: fixed;
 }
 
 .th-row{
