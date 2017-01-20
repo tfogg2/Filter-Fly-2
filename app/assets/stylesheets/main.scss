@@ -185,13 +185,14 @@ body{
 	padding: 0.625em 0;
 }
 .selected{
-	background: #7AB55C;
-	//background: white;
+	//background: #7AB55C;
+	background: white;
+	opacity: .2;
 
 }
 .selected a{
 	color: white;
-
+	opacity: 1;
 }
 .last_nav{
 	border-bottom: 1px solid #5C656D; 
@@ -303,17 +304,16 @@ body{
 	width: auto;
 }
 button.nav_btn, a{
-	color: #fff;
+	color: #000;
 }
 button.product_btn, a{
-	color: #fff;
+	color: #000;
 }
-button.nav_btn, a:visited{
-	color: #fff;
+.product_btn a{
+	color:white;
 }
-button.product_btn, a:visited{
-	color: #fff;
-}
+
+
 #collection_index h1{
 	text-align: left;
 	margin-left: 100px;
