@@ -314,7 +314,7 @@ button.product_btn, a:visited{
 #collection_index h1{
 	text-align: left;
 	margin-left: 20px;
-	margin-top: 20px;
+	margin-top: 5px;
 	font-size: 320%;
 	font-weight: 100;
 	letter-spacing: .05em;
@@ -322,7 +322,13 @@ button.product_btn, a:visited{
 #collection_index table{
 	border-collapse: collapse;
 	margin-left: 20px;
-	border: 1px solid black;
+	border-width: 0 0 1px;
+	border: 1px solid #cbcbcb;
+	color: #777;
+}
+.th-row{
+	background: #e0e0e0;
+	color: black;
 }
 // #collection_index table {
 // 	border: 1px solid black;
