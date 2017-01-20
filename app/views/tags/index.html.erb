@@ -1,5 +1,5 @@
 
-<div class="page">
+
   <%= render 'shared/breadcrumb' %>
 
   <p id="notice"><%= notice %></p>
@@ -7,19 +7,23 @@
   <!-- <div id="navbar">
     <%# render 'shared/navbar' %>
   </div> -->
-
-  <div id="index">
+  <div id="collection_index">
     <%- if @tags.any? %>
       <h1>Tags</h1>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th colspan="1"></th>
-          </tr>
-        </thead>
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr class="th-row">
+              <th>Title</th>
 
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
           <% @tags.each do |tag| %>
             <tr>
@@ -28,24 +32,22 @@
               <td><%= button_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
-        </tbody>
-      </table>
-      <%# @tags.each do |tag| %>
-          <option class="product_tag_select"><%# tag.title %></option>
-      <%# end %>
-    <%- end %>
-    <button class="modalBtn">New Tag</button>
-      <div id="myModal" class="modal">
+      </tbody>
+    </table>
+  </div>
 
-        <!-- Modal content  <div id="newCategory"></div> <div id="newType"></div>   <div id="newTag"></div>-->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div id="newTag"></div>
-        </div>
+    <%# @tags.each do |tag| %>
+        <option class="product_tag_select"><%# tag.title %></option>
+    <%# end %>
+  <%- end %>
+  <button class="modalBtn">New Tag</button>
+    <div id="myModal" class="modal">
 
+      <!-- Modal content  <div id="newCategory"></div> <div id="newType"></div>   <div id="newTag"></div>-->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="newTag"></div>
       </div>
 
-   
-
-  </div>
+    </div>
 </div>
