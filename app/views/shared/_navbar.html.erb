@@ -1,7 +1,7 @@
 <%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
   <div id="left_panel">
       <p>Filter Fly</p>
-      <ul class= "ul_nav">
+      <ul class= "ul_nav top">
         <label>Collection</label>  
         <li><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
       </ul>

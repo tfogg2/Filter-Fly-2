@@ -156,21 +156,21 @@ body{
 }
 
 */
-.ul_nav{
-	margin: 28px 0 0 12px;
+.ul_nav {
+	margin: 0px 0 0 12px;
 	list-style: none;
-	text-align: center;
+	text-align: left;
 	padding: 0 0;
-	line-height: 45px;
-
-
-	
+	line-height: 25px;
+}
+.ul_nav .top{
+	margin: 28px 0 0 12px;
 }
 .ul_nav li a{
 	display: block;
 	width: 150px;
 	color: #d3dbe2;
-	font-size: 16px;
+	font-size: 14px;
 	 
 	
 }
@@ -181,12 +181,13 @@ body{
 .ul_nav li{
 	text-align: left;
 
-	height: 45px;
-	padding: 0.625em 0;
+	height: 25px;
+	// padding: 0.625em 0;
 }
 .ul_nav label{
 	color: white;
 	opacity: .2;
+	text-align: left;
 }
 .selected{
 	background: #7AB55C;
