@@ -52,7 +52,7 @@
               </td>
               <%- if @categories.any? %>
                 <%= @categories.each do |category| %>
-                  <td><%= category.title %></td>
+                  <td><%= category.inspect %></td>
                 <%- end %>
               <%- end %>
              <!--  <td><%# collection.categories.count %>0</td>
