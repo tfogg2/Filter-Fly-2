@@ -52,7 +52,8 @@
               </td>
               <%- if @categories.any? %>
                 <%= @categories.each do |category| %>
-                  <td>category.title</td>
+                  <td><%= category.title %></td>
+                <%- end %>
               <%- end %>
              <!--  <td><%# collection.categories.count %>0</td>
               <td><%# collection.categories.count %>0</td> -->
