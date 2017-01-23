@@ -51,9 +51,8 @@
               <td><button class="product_btn"><%= link_to "Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button> 
               </td>
               <%- if @categories.any? %>
-                <%= @categories.each do |category| %>
-                  <td><%= category.inspect %></td>
-                <%- end %>
+                <%= @categories.each.count %>
+      
               <%- end %>
              <!--  <td><%# collection.categories.count %>0</td>
               <td><%# collection.categories.count %>0</td> -->
