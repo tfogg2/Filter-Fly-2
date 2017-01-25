@@ -375,8 +375,9 @@ tr.row {
 	border: 1px solid #cbcbcb;
 	height: 50px;
 	text-align: center;
-
-
+}
+tr:nth-child(even) {
+    background-color: #DAEAD2;
 }
 .collectionTitle{
 	font-size: 1.2em;
