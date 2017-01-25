@@ -41,10 +41,9 @@
     <div class="tbl-content">
       <table cellpadding="0" cellspacing="0" border="0">
       
-        <tbody >
-
         <%- if @customCollections.any? or @smartCollections.any? %>
-          
+        <tbody >
+   
           <% @customCollections.each do |collection| %>
             <tr class="row">
               <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
@@ -59,12 +58,13 @@
                <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
             </tr>
           <% end %>
+        </tbody>
 
           <%# paginate @customCollections  %>
 
 
 
-
+        <tbody>
           <% @smartCollections.each do |collection| %>
           <tr class="row">
               <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
