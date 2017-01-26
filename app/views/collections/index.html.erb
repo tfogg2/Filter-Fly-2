@@ -73,10 +73,7 @@
               <td><%# collection.categories.count %>0</td>
               <td><%# collection.categories.count %>0</td> -->
               <td><button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-               <%- if categories(shopify_collection_id:collection.id, shopify_collection_title:collection.title).any? %>
-                <td><%= categories.(shopify_collection_id:collection.id, shopify_collection_title:collection.title).count %></td>
-      
-              <%- end %>
+               
 
             </tr>
           <% end %>
