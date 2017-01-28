@@ -1,23 +1,25 @@
-<%= link_to "Collections", index_path %>
+<div id="breadcrumb">	
+	<%= link_to "Collections", index_path %>
 
-<%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
+	<%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
 
-<%- if ["products"].include?(params[:controller]) %>
- > <%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
-<%- else %>
- > <%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
-<%- end %>
+	<%- if ["products"].include?(params[:controller]) %>
+	 > <%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
+	<%- else %>
+	 > <%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
+	<%- end %>
 
-<%- end %>
+	<%- end %>
 
-<%- if @category && !@category.new_record? %>
- > <%= link_to @category.title, category_product_types_path(@category) %>
-<%- end %>
+	<%- if @category && !@category.new_record? %>
+	 > <%= link_to @category.title, category_product_types_path(@category) %>
+	<%- end %>
 
-<%- if @product_type && !@product_type.new_record? %>
- > <%= link_to @product_type.title, category_product_type_tags_path(@category, @product_type) %>
-<%- end %>
+	<%- if @product_type && !@product_type.new_record? %>
+	 > <%= link_to @product_type.title, category_product_type_tags_path(@category, @product_type) %>
+	<%- end %>
 
-<%- if @tag && !@tag.new_record? %>
- > <%= link_to @tag.title, category_product_type_tag_path(@category, @product_type, @tag) %>
-<%- end %>
+	<%- if @tag && !@tag.new_record? %>
+	 > <%= link_to @tag.title, category_product_type_tag_path(@category, @product_type, @tag) %>
+	<%- end %>
+</div>
