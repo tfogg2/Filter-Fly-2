@@ -1,42 +1,44 @@
 <%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
 
   <div id="left_panel">
-    <ul id="collect">
+    <ul class="ul_nav">
       <%- if ["products"].include?(params[:controller]) %>
         <li><%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
       <%- else %>
-        <strong><label>Collection</label></strong>
-        <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li><br>
-
+        <strong><label>Collection:</label></strong>
+        <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
+    </ul>
+    <ul class="ul_nav">
         <%- if @categories.any?  %>
           <strong><label>Category</label></strong>
           <% @categories.each do |category| %>
             <li id="category-nav-<%= category ? category.id : 'nil' %>" class="category-selectable <%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
           <% end %>
-        <%- end %><br>
-
+        <%- end %>
+    </ul>
+    <ul class="ul_nav">
         <% if @category %>
           <% if @product_types.any? %>
             <strong><label>Product Type</label></strong>
             <% @product_types.each do |type| %>
               <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="product-type-selectable <%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
             <% end %>
-          <%- end %><br>
+          <%- end %>
         <%- end %>
+    </ul>
 
-
-        <% if @product_type %>
-          <% if @tags.any? %>
+        <!-- <%# if @product_type %>
+          <%# if @tags.any? %>
             <strong><label>Tag</label></strong>
-            <% @tags.each do |tag| %>
-              <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="tag-selectable <%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
-            <% end %>
-          <%- end %><br>
-        <%- end %>
+            <%# @tags.each do |tag| %>
+              <li id="tag-nav-<%# tag ? tag.id : 'nil' %>"  class="tag-selectable <%# @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%# tag.id %>'><%# link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
+            <%# end %>
+          <%# end %>
+        <%# end %>
 
-      <%- end %>
-      </ul>
-        <%- if @products  %>
+      <%# end %> -->
+
+        <%# if @products  %>
           <!-- <ul>  
             <label><strong>Shopify Products</strong></label>
             <%# @shopify_products.each do |shopify_product| %>
