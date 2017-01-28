@@ -7,16 +7,14 @@
       <%- else %>
         <strong><label>Collection:</label></strong>
         <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
-    </ul>
-    <ul class="ul_nav">
+   
         <%- if @categories.any?  %>
           <strong><label>Category</label></strong>
           <% @categories.each do |category| %>
             <li id="category-nav-<%= category ? category.id : 'nil' %>" class="category-selectable <%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
           <% end %>
         <%- end %>
-    </ul>
-    <ul class="ul_nav">
+
         <% if @category %>
           <% if @product_types.any? %>
             <strong><label>Product Type</label></strong>
@@ -27,17 +25,17 @@
         <%- end %>
     </ul>
 
-        <% if @product_type %>
-          <% if @tags.any? %>
+        <!-- <%# if @product_type %>
+          <%# if @tags.any? %>
             <strong><label>Tag</label></strong>
-            <% @tags.each do |tag| %>
-              <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="tag-selectable <%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
-            <% end %>
-          <%- end %>
-        <%- end %>
+            <%# @tags.each do |tag| %>
+              <li id="tag-nav-<%# tag ? tag.id : 'nil' %>"  class="tag-selectable <%# @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%# tag.id %>'><%# link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
+            <%# end %>
+          <%# end %>
+        <%# end %> -->
 
       <%- end %>
-      </ul>
+
         <%- if @products  %>
           <!-- <ul>  
             <label><strong>Shopify Products</strong></label>
