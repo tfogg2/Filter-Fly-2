@@ -27,17 +27,17 @@
         <%- end %>
     </ul>
 
-        <!-- <%# if @product_type %>
-          <%# if @tags.any? %>
+        <% if @product_type %>
+          <% if @tags.any? %>
             <strong><label>Tag</label></strong>
-            <%# @tags.each do |tag| %>
-              <li id="tag-nav-<%# tag ? tag.id : 'nil' %>"  class="tag-selectable <%# @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%# tag.id %>'><%# link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
-            <%# end %>
-          <%# end %>
-        <%# end %>
+            <% @tags.each do |tag| %>
+              <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="tag-selectable <%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
+            <% end %>
+          <%- end %>
+        <%- end %>
 
-      <%# end %> -->
-
+      <%- end %>
+      </ul>
         <%- if @products  %>
           <!-- <ul>  
             <label><strong>Shopify Products</strong></label>
