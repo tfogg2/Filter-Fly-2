@@ -7,7 +7,6 @@
       <%- else %>
         <strong><label>Collection:</label></strong>
         <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
-    <%- end %>
     </ul>
     <ul class="ul_nav">
         <%- if @categories.any?  %>
@@ -39,7 +38,7 @@
 
       <%# end %> -->
 
-        <%# if @products  %>
+        <%- if @products  %>
           <!-- <ul>  
             <label><strong>Shopify Products</strong></label>
             <%# @shopify_products.each do |shopify_product| %>
