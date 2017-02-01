@@ -12,8 +12,8 @@
         <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
         
         <%# if @categories  %>
-          <strong><label>Category</label></strong>
           <%- if @category %>
+            <strong><label>Category</label></strong>
             <li><%= link_to @category.title, @category_product_types_path %></li>
           <%- end %>
           <!-- <%# @categories.each do |category| %>
@@ -21,13 +21,12 @@
           <%# end %>
         <%# end %> -->
 
-        <% if @category %>
-          <% if @product_types %>
+        <% if @product_type %>
             <strong><label>Product Type</label></strong>
-            <% @product_types.each do |type| %>
-              <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="product-type-selectable <%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
-            <% end %>
-          <%- end %>
+            <li><%= link_to @product_type.title, @product_type_tags_path %></li>
+           <!--  <%# @product_types.each do |type| %>
+              <li id="product-type-nav-<%# type ? type.id : 'nil' %>" class="product-type-selectable <%# @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%# link_to type.title, category_product_type_tags_path(@category, type) %></li>
+            <%# end %> -->
         <%- end %>
     </ul>
 
