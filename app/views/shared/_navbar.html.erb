@@ -10,12 +10,12 @@
       <%- else %>
         <strong><label>Collection:</label></strong>
         <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
-        <%- if @category %>
-          <li><%= @category.title %></li>
-        <%- end %>
+        
         <%- if @categories  %>
           <strong><label>Category</label></strong>
-
+          <%- if @category %>
+            <li><%= @category.title %></li>
+          <%- end %>
           <% @categories.each do |category| %>
             <li id="category-nav-<%= category ? category.id : 'nil' %>" class="category-selectable <%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
           <% end %>
