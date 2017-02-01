@@ -14,7 +14,7 @@
         <%# if @categories  %>
           <%- if @category %>
             <strong><label>Category</label></strong>
-            <li><%= link_to @category.title, @category_product_types_path %></li>
+            <li class="bold"><%= link_to @category.title, @category_product_types_path %></li>
           <%- end %>
           <!-- <%# @categories.each do |category| %>
             <li id="category-nav-<%# category ? category.id : 'nil' %>" class="category-selectable <%# @category && @category == category ? 'bold' : '' %>" data-category-id='<%# category.id %>' ><%# link_to category.title, category_product_types_path(category) %></li>
@@ -23,8 +23,8 @@
 
         <% if @product_type %>
             <strong><label>Product Type</label></strong>
-            <li><%= link_to @product_type.title, @category_product_type_tags_path %></li>
-          
+            <li class="bold"><%= link_to @product_type.title, @category_product_type_tags_path %></li>
+
         <%- end %>
     </ul>
 
