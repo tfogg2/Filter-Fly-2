@@ -13,7 +13,7 @@
         
         <%# if @categories  %>
           <strong><label>Category</label></strong>
-          <%- if @category && @categories %>
+          <%- if @category %>
             <li><%= link_to @category.title, @category_product_types_path(@category) %></li>
           <%- end %>
           <!-- <%# @categories.each do |category| %>
