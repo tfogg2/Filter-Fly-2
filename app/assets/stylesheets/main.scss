@@ -108,7 +108,7 @@ button.modalBtn {
 	width: 150px;
 	height: 100%;
 	margin: 0px;
-    position: fixed; /* Stay in place */
+    position: relative; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
@@ -180,7 +180,8 @@ ul{
 	padding: inherit;
 	line-height: 30px;
 	overflow-y: auto;
-	margin-top: 80%;
+	position: absolute; 
+	bottom: 0;
 }
 .low_nav li{
 	text-align: left;
