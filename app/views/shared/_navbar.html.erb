@@ -20,6 +20,9 @@
             <li id="category-nav-<%= category ? category.id : 'nil' %>" class="category_select <%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
           <%- end %>
         <%# end %> 
+          <%= @product_types.each do |type| %>
+            <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="product-type-selectable <%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
+          <%- end %> 
 
         <%# if @product_type %>
             <!-- <strong><label>Product Type</label></strong> -->
