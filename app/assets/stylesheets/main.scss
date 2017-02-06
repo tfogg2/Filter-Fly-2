@@ -178,10 +178,10 @@ ul{
 	list-style: none;
 	text-align: left;
 	padding: inherit;
-	line-height: 30px;
+	line-height: 45px;
 	overflow-y: auto;
 	position: absolute; 
-	bottom: 40px;
+	bottom: 20px;
 }
 .low_nav li{
 	text-align: left;
@@ -257,7 +257,7 @@ ul{
 #collection_index{
 	margin: 0px 0px 0 150px;
 	min-height: 120px;
-	background: #fff;
+	background: rgba(255,255,255,0.3)1;
 	//padding-top: 15px;
 
 }
@@ -305,7 +305,7 @@ tr.row {
 	text-align: center;
 }
 tr:nth-child(even) {
-    background-color: #DEDEDE;
+    background-color: white;
 }
 .collectionTitle{
 	font-size: 1.2em;
