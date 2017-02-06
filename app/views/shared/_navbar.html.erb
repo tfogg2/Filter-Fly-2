@@ -8,12 +8,12 @@
       <%- if ["products"].include?(params[:controller]) %>
         <li><%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
       <%- else %>
-        <strong><label>Collection:</label></strong>
+        <!-- <strong><label>Collection:</label></strong> -->
         <li class="bold"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></li>
         
         <%# if @categories  %>
           <%- if @category %>
-            <strong><label>Category</label></strong>
+            <!-- <strong><label>Category</label></strong> -->
             <li class="bold category_select"><%= link_to @category.title, @category_product_types_path %></li>
           <%- end %>
           <!-- <%# @categories.each do |category| %>
@@ -22,7 +22,7 @@
         <%# end %> -->
 
         <% if @product_type %>
-            <strong><label>Product Type</label></strong>
+            <!-- <strong><label>Product Type</label></strong> -->
             <li class="bold type_select"><%= link_to @product_type.title, @category_product_type_tags_path %></li>
 
         <%- end %>
