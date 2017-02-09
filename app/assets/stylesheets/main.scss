@@ -60,14 +60,9 @@ body{
 }
 .nav li{
 	margin: 5px 0;
-	padding-top: 20px;
-}
-.nav label{
-	border-bottom: 1px solid white;
-	opacity: .4;
-	position:absolute;
 
 }
+
 // .type_select{
 // 	margin-left: 15px;
 // 	overflow: auto;
@@ -209,6 +204,9 @@ ul{
 .ul_nav label{
 	color: white;
 	text-align: left;
+	border-bottom: 1px solid white;
+	opacity: .4;
+	position:absolute;
 }
 .low_nav{
 	list-style: none;
