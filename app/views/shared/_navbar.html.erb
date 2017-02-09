@@ -27,7 +27,7 @@
         <%- end %>
       <%# end %> 
       <%- if @product_types %>
-        <div class="type_select .nav">
+        <div class="type_select nav">
           <%- @product_types.each do |type| %>
             <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="<%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
           <%- end %> 
@@ -41,7 +41,7 @@
         <%# end %>
         <%- if @product_type %>
           <% if @tags.any? %>
-            <div class="tag_select .nav">
+            <div class="tag_select nav">
               <%- @tags.each do |tag| %>
                 <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="<%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
               <%- end %>
