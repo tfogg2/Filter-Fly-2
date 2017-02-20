@@ -42,7 +42,7 @@
 
         <%# end %>
         <%- if @product_type %>
-          <% if @tags.any? %>
+          <% if @tags %>
             <strong><label>Tags</label></strong>
             <div class="nav">
               <%- @tags.each do |tag| %>
