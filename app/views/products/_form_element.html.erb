@@ -4,11 +4,23 @@
 	<%- product_type = product_type || product.product_type %>
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
+	<div class="tbl-header">
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+        <tr class="th-row">
+        	<td>Category</td>
+        	<td>Type</td>
+        	<td>Tag</td>
+        </tr>
+      </thead>
+    </table>
 	<form class='ajax-form' id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
-		<div>
+		<div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+
 			<%- if @categories.any? %>
-				<div>
-					<select class="sel selectable category chosen-select" name="product[category_id]">
+				<tr class="row">
+					<td><select class="sel selectable category chosen-select" name="product[category_id]">
 						<%- @categories.each do |cat| %>
 							<%- if category && cat.id == category.id %>
 								<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
@@ -16,8 +28,8 @@
 								<option value="<%= cat.id %>"><%= cat.title %></option>
 							<%- end %>
 						<%- end %>
-					</select>
-				</div>
+					</select></td>
+				</tr>
 			<%- else %>
 
 			<%- end %>
