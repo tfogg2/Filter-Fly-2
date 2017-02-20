@@ -4,92 +4,79 @@
 	<%- product_type = product_type || product.product_type %>
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
-	<div class="tbl-header">
-    <table cellpadding="0" cellspacing="0">
-      <thead>
-        <tr class="th-row">
-        	<td>Category</td>
-        	<td>Type</td>
-        	<td>Tag</td>
-        </tr>
-      </thead>
-    </table>
 	<form class='ajax-form' id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
-		<div class="tbl-content">
-      <table cellpadding="0" cellspacing="0" border="0">
+		<div>
+			<%- if @categories.any? %>
+				<div>
+					<select class="sel selectable category chosen-select" name="product[category_id]">
+						<%- @categories.each do |cat| %>
+							<%- if category && cat.id == category.id %>
+								<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
+							<%- else %>
+								<option value="<%= cat.id %>"><%= cat.title %></option>
+							<%- end %>
+						<%- end %>
+					</select>
+				</div>
+			<%- else %>
+
+			<%- end %>
+
+			<p><%# product_type.tags.ids.inspect if product_type %></p>
+			<%- if category %>
+				<div>
+					<select class="sel selectable product_type chosen-select" name="product[product_type_id]">
+						<%- category.product_types.each do |type| %>
+							
+							<%- if product_type && type.id == product_type.id %>
+								<option value="<%= type.id %>" selected="selected"><%= type.title %></option>
+							<%- else %>
+								<option value="<%= type.id %>"><%= type.title %></option>
+							<%- end %>
+
+						<%- end %>
+					</select>
+				</div>
+			<%- else %>
+				<div>
+					<select class="sel product_type chosen-select">
+						
+
+
+					</select>
+				</div>
+
+			<%- end %>
+		
+			<%- if product_type %>
+				<!-- <div id="ProductType <%# product_type.id %>"> -->
+				<div>
+					<p><%# product_type.tags.inspect %></p>
+					<select class="sel tag chosen-select" name="product[tags][]" multiple>
+						<%- product_type.tags.each do |tag| %>
+							<p><%# tag.inspect %></p>
+							<%- if !tags.blank? && tags.ids.include?(tag.id) %>
+								<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
+							<%- else %>
+								<option value="<%= tag.id %>"><%= tag.title %></option>
+							<%- end %>
+						<%- end %>
+					</select>
+				</div>
+				<!-- </div> -->
+			<% else %> 
+		
+				<div>
+					<select multiple class="sel tag chosen-select" >
+						
+					</select>
+				</div>
+
+			<%- end %>
 
 			<%- if @categories.any? %>
-				<tr class="row">
-						<td><select class="sel selectable category chosen-select" name="product[category_id]">
-							<%- @categories.each do |cat| %>
-								<%- if category && cat.id == category.id %>
-									<option value="<%= cat.id %>" selected="selected"><%= cat.title %></option>
-								<%- else %>
-									<option value="<%= cat.id %>"><%= cat.title %></option>
-								<%- end %>
-							<%- end %>
-						</select></td>
-					
-				<%- else %>
-
-				<%- end %>
-
-				<p><%# product_type.tags.ids.inspect if product_type %></p>
-				<%- if category %>
-					<td>
-						<select class="sel selectable product_type chosen-select" name="product[product_type_id]">
-							<%- category.product_types.each do |type| %>
-								
-								<%- if product_type && type.id == product_type.id %>
-									<option value="<%= type.id %>" selected="selected"><%= type.title %></option>
-								<%- else %>
-									<option value="<%= type.id %>"><%= type.title %></option>
-								<%- end %>
-
-							<%- end %>
-						</select>
-					</td>
-				<%- else %>
-					<div>
-						<select class="sel product_type chosen-select">
-							
-
-
-						</select>
-					</div>
-
-				<%- end %>
-			
-				<%- if product_type %>
-					<!-- <div id="ProductType <%# product_type.id %>"> -->
-					<td>
-						<p><%# product_type.tags.inspect %></p>
-						<select class="sel tag chosen-select" name="product[tags][]" multiple>
-							<%- product_type.tags.each do |tag| %>
-								<p><%# tag.inspect %></p>
-								<%- if !tags.blank? && tags.ids.include?(tag.id) %>
-									<option value="<%= tag.id %>" selected="selected"><%= tag.title %></option>
-								<%- else %>
-									<option value="<%= tag.id %>"><%= tag.title %></option>
-								<%- end %>
-							<%- end %>
-						</select>
-					</td>
-					<!-- </div> -->
-				<% else %> 
-			
-					<div>
-						<select multiple class="sel tag chosen-select" >
-							
-						</select>
-					</div>
-
-				<%- end %>
-
-				<%- if @categories.any? %>
-					<div><%= submit_tag ("Save") %></div>
-				<%- end %>
-			</tr>
+				<div><%= submit_tag ("Save") %></div>
+			<%- end %>
 			<%# @product_types.each do |type| %>
 				<p><%# type.category_id %></p>
 			<%# end %>
