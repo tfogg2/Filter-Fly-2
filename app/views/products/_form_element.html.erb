@@ -5,7 +5,7 @@
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
 	<form class='ajax-form' id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
-		<div>
+
 			<%- if @categories.any? %>
 				<div>
 					<select class="sel selectable category chosen-select" name="product[category_id]">
@@ -17,14 +17,14 @@
 							<%- end %>
 						<%- end %>
 					</select>
-				</div>
+
 			<%- else %>
 
 			<%- end %>
 
 			<p><%# product_type.tags.ids.inspect if product_type %></p>
 			<%- if category %>
-				<div>
+
 					<select class="sel selectable product_type chosen-select" name="product[product_type_id]">
 						<%- category.product_types.each do |type| %>
 							
@@ -36,21 +36,21 @@
 
 						<%- end %>
 					</select>
-				</div>
+
 			<%- else %>
-				<div>
+
 					<select class="sel product_type chosen-select">
 						
 
 
 					</select>
-				</div>
+
 
 			<%- end %>
 		
 			<%- if product_type %>
 				<!-- <div id="ProductType <%# product_type.id %>"> -->
-				<div>
+
 					<p><%# product_type.tags.inspect %></p>
 					<select class="sel tag chosen-select" name="product[tags][]" multiple>
 						<%- product_type.tags.each do |tag| %>
@@ -62,20 +62,20 @@
 							<%- end %>
 						<%- end %>
 					</select>
-				</div>
+
 				<!-- </div> -->
 			<% else %> 
 		
-				<div>
+
 					<select multiple class="sel tag chosen-select" >
 						
 					</select>
-				</div>
+
 
 			<%- end %>
 
 			<%- if @categories.any? %>
-				<div><%= submit_tag ("Save") %></div>
+				<%= submit_tag ("Save") %>
 			<%- end %>
 			<%# @product_types.each do |type| %>
 				<p><%# type.category_id %></p>
