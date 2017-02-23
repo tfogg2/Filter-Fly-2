@@ -49,7 +49,7 @@ body{
 }
 
 .nav{
-	margin: 10px 0 10px 0;
+	margin: 0px 0 20px 0;
 	overflow: auto;
 	height: 75px;
 	background: #2C3238;//#282D32;
@@ -63,6 +63,7 @@ body{
 .nav_label{
 	background: #d8d8d8;
 	color: #434343;
+	padding-left: 10px;
 }
 
 #notice{
