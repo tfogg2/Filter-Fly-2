@@ -18,7 +18,7 @@
            <!--  <li class="bold category_select"><%# link_to @category.title, @category_product_types_path %></li> -->
           <%# end %>
         <%- if @categories  %>
-          <strong><label>Categories</label></strong>
+          <strong><label class="nav_label">Categories</label></strong>
           <div class="nav">
             
             <%- @categories.each do |category| %>
@@ -28,7 +28,7 @@
         <%- end %>
       <%# end %> 
       <%- if @product_types %>
-        <div class="label"><label>Types</label></div>
+        <div class="label"><label class="nav_label">Types</label></div>
         <div class="nav">
           <%- @product_types.each do |type| %>
             <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="<%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
@@ -43,7 +43,7 @@
         <%# end %>
         <%- if @product_type %>
           <% if @tags %>
-            <strong><label>Tags</label></strong>
+            <strong><label class="nav_label">Tags</label></strong>
             <div class="nav">
               <%- @tags.each do |tag| %>
                 <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="<%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
