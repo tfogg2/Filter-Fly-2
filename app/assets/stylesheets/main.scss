@@ -41,7 +41,7 @@ body{
 }
 .bold{
 	// font-weight: bold;
-	opacity: .8;
+	opacity: 1;
 }
 .collection_select{
 	overflow: auto;
@@ -57,7 +57,6 @@ body{
 }
 .nav li{
 	margin: 5px 0;
-	opacity: .60;
 
 }
 .nav_label{
@@ -147,14 +146,7 @@ button.modalBtn {
 	background: #31373d;
 	// color: #d3dbe2;
 }
-#left_panel .selected a {
-	color:white;
-	opacity: 1;
-}
 
-#left_panel .bold a{
-	opacity: 1;
-}
 
 #left_panel p{
 	color: white;
@@ -182,7 +174,7 @@ button.modalBtn {
 	color: #ECEDEE;
 	font-size: 14px;
 	margin-left: 12px;
-	
+	opacity: .6;
 }
 ul{
 	margin: 10px 0px;
