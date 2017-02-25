@@ -5,6 +5,7 @@
 	<%- shopify_product = shopify_product  %>
 	<%- tags = product.tags %>
 	<form class='ajax-form' id="form-element-<%= product ? product.id : "nil" %>" data-product-id='<%= product.id %>'>
+			<%= shopify_product.title %>
 
 			<%- if @categories.any? %>
 				<div>
