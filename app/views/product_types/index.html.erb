@@ -29,7 +29,7 @@
           <tbody>
             <% @product_types.each do |product_type| %>
               <tr class="row">
-                <td><%= link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" } %></td>
+                <td><%= link_to product_type.title, category_product_type_tag_path(@category, product_type), { :class=>"product_type_title" } %></td>
                 <td><%= link_to 'Edit', edit_category_product_type_path(@category, product_type) %></td>
                 <td><%= button_to 'Destroy', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
