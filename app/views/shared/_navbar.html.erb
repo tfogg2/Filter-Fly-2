@@ -19,21 +19,21 @@
           <%# end %>
         <%- if @categories  %>
           <label class="nav_label">Categories</label>
-          <div class="nav">
+          <!-- <div class="nav">
             
-            <%- @categories.each do |category| %>
-              <li id="category-nav-<%= category ? category.id : 'nil' %>" class="<%= @category && @category == category ? 'bold' : '' %>" data-category-id='<%= category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
-            <% end %>
-          </div>
+            <%# @categories.each do |category| %>
+              <li id="category-nav-<%# category ? category.id : 'nil' %>" class="<%# @category && @category == category ? 'bold' : '' %>" data-category-id='<%# category.id %>' ><%= link_to category.title, category_product_types_path(category) %></li>
+            <%# end %>
+          </div> -->
         <%- end %>
       <%# end %> 
       <%- if @product_types %>
         <label class="nav_label">Types</label>
-        <div class="nav">
-          <%- @product_types.each do |type| %>
-            <li id="product-type-nav-<%= type ? type.id : 'nil' %>" class="<%= @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%= type.id %>'><%= link_to type.title, category_product_type_tags_path(@category, type) %></li>
-          <%- end %> 
-        </div>
+        <!-- <div class="nav">
+          <%# @product_types.each do |type| %>
+            <li id="product-type-nav-<%# type ? type.id : 'nil' %>" class="<%# @product_type && @product_type == type ? 'bold' : '' %>" data-product-type-id='<%# type.id %>'><%# link_to type.title, category_product_type_tags_path(@category, type) %></li>
+          <%# end %> 
+        </div> -->
       <%- end %>
 
         <%# if @product_type %>
@@ -44,11 +44,11 @@
         <%- if @product_type %>
           <% if @tags %>
             <label class="nav_label">Tags</label>
-            <div class="nav">
-              <%- @tags.each do |tag| %>
-                <li id="tag-nav-<%= tag ? tag.id : 'nil' %>"  class="<%= @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%= tag.id %>'><%= link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
-              <%- end %>
-            </div>
+            <!-- <div class="nav">
+              <%# @tags.each do |tag| %>
+                <li id="tag-nav-<%# tag ? tag.id : 'nil' %>"  class="<%# @tag && @tag == tag ? 'bold' : '' %>" data-tag-id='<%# tag.id %>'><%# link_to tag.title, category_product_type_tag_path(@category, @product_type, tag) %></li>
+              <%# end %>
+            </div> -->
           <%- end %>
         <%- end %> 
     </ul>
