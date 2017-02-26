@@ -41,7 +41,7 @@
 
         <%# end %>
       <%- if @product_type %>
-        <label class="nav_label selected">Tags</label>
+        <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
       <%- else %>
         <label class="nav_label">Tags</label>
       <%- end %>
