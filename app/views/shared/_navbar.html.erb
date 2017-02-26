@@ -1,4 +1,5 @@
 <label class="nav_label"><%= link_to "All Collections", index_path %></label>
+
 <%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
 
   <div id="left_panel">
@@ -12,7 +13,7 @@
   
               <label class="nav_label"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
 
-              <div id="begin"><h3>Choose a collection to begin.</h3></div>
+              
 
           <%- end %>
 
@@ -79,7 +80,7 @@
        </div>
 
 <%- else %>
-  
+  <div id="begin"><h3>Choose a collection to begin.</h3></div>
 
 <%- end %>
 
