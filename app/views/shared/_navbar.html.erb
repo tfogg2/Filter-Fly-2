@@ -18,7 +18,11 @@
            <!--  <li class="bold category_select"><%# link_to @category.title, @category_product_types_path %></li> -->
           <%# end %>
         <%- if @categories  %>
-          <label class="nav_label">Categories</label>
+          <%- if @category %>
+            <label class="nav_label selected">Categories</label>
+          <%- else %>
+            <label class="nav_label">Categories</label>
+          <%- end %>
           
         <%- end %>
       <%# end %> 
