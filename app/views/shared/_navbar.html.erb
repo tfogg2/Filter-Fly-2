@@ -17,36 +17,31 @@
             <!-- <strong><label>Category</label></strong> -->
            <!--  <li class="bold category_select"><%# link_to @category.title, @category_product_types_path %></li> -->
           <%# end %>
-        <%- if @categories  %>
+
           <%- if @category %>
             <label class="nav_label selected">Categories</label>
           <%- else %>
             <label class="nav_label">Categories</label>
           <%- end %>
           
-        <%- end %>
+
       <%# end %> 
-      <%- if @product_types %>
+
         <label class="nav_label">Types</label>
-        
-      <%- end %>
+
 
         <%# if @product_type %>
             <!-- <strong><label>Product Type</label></strong> -->
            <!--  <li class="bold type_select"><%# link_to @product_type.title, @category_product_type_tags_path %></li> -->
 
         <%# end %>
-        <%- if @product_type %>
-          <% if @tags %>
+
             <label class="nav_label">Tags</label>
             
-          <%- end %>
-        <%- end %> 
     </ul>
 
         
 
-      <%- end %>
 
         <%- if @products  %>
           <!-- <ul>  
