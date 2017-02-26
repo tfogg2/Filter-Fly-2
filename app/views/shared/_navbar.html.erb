@@ -2,7 +2,7 @@
 <%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
 
   <div id="left_panel">
-    <ul class="ul_nav">
+    <div class="ul_nav">
       <p>Filter Fly</p>
           <label class="nav_label"><%= link_to "All Collections", index_path %></label>
           <%- if ["products"].include?(params[:controller]) %>
@@ -29,7 +29,7 @@
       <%- if @category %>
         <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
       <%- else %>
-        <label class="nav_label">Types</label>
+        <!-- <label class="nav_label">Types</label> -->
       <%- end %>
 
 
@@ -41,9 +41,9 @@
       <%- if @product_type %>
         <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
       <%- else %>
-        <label class="nav_label">Tags</label>
+        <!-- <label class="nav_label">Tags</label> -->
       <%- end %>
-    </ul>
+    </div>
 
         
 
