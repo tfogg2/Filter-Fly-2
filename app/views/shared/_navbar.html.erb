@@ -29,7 +29,7 @@
       <%- if @category %>
         <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
       <%- else %>
-        <!-- <label class="nav_label">Types</label> -->
+        <label class="nav_label">Types</label>
       <%- end %>
 
 
@@ -41,8 +41,13 @@
       <%- if @product_type %>
         <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
       <%- else %>
-        <!-- <label class="nav_label">Tags</label> -->
+        <label class="nav_label">Tags</label>
       <%- end %>
+
+      <label class="nav_label"><%= link_to session[:shopify_collection_title] + " Products" , products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+
+
+
     </div>
 
         
