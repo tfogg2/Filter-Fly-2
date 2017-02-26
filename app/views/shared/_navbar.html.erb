@@ -31,7 +31,7 @@
           
 
       <%# end %> 
-      <%- if @category %>
+      <%- if @category && @product_types.any? %>
         <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
       <%- else %>
         <label class="nav_label">Types</label>
@@ -43,7 +43,7 @@
            <!--  <li class="bold type_select"><%# link_to @product_type.title, @category_product_type_tags_path %></li> -->
 
         <%# end %>
-      <%- if @product_type %>
+      <%- if @product_type && @tags.any? %>
         <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
       <%- else %>
         <label class="nav_label">Tags</label>
