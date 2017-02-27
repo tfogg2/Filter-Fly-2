@@ -69,7 +69,7 @@
                 <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
               </tr>
             <% end %>
-
+            <p>Choose a collection to begin.</p>
             <%# paginate @smartCollections  %>
           <%- else %>
             <p>You should create these on shopify and then return</p>
