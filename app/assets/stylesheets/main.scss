@@ -138,6 +138,10 @@ button.modalBtn {
 	border: none;
 
 }
+.table{
+	width: 40%;
+	margin: 0 auto;
+}
 .navProductBtn {
 	margin: 0 auto;
 	text-align: center;
@@ -260,6 +264,8 @@ ul{
 .tbl-header{
   background-color: rgba(255,255,255,0.3);
   position: absolute;
+  width: 45%;
+  margin: 0 auto;
 
  }
 .tbl-content{
@@ -293,7 +299,7 @@ ul{
 #collection_index{
 	margin: 0px 0px 0 150px;
 	min-height: 120px;
-	background: #ebebeb;
+	//background: #ebebeb;
 	padding-top: 15px;
 	min-width: 600px;
 
