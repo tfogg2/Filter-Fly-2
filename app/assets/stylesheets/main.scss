@@ -347,7 +347,7 @@ ul{
 }
 tr.row {
 	//border-width: 0 0 1px;
-	//border: 1px solid #cbcbcb;
+	border: 1px solid #cbcbcb;
 	height: 30px;
 	text-align: left;
 
@@ -356,7 +356,7 @@ tr.row {
 }
 tr:nth-child(odd) {
     // background-color: white;
-    background-color: #ebebeb;//rgba(255,255,255,0.3);
+    //background-color: #ebebeb;//rgba(255,255,255,0.3);
 }
 .collectionTitle{
 	font-size: 1.2em;
