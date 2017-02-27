@@ -54,7 +54,9 @@ body{
 	// font-weight: bold;
 	opacity: 1;
 }
-
+.table{
+	padding-left: 40px;
+}
 
 .nav{
 	margin: 0px 0 20px 0;
@@ -341,6 +343,7 @@ tr.row {
 	//border: 1px solid #cbcbcb;
 	height: 30px;
 	text-align: left;
+
 }
 tr:nth-child(even) {
     // background-color: white;
