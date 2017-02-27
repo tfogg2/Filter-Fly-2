@@ -37,10 +37,20 @@ body{
     height: 100%; /* Full height */
 
 }
-#begin p{
-	color: black;
-	line-height: 35px;
+#begin{
+	background-color: #6A9870;
+    height: 40px;
+    opacity: .6;
+    padding-top: 20px;
 
+}
+#begin h2{
+	text-align: center;
+    font-weight: 300;
+    font-size: 170%;
+    margin-top: 50px;
+    color: white;//#6A9870;
+    opacity: 1;
 }
 
 
@@ -338,13 +348,7 @@ ul{
 	border: none;
 	font-size: 1.2em;
 }
-#collection_index h2{
-	text-align: center;
-    font-weight: 300;
-    font-size: 170%;
-    margin-top: 50px;
-    color: #6A9870;
-}
+
 #collection_index td, th{
 	height: 50px;
 	min-width: 30px;
