@@ -4,7 +4,8 @@ a{
 	text-decoration: none;
 }
 a:hover{
-	background: transparent;
+	background: none;
+	color: black;
 }
 body{
 	//background: #fff;
@@ -128,6 +129,9 @@ button.modalBtn {
 	margin: 0 40%;
 	background: #fafafa;
 	width: 150px;
+}
+.collection_table{
+	width: 80%;
 }
 .tbl-content button{
 	margin: 0 auto;
