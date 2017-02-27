@@ -130,9 +130,7 @@ button.modalBtn {
 	background: #fafafa;
 	width: 150px;
 }
-.collection_table{
-	width: 80%;
-}
+
 .tbl-content button{
 	margin: 0 auto;
 	background: #7AB55C;//#e0e0e0;
@@ -336,13 +334,13 @@ ul{
 #collection_index td, th{
 	height: 50px;
 	min-width: 100px;
-	text-align: center;
+	text-align: left;
 }
 tr.row {
 	//border-width: 0 0 1px;
 	//border: 1px solid #cbcbcb;
 	height: 30px;
-	text-align: center;
+	text-align: left;
 }
 tr:nth-child(even) {
     // background-color: white;
