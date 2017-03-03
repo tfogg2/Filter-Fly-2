@@ -108,9 +108,10 @@ body{
 }
 .product_nav{
 	margin: 30px auto;
-	background: url("productBtn.png");
+	background: url("productBtn.png") no-repeat;
 	width: 100px;
 	height: 20px;
+	color: white;
 }
 
 
