@@ -78,8 +78,8 @@ body{
 	//background: #d8d8d8;
 	color: white;
 	padding-left: 10px;
-	line-height: 20px;
-	height: 45px;
+	line-height: 30px;
+	height: 30px;
 	font-size: 15px;
 }
 .nav_label a{
@@ -244,7 +244,7 @@ ul{
 .selected{
 	//box-shadow: inset 0px 0px 5px rgba(0,0,0,1);
 	color: white;
-	background: url('DarkBar.png');
+	background: url('DarkBar.png') no-repeat;
 
 
 }
