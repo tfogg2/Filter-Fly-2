@@ -106,7 +106,7 @@ body{
 #product_form{
 	overflow: auto;
 }
-.product_nav button{
+.product_btn{
 	margin: 30px auto;
 	//background: url("productBtn.png") no-repeat;
 	background: #7AB55C;
@@ -137,9 +137,7 @@ body{
 	margin: 10px;
 	bottom: 20px;
 }
-.product_btn a{
-	color:white;
-}
+
 button.modalBtn {
 	margin: 0 40%;
 	background: #fafafa;
