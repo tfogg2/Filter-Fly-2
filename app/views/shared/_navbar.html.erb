@@ -75,12 +75,11 @@
 
           <button><%= link_to session[:shopify_collection_title] + " Navigation", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
         <%- else %>
-         <button class="navProductBtn"><%= link_to session[:shopify_collection_title] + " Products" , products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
+         <button class="navProductBtn"><%= link_to "", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
 
 
 
          <%- end %>
-         <button><%= link_to "Home", root_path %></button>
          <li><%= link_to "Get Started", index_path %></li>
           <li><%= link_to "Support", index_path %></li>
        </div>
