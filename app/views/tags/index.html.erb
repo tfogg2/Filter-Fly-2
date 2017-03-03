@@ -10,36 +10,22 @@
   <div id="collection_index">
     <%- if @tags.any? %>
       <h1>Tags</h1>
-
-      <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-          <thead>
-            <tr class="th-row">
-              <th>Title</th>
-
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-        </table>
-    </div>
-    <div class="tbl-content">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tbody>
-          <% @tags.each do |tag| %>
-            <tr class="row">
-              <td><%= link_to tag.title, products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></td>
-              <!-- category_product_type_tag_path(@category, @product_type, tag) -->
-              <td><%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, tag) %></td>
-              <td><%= button_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-      </tbody>
-    </table>
-  </div>
-
-    <%# @tags.each do |tag| %>
-        <option class="product_tag_select"><%# tag.title %></option>
-    <%# end %>
+      <div class="table">
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <% @tags.each do |tag| %>
+                  <tr class="row">
+                    <td><%= link_to tag.title, products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></td>
+                    <!-- category_product_type_tag_path(@category, @product_type, tag) -->
+                    <td><%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, tag) %></td>
+                    <td><%= button_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
   <%- end %>
   <button class="modalBtn">New Tag</button>
     <div id="myModal" class="modal">
