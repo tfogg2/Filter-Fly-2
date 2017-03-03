@@ -15,7 +15,7 @@
               <%- if @category %>
                 <label class="nav_label category_label"><%= link_to @category.title, category_product_types_path %></label>
               <%- end %>
-              <%- if @product_type %>
+              <%- if @product_type && @category && @product_types %>
                 <label class="nav_label type_label"><%= link_to @product_type.title, category_product_type_tags_path %></label>
               <%- end %>
               
