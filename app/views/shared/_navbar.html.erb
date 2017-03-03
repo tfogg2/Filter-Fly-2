@@ -6,56 +6,58 @@
     <div class="ul_nav">
       <p><%= link_to "Filter Fly", index_path %></p>
           <!-- <label class="nav_label"><%# link_to "All Collections", index_path %></label> -->
-          <%- if ["products"].include?(params[:controller]) %>
-            <label class="nav_label collection_label"><%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
-          <%- else %>
-            <!-- <strong><label>Collection:</label></strong> -->
-  
-              <label class="nav_label collection_label"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+          <div class="primary_nav">
+            <%- if ["products"].include?(params[:controller]) %>
+              <label class="nav_label collection_label"><%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+            <%- else %>
+              <!-- <strong><label>Collection:</label></strong> -->
+    
+                <label class="nav_label collection_label"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
 
-              
+                
 
-          <%- end %>
+            <%- end %>
+
+            
 
           
+            <%# if @category %>
+              <!-- <strong><label>Category</label></strong> -->
+             <!--  <li class="bold category_select"><%# link_to @category.title, @category_product_types_path %></li> -->
+            <%# end %>
 
-        
-          <%# if @category %>
-            <!-- <strong><label>Category</label></strong> -->
-           <!--  <li class="bold category_select"><%# link_to @category.title, @category_product_types_path %></li> -->
-          <%# end %>
+            <%- if !@category && !@product_type && !@tag %>
+              <label class="nav_label selected"><%= link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+            <%- else %>
+              <label class="nav_label"><%= link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+            <%- end %>
+   
+            
 
-          <%- if !@category && !@product_type && !@tag %>
-            <label class="nav_label selected"><%= link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
-          <%- else %>
-            <label class="nav_label"><%= link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+        <%# end %> 
+        <%- if @category && @product_types && !@product_type %>
+          <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
+        <%- else %>
+          <%- if @product_type %>
+            <label class="nav_label"><%= link_to "Types", category_product_types_path%></label>
           <%- end %>
- 
-          
-
-      <%# end %> 
-      <%- if @category && @product_types && !@product_type %>
-        <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
-      <%- else %>
-        <%- if @product_type %>
-          <label class="nav_label"><%= link_to "Types", category_product_types_path%></label>
+          <!-- <label class="nav_label">Types</label> -->
         <%- end %>
-        <!-- <label class="nav_label">Types</label> -->
-      <%- end %>
 
 
-        <%# if @product_type %>
-            <!-- <strong><label>Product Type</label></strong> -->
-           <!--  <li class="bold type_select"><%# link_to @product_type.title, @category_product_type_tags_path %></li> -->
+          <%# if @product_type %>
+              <!-- <strong><label>Product Type</label></strong> -->
+             <!--  <li class="bold type_select"><%# link_to @product_type.title, @category_product_type_tags_path %></li> -->
 
-        <%# end %>
-      <%- if @product_type && @tags %>
-        <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
-      <%- else %>
-        <!-- <label class="nav_label">Tags</label> -->
-      <%- end %>
+          <%# end %>
+        <%- if @product_type && @tags %>
+          <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
+        <%- else %>
+          <!-- <label class="nav_label">Tags</label> -->
+        <%- end %>
+      </div>
 
-      <button<%= link_to "Products", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]), {class: "product_nav"} %></button>
+      <button><%= link_to "Products", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]), {class: "product_nav"} %></button>
 
 
 
