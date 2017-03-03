@@ -55,7 +55,7 @@
         <!-- <label class="nav_label">Tags</label> -->
       <%- end %>
 
-      <label class="nav_label product_nav"><%= link_to session[:shopify_collection_title] + " Products" , products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+      <label class="nav_label product_nav"><%= link_to "", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
 
 
 
@@ -75,7 +75,7 @@
 
           <button><%= link_to session[:shopify_collection_title] + " Navigation", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
         <%- else %>
-         <button class="navProductBtn"><%= link_to "", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
+         <button class="navProductBtn"><%= link_to session[:shopify_collection_title] + " Products" , products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></button>
 
 
 
