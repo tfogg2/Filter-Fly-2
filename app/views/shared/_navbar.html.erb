@@ -12,7 +12,7 @@
             <!-- <strong><label>Collection:</label></strong> -->
   
               <label class="nav_label"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
-              <%- if @category %>
+              <%- if @category && !@category.new %>
                 <label class="nav_label category_label"><%= link_to @category.title, category_product_types_path %></label>
               <%- end %>
               <%- if @product_type && @category && @product_types %>
