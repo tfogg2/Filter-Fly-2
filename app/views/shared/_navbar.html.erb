@@ -25,7 +25,7 @@
            <!--  <li class="bold category_select"><%# link_to @category.title, @category_product_types_path %></li> -->
           <%# end %>
 
-          <%- if @smartCollection || @customCollection && !@category  %>
+          <%- if !@category && !@product_type && !@tag %>
             <label class="nav_label selected"><%= link_to "Category", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
           <%- else %>
             <label class="nav_label"><%= link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
@@ -34,10 +34,10 @@
           
 
       <%# end %> 
-      <%- if @category && @product_types && @product_type %>
+      <%- if @category && @product_types %>
         <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
       <%- else %>
-        <label class="nav_label">Types</label>
+        <!-- <label class="nav_label">Types</label> -->
       <%- end %>
 
 
@@ -49,7 +49,7 @@
       <%- if @product_type && @tags && @tag %>
         <label class="nav_label selected"><%= link_to "Tags", category_product_type_tags_path%></label>
       <%- else %>
-        <label class="nav_label">Tags</label>
+        <!-- <label class="nav_label">Tags</label> -->
       <%- end %>
 
       <label class="nav_label product_nav"><%= link_to session[:shopify_collection_title] + " Products" , products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
