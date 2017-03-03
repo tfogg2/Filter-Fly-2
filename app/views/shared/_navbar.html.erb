@@ -12,7 +12,12 @@
             <!-- <strong><label>Collection:</label></strong> -->
   
               <label class="nav_label"><%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
-
+              <%- if @category %>
+                <label class="nav_label selected category_label"><%= link_to @category.title, category_product_types_path %></label>
+              <%- end %>
+              <%- if @product_type %>
+                <label class="nav_label selected category_label"><%= link_to @product_type.title, category_product_type_tags_path %></label>
+              <%- end %>
               
 
           <%- end %>
@@ -26,7 +31,7 @@
           <%# end %>
 
           <%- if @category %>
-            <label class="nav_label selected"><%= link_to "Category: " + @category.title, categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
+            <label class="nav_label selected"><%= link_to "Category", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
           <%- else %>
             <label class="nav_label selected"><%= link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
           <%- end %>
@@ -35,7 +40,7 @@
 
       <%# end %> 
       <%- if @category && @product_types && @product_type %>
-        <label class="nav_label selected"><%= link_to "Types: " + @product_type.title, category_product_types_path%></label>
+        <label class="nav_label selected"><%= link_to "Types", category_product_types_path%></label>
       <%- else %>
         <label class="nav_label">Types</label>
       <%- end %>
