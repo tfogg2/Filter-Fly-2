@@ -4,7 +4,7 @@
 
   <div id="left_panel">
     <div class="ul_nav">
-      <p>Filter Fly</p>
+      <p><%= link_to "Filter Fly", root_path %></p>
           <label class="nav_label"><%= link_to "All Collections", index_path %></label>
           <%- if ["products"].include?(params[:controller]) %>
             <label class="nav_label"><%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></label>
