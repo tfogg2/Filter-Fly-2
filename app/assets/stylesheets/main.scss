@@ -107,13 +107,17 @@ body{
 	overflow: auto;
 }
 .product_btn{
-	margin: 30px auto;
+	margin: 30px 22.5px;
 	//background: url("productBtn.png") no-repeat;
 	background: #7AB55C;
 	width: 100px;
 	height: 20px;
-	color: white;
+
 	border-radius: 5px;
+}
+.product_btn a{
+	color: white;
+	font-size: 15px;
 }
 
 
