@@ -104,8 +104,12 @@ body{
 }
 
 #product_form{
+	margin: 0 auto;
+	background: white;
+	width: 50%;
+	height: 250px;
 	overflow: auto;
-}
+
 .product_btn{
 	margin: 30px 22.5px;
 	//background: url("productBtn.png") no-repeat;
@@ -273,11 +277,7 @@ ul{
 
 
 // NAV //
-#product_form{
-	margin: 0 auto;
-	background: white;
-	width: 50%;
-}
+
 
 /* TEST DATA TABLE */
 
