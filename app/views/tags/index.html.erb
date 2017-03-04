@@ -19,7 +19,7 @@
                     <td><%= link_to tag.title, products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %></td>
                     <!-- category_product_type_tag_path(@category, @product_type, tag) -->
                     <td><%= link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, tag) %></td>
-                    <td><%= button_to 'Destroy', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= button_to 'X', category_product_type_tag_path(@category, @product_type, tag), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   </tr>
                 <% end %>
             </tbody>
