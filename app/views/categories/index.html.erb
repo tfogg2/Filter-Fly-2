@@ -42,7 +42,11 @@
       <span class="close">&times;</span>
       <div id="newCategory"></div>
     </div>
-
+    <%- if @categories %>
+      <div id="begin"><h2>Select a category to continue.</h2></div>
+    <%- else %>
+      <div id="begin"><h2>Create and select a category to continue.</h2></div>
+    <%- end %>
   </div>
     
   </div>
