@@ -21,8 +21,16 @@
         <div id="left_panel">
           <p><%= link_to "Filter Fly", index_path %></p>
           <%= render 'shared/navbar' %>
-          <label class="nav_label"><%= link_to "Get Started", index_path %></label>
-          <label class="nav_label"><%= link_to "Support", index_path %></label>
+          <ul class= "ul_nav">  
+           <!--  <li><%# link_to "All Collections", index_path %></li> -->
+
+            
+          </ul>
+          <div class="low_nav">
+            <label class="nav_label"><%= link_to "Get Started", index_path %></label>
+            <label class="nav_label"><%= link_to "Support", index_path %></label>
+          </div>
+
         </div>
         <main role="main">
           <%= yield %>
