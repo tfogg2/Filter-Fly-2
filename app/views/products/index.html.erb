@@ -12,7 +12,11 @@
 
 		<%= render 'products/form' %>
 
-		<div id="begin"><h2>Add filtering to your shopify products.</h2></div>
+		<%- if @shopify_products.any? %>
+			<div id="begin"><h2>Add filtering to your shopify products.</h2></div>
+		<%- else %>
+			<div id="begin"><h2>You should create these on shopify and then return.</h2></div>
+		<%- end %>
 
 	</div>
 
