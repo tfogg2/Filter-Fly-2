@@ -62,6 +62,8 @@
 
       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]), {class: "product_nav"} %></button>
 
+      <label class="nav_label"><%= link_to "Get Started", index_path %></label>
+      <label class="nav_label"><%= link_to "Support", index_path %></label>
 
 
     </div>
@@ -85,8 +87,7 @@
 
 
          <%# end %>
-         <li><%= link_to "Get Started", index_path %></li>
-          <li><%= link_to "Support", index_path %></li>
+         
        </div>
 
 <%- else %>
