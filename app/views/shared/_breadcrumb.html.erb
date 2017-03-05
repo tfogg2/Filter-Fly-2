@@ -4,7 +4,7 @@
 	<%- if session[:shopify_collection_title] && session[:shopify_collection_id] %>
 
 	<%- if ["products"].include?(params[:controller]) %>
-	 > <%= link_to session[:shopify_collection_title], products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
+	 > <%= link_to session[:shopify_collection_title] + " Products", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
 	<%- else %>
 	 > <%= link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]) %>
 	<%- end %>
