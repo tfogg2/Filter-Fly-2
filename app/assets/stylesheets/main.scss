@@ -143,10 +143,6 @@ body{
 	color: white;
 	background: url('DarkBar.png') no-repeat;
 }
-.lower_nav{
-	
-	margin-top: 15px;
-}
 .collection_label{
 	background: url("collectionBox.png");
 	
@@ -158,6 +154,9 @@ body{
 	position: absolute;
 	opacity: .8;
 	bottom: 60px;
+	
+}
+#left_panel .support{
 	border-top: 1px solid #5C656D; 
 }
 .category_label{
