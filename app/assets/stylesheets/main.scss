@@ -100,6 +100,9 @@ body{
 	display: inline;
 
 }
+.ajax-form .chosen-container{
+	margin-left: 10px;
+}
 .ajax-form{
 	padding-left: 20px;
 }
@@ -111,7 +114,7 @@ body{
 #product_form{
 	margin: 0 auto;
 	background: white;
-	width: 50%;
+	width: 60%;
 	height: 250px;
 	overflow: auto;
 }
