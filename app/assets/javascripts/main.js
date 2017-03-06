@@ -184,7 +184,8 @@ $(document).ready(function () {
 
 
 
-
+	var testJava = getElementById("testJava");
+	alert(testJava.value);
 
 	// TEST DATA TABLE //
 
