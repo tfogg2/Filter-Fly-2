@@ -5,6 +5,7 @@
     <% application_name = ShopifyApp.configuration.application_name %>
     <title><%= application_name.presence || 'Embedded Shopify App Example' %></title>
     <%= stylesheet_link_tag 'application' %>
+    <!-- <script src="https://cdn.shopify.com/s/assets/external/app.js"></script> -->
     <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
