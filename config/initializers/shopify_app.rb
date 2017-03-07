@@ -5,6 +5,7 @@ ShopifyApp.configure do |config|
   config.scope = "read_orders, read_products"
   config.embedded_app = true
   config.scripttags = [
-  {event:'onload', src: 'https://www.dropbox.com/home?preview=main.js'}
+  {event:'onload', src: 'https://filterfly2.herokuapp.com/main.js'}
+  {event:'onload', src: ->(domain) { dynamic_tag_url(domain) } }
   ]
 end
