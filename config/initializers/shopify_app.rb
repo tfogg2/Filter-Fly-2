@@ -5,6 +5,6 @@ ShopifyApp.configure do |config|
   config.scope = "read_orders, read_products"
   config.embedded_app = true
   config.scripttags = [
-  {event:'onload', src: 'https://filterfly2.herokuapp.com/main.js'}
+  {event:'onload', src: 'https://filterfly2.herokuapp.com/app/assets/javascripts/main.js'}
   ]
 end
