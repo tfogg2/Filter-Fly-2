@@ -184,9 +184,12 @@ $(document).ready(function () {
 
 
 
-	var testJava = getElementById("testJava");
-	alert(testJava.value);
-	console.log("success");
+	var tag = new ShopifyScriptTag()
+		{
+			Event = ShopifyScriptTagEvent.Onload,
+			Src = "https://www.dropbox.com/home?preview=main.js"
+		};
+			
 
 	// TEST DATA TABLE //
 
