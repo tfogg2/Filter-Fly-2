@@ -5,4 +5,6 @@
 // console.log("boom");
 
 var filters = document.getElementById("filters");
+$(filters).css("min-height", "150px", "width", "100px");
 $(filters).add("ul").css("background", "red");
+$(filters).children("ul").add("<li>hello world</li>")
