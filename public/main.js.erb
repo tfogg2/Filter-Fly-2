@@ -1,17 +1,38 @@
-// alert("We made it!");
-// console.log(6*12);
-// var testJava = document.getElementById("testJava");
-// $(testJava).addClass("red");
-// console.log("boom");
+// // alert("We made it!");
+// // console.log(6*12);
+// // var testJava = document.getElementById("testJava");
+// // $(testJava).addClass("red");
+// // console.log("boom");
 
-var filters = document.getElementById("filters");
-$(filters).css("min-height", "150px");
-$(filters).css("width", "150px");
-var ul = $(filters).children("ul");
-$(ul).addClass("filter-nav");
-var collections = $(ul).children('li');
-$(collections).addClass("collections");
+// var filters = document.getElementById("filters");
+// $(filters).css("min-height", "150px");
+// $(filters).css("width", "150px");
+// var ul = $(filters).children("ul");
+// $(ul).addClass("filter-nav");
+// var collections = $(ul).children('li');
+// $(collections).addClass("collections");
 
+var ff_shop_id;
+
+function ff_init(shop_id) {
+	ff_shop_id = shop_id;
+	getProducts();
+}
+
+
+function getProducts(){
+	if(!ff_shop_id) {
+		console.log("No shop id set");
+		return
+	}
+
+	// Go get products for ff_shop_id
+}
+
+
+ff_init({my_shop_id})
+
+// 
 
 
 
