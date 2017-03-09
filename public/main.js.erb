@@ -8,10 +8,11 @@ var filters = document.getElementById("filters");
 $(filters).css("min-height", "150px");
 $(filters).css("width", "150px");
 var ul = $(filters).children("ul");
-$(ul).addClass("collections");
-var categories = $(ul).add('li');
+$(ul).addClass("filter-nav");
+var collections = $(ul).add('li');
+$(collections).addClass("collections");
+var categories = $(collections).add('li');
 $(categories).addClass("categories");
-
 
 
 // $(filters).replaceWith("<%= j render('shared/filters') %>");
