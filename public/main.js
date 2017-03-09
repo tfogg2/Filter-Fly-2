@@ -5,6 +5,12 @@
 // console.log("boom");
 
 var filters = document.getElementById("filters");
-$(filters).css("min-height", "150px", "width", "100px");
-$(filters).add("ul").css("background", "red");
-$(filters).children("ul").add("<li>hello world</li>")
+$(filters).css("min-height", "150px");
+$(filters).css("width", "100px");
+$(filters).html("
+	{% for collection in collections %}
+  		<ul>
+    		<li style='font-size: 18px;'><strong>{{ collection.title }}</strong></li>
+  		</ul>
+  	{% endfor %}
+	");
