@@ -12,14 +12,14 @@
 // var collections = $(ul).children('li');
 // $(collections).addClass("collections");
 
-var ff_shop_id;
-var domain =  shop.id;
-console.log(myshopify_domain);
+// var ff_shop_id;
+// var domain =  shop.id;
+// console.log(myshopify_domain);
 
-function ff_init(shop_id) {
-	ff_shop_id = shop_id;
-	getProducts();
-}
+// function ff_init(shop_id) {
+// 	ff_shop_id = shop_id;
+// 	getProducts();
+// }
 
 
 function getProducts(){
