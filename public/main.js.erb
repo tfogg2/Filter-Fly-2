@@ -9,9 +9,9 @@ $(filters).css("min-height", "150px");
 $(filters).css("width", "150px");
 var ul = $(filters).children("ul");
 $(ul).addClass("filter-nav");
-var collections = $(ul).add('li');
+var collections = $(ul).children('li');
 $(collections).addClass("collections");
-var categories = $(collections).add('li');
+var categories = $(collections).html('<li>Categories</li>');
 $(categories).addClass("categories");
 
 
