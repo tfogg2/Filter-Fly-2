@@ -7,4 +7,5 @@
 var filters = document.getElementById("filters");
 $(filters).css("min-height", "150px");
 $(filters).css("width", "100px");
-$(filters).children("ul").addClass("collections");
+var ul = $(filters).children();
+$(ul).addClass("collections");
