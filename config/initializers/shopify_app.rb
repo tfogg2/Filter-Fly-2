@@ -6,6 +6,6 @@ ShopifyApp.configure do |config|
   config.embedded_app = true
   config.scripttags = [{
 	event:'onload',
-	src: 'https://filterfly2.herokuapp.com/main.js'
+	src: 'https://filterfly2.herokuapp.com/main.js.erb'
   }]
 end
