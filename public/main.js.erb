@@ -9,5 +9,10 @@ $(filters).css("min-height", "150px");
 $(filters).css("width", "150px");
 var ul = $(filters).children("ul");
 $(ul).addClass("collections");
+var categories = $(ul).add('li');
+$(categories).addClass("categories");
+
+
+
 // $(filters).replaceWith("<%= j render('shared/filters') %>");
-$(filters).load('filters.html.erb');
+// $(filters).load('filters.html.erb');
