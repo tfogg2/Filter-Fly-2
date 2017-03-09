@@ -7,4 +7,4 @@
 var filters = document.getElementById("filters");
 $(filters).css("min-height", "150px");
 $(filters).css("width", "100px");
-$(filters).html({% for collection in collections %}"<ul><li style='font-size: 18px;'><strong>"{{ collection.title }}"</strong></li></ul>"{% endfor %});
+$(filters).children("li").addClass("collections");
