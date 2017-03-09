@@ -1,5 +1,5 @@
 alert("We made it!");
 console.log(6*12);
 var testJava = document.getElementById("testJava");
-alert(testJava.value);
+testJava.html("<stlyle>color: red</stlye>")
 console.log("boom");
