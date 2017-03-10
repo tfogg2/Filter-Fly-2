@@ -24,8 +24,32 @@ function getProducts(){
 		}
 	});
 
-	return
+	//return
 };
 
 
+
+// var ff_shop_id;
+// var domain =  shop.id;
+// console.log(myshopify_domain);
+
+// function ff_init(shop_id) {
+// 	ff_shop_id = shop_id;
+// 	getProducts();
+// }
+
+
+// function getProducts(){
+// 	if(!ff_shop_id) {
+// 		console.log("No shop id set");
+// 		return
+// 	}
+
+// 	// Go get products for ff_shop_id
+// }
+
+
+// ff_init({my_shop_id})
+
+// 
 
