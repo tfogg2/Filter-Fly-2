@@ -12,6 +12,23 @@
 // var collections = $(ul).children('li');
 // $(collections).addClass("collections");
 
+
+
+function getProducts(){
+	console.log("No shop id set");
+	$.ajax({
+		type: 'GET',
+		url: '/products.json',
+		success: function(data){
+			alert('success');
+		}
+	});
+
+	return
+};
+
+
+
 // var ff_shop_id;
 // var domain =  shop.id;
 // console.log(myshopify_domain);
@@ -22,21 +39,17 @@
 // }
 
 
-function getProducts(){
-	if(!ff_shop_id) {
-		console.log("No shop id set");
-		return
-	}
+// function getProducts(){
+// 	if(!ff_shop_id) {
+// 		console.log("No shop id set");
+// 		return
+// 	}
 
-	// Go get products for ff_shop_id
-}
+// 	// Go get products for ff_shop_id
+// }
 
 
-ff_init({my_shop_id})
+// ff_init({my_shop_id})
 
 // 
 
-
-
-// $(filters).replaceWith("<%= j render('shared/filters') %>");
-// $(filters).load('filters.html.erb');
