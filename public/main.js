@@ -18,7 +18,7 @@ function getProducts(){
 	console.log("No shop id set");
 	$.ajax({
 		type: 'GET',
-		url: '/products.json',
+		url: '/products',
 		success: function(data){
 			alert('success');
 		}
