@@ -14,7 +14,7 @@
 
 
 
-function getProducts(){
+$(document).ready(function(){
 	console.log("No shop id set");
 	$.ajax({
 		type: 'GET',
@@ -25,7 +25,7 @@ function getProducts(){
 	});
 
 	//return
-};
+});
 
 
 
