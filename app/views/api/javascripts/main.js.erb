@@ -1,0 +1,16 @@
+alert("<%= params[:shop] %>");
+
+
+$(document).ready(function(){
+	alert("Hitting shop: <%= params[:shop] %>");
+	
+	$.ajax({
+		type: 'GET',
+		data: {},
+		url: 'https://filterfly2.herokuapp.com/api/collections',
+		success: function(data){
+			alert('success');
+			console.log('data', data);
+		}
+	});
+});

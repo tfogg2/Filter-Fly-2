@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108004521) do
+ActiveRecord::Schema.define(version: 20170312231422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20161108004521) do
   create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.string   "handle"
+    t.string   "shopify_collection_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "collection_id"
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string   "shop_id"
+    t.string   "title"
     t.string   "shopify_collection_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false

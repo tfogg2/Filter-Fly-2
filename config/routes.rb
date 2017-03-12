@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'collections', to: "collections#index"
+    get 'main', to: "javascripts#main"
   end
   #get 'tutorial', to: "shared#_tutorial"
   #get 'navbar', to: 'collections#navbar'

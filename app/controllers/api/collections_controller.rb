@@ -1,5 +1,7 @@
 class Api::CollectionsController < Api::BaseController	
 	def index
-		render json: ["array", "of", "strings"]
+		@shop = Shop.last
+		collections_json = @shop.collections.as_json
+		render json: collections_json
 	end
 end

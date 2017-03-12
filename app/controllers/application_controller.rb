@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
   	session[:shopify_collection_id] = nil
   	session[:shopify_collection_title] = nil
   end
+
+  def set_shop
+    # This needs to look the shop up by it's store name? url?
+    # @shop = blah
+  end
   
   #def logger
    # Rails.logger.debug("///set_shopify_collection_id: #{session[:shopify_collection_id]}")

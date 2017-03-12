@@ -9,4 +9,12 @@ class ProductType < ApplicationRecord
 	def update_handle
     	self.handle = title.parameterize
   	end
+
+  	def as_json
+		{
+			id: id,
+			title: title,
+			tags: tags.as_json
+		}
+	end
 end

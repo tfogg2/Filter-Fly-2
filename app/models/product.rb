@@ -11,9 +11,7 @@ class Product < ApplicationRecord
 
   	shopify_products.each do |p|
   		product = Product.find_by_shopify_product_id(p.id)
-		Product.create(:shopify_product_id => p.id) if !product
-    
-	end
+		  Product.create(:shopify_product_id => p.id) if !product
+    end
   end
-
 end
