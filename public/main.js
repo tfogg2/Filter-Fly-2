@@ -15,12 +15,15 @@
 
 
 $(document).ready(function(){
-	console.log("No shop id set");
+	console.log("Hitting ");
+	
 	$.ajax({
 		type: 'GET',
-		url: '/products',
+		data: {}
+		url: 'https://filterfly2.herokuapp.com/api/collections',
 		success: function(data){
 			alert('success');
+			console.log('data', data);
 		}
 	});
 
