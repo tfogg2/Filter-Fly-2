@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get 'index', to: "collections#index" 
   get 'select_change', to: "products#select_change"
   get 'navbar_select', to: "shared#navbar_select"
+
+  namespace :api do
+    get 'collections', to: "collections#index"
+  end
   #get 'tutorial', to: "shared#_tutorial"
   #get 'navbar', to: 'collections#navbar'
  #get 'products/select_change', to: "", constraints: { format: 'json' }
