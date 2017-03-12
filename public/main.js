@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	$.ajax({
 		type: 'GET',
-		data: {}
+		data: {},
 		url: 'https://filterfly2.herokuapp.com/api/collections',
 		success: function(data){
 			alert('success');
