@@ -1,5 +1,5 @@
 class Api::JavascriptsController < Api::BaseController	
-	format :js
+	# format :js
 
 	def main
 		
