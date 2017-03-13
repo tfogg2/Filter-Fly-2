@@ -10,17 +10,3 @@ class Collection < ApplicationRecord
 		}
 	end
 end
-
-{
-	title: "This collection",
-	categories: [
-		{
-			title: "category title",
-			product_types: [
-				{
-					title: ''
-				}
-			]
-		}
-	]
-}
