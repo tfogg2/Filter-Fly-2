@@ -28,9 +28,7 @@ class ApplicationController < ActionController::Base
     shop = ShopifyApp::SessionRepository.retrieve(shop_domain)
     #shop = self.find_or_initialize_by(shopify_domain: session.url)
     #ShopifyAPI::Base.activate_session(shop)
-    shop.shopify_token = session.token
-    shop.save!
-    shop.id
+
     #@shop = Shop.find_by_shopify_domain(params[:shop])
   end
   
