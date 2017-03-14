@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-	belongs_to :collections
+	belongs_to :shopify_collection_id
 	has_many :product_types, :dependent => :destroy
 	has_many :products, :dependent => :destroy
 	validates :title, presence: true
