@@ -16,6 +16,7 @@
 
 $(document).ready(function(){
 	console.log("Hitting ");
+	alert("'Ello Mate");
 	
 	$.ajax({
 		type: 'GET',
