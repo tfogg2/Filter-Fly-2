@@ -4,7 +4,7 @@ class Shop < ActiveRecord::Base
 
   has_many :collections, dependent: :destroy
 
-  def find_or_create_collection(collection)
+  	def find_or_create_collection(collection)
 		# collection is response from shopify api
 		c = collections.find_by_shopify_collection_id(c.id)
 		return c if c
@@ -13,7 +13,7 @@ class Shop < ActiveRecord::Base
 
 		collections.create(
 			title: collection[:title],
-			shopify_collection_id: collection[:id], # Dont know what the actual id is called
+			shopify_collection_id: collection_id #[:id], # Dont know what the actual id is called
 		)
 	end
 end
