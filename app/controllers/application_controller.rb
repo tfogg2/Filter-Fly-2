@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   def set_shop
     shop_domain = params[:shop]
     # # This needs to look the shop up by it's store name? url?
-    shop = ShopifyApp::SessionRepository.retrieve(shop_domain)
+    @shop = ShopifyApp::SessionRepository.retrieve(shop_domain)
     Rails.logger.debug(shop)
     #shop = self.find_or_initialize_by(shopify_domain: session.url)
     #ShopifyAPI::Base.activate_session(shop)
