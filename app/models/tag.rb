@@ -10,4 +10,11 @@ class Tag < ApplicationRecord
 	def update_handle
     	self.handle = title.parameterize
   	end
+
+  	def as_json
+		{
+			id: id,
+			title: title,
+		}
+	end
 end

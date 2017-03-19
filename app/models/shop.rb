@@ -13,7 +13,7 @@ class Shop < ActiveRecord::Base
 
 		collections.create(
 			title: collection[:title],
-			shopify_collection_id: collection_id #[:id], # Dont know what the actual id is called
+			shopify_collection_id: collection.id #[:id], # Dont know what the actual id is called
 		)
 	end
 end
