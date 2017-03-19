@@ -10,7 +10,7 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 
 		# Create custom collections
 		@customCollections.each do |c|
-			c.find_or_initialize_by(title: c.title, collection_id: c.id)
+			Shop.find_or_create_by(title: c.title, collection_id: c.id)
 		end
 
 		# Create smart collections
