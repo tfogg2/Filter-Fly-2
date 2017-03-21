@@ -7,10 +7,10 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 		@products = ShopifyAPI::Product.find(:all) #, params: { limit: 10 }
 		@customCollections = ShopifyAPI::CustomCollection.find(:all) #, params: { limit: 10 }
 		@smartCollections = ShopifyAPI::SmartCollection.find(:all) #, params: { limit: 10 }
-		@shop = ShopifyAPI::Shop
+
 		# Create custom collections
 		@customCollections.each do |c|
-			@shop.find_or_create_by(shopify_collection_id: c.id )
+			@collection = Shop.c.find_or_create_by(shopify_collection_id: c.id )
 			#Shop.find_or_create_collection(c)  #title: c.title, collection_id: c.id)
 		end
 
