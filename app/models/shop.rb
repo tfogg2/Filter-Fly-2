@@ -4,7 +4,7 @@ class Shop < ActiveRecord::Base
 
   has_many :collections, dependent: :destroy
 
-  	def find_or_create_collection(collection)
+  	def find_or_create_by(collection)
 		# collection is response from shopify api
 		c = collections.find_by_shopify_collection_id(c.id)
 		return c if c
