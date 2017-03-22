@@ -25,8 +25,7 @@ class ApplicationController < ActionController::Base
   def set_shop
     # shop = self.find_or_initialize_by(shopify_domain: session.url)
     # ShopifyAPI::Base.activate_session(shop)
-    @shop = Shop.find_by_id(params[:shop])
-    #shopify_domain(params[:shop])
+    @shop = Shop.find_by_shopify_domain(params[:shop])
   end
 
   #def logger
