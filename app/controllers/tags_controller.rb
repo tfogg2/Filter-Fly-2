@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :set_collection
   before_action :set_category
   before_action :set_product_type
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
@@ -6,22 +7,22 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = @product_type.tags.all
-    @product_types = @category.product_types.all
-    @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+    @tags = @collection.category.product_type.tags.all
+    @product_types = @collection.category.product_types.all
+    @categories = @collection.categories.all
   end
 
   # GET /tags/1
   # GET /tags/1.json
   def show
-     @tags = @product_type.tags.all
-    @product_types = @category.product_types.all
-    @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+    @tags = @collection.category.product_type.tags.all
+    @product_types = @collection.category.product_types.all
+    @categories = @collection.categories.all
   end
 
   # GET /tags/new
   def new
-    @tag = @product_type.tags.new
+    @tag = @collection.category.product_type.tags.new
   end
 
   # GET /tags/1/edit
@@ -31,7 +32,7 @@ class TagsController < ApplicationController
   # POST /tags
   # POST /tags.json
   def create
-    @tag = @product_type.tags.new(tag_params)
+    @tag = @collection.category.product_type.tags.new(tag_params)
 
     respond_to do |format|
       if @tag.save
@@ -70,8 +71,11 @@ class TagsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_collection
+      @collection = @shop.collections.find(params[:collection_id] || params[:id])
+    end
     def set_category
-      @category = Category.find(params[:category_id] || params[:id])
+      @category = @collection.category.find(params[:category_id] || params[:id])
     end
 
     def set_product_type
@@ -79,7 +83,7 @@ class TagsController < ApplicationController
     end
 
     def set_tag
-      @tag = Tag.find(params[:id])
+      @tag = @collection.category.product_type.tags.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

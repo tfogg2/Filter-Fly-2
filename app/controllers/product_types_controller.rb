@@ -1,13 +1,15 @@
 class ProductTypesController < ApplicationController
+  before_action :set_collection
   before_action :set_category
   before_action :set_product_type, only: [:show, :edit, :update, :destroy]
+
 
   # GET /product_types
   # GET /product_types.json
   def index
-    @product_types = @category.product_types.all
+    @product_types = @collection.category.product_types.all
     
-    @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+    @categories = @collection.categories.all
   end
 
   # GET /product_types/1
@@ -17,7 +19,7 @@ class ProductTypesController < ApplicationController
 
   # GET /product_types/new
   def new
-    @product_type = @category.product_types.new
+    @product_type = @collection.category.product_types.new
   end
 
   # def populate_type_select
@@ -34,7 +36,7 @@ class ProductTypesController < ApplicationController
   # POST /product_types
   # POST /product_types.json
   def create
-    @product_type = @category.product_types.new(product_type_params)
+    @product_type = @collection.category.product_types.new(product_type_params)
 
     respond_to do |format|
       if @product_type.save
@@ -72,13 +74,16 @@ class ProductTypesController < ApplicationController
   end
 
   private
+    def set_collection
+      @collection = @shop.collections.find(params[:collection_id] || params[:id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:category_id] || params[:id])
+      @category = @collection.category.find(params[:category_id] || params[:id])
     end
 
     def set_product_type
-      @product_type = @category.product_types.find(params[:id])
+      @product_type = @collection.category.product_types.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

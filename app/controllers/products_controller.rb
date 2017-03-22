@@ -1,16 +1,20 @@
 class ProductsController < ShopifyApp::AuthenticatedController
   layout "application"
-  
+
+  before_action :set_collection
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:update, :select_change]
+  before_action :set_product_types, only: [:update, :select_change]
+  before_action :set_tags, only: [:update, :select_change]
+  
 
  def index
     Rails.logger.debug("set_shopify_product_id: #{session[:shopify_collection_id]}")
 
-    if session[:shopify_collection_id].blank? 
+    if !@collection
       @products = []
     else
-      @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:session[:shopify_collection_id] })
+      @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id: @collection.id })
       
       #creating product for each shopify product
       @shopify_products.each do |shopify_product|
@@ -25,27 +29,30 @@ class ProductsController < ShopifyApp::AuthenticatedController
       # Rails.logger.debug("---")
       # Rails.logger.debug("@products: #{@products.inspect}")
       # Get the available categories
-    if session[:shopify_collection_id].blank?
+    if !@collection
       @categories = []
     else
-      @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+      @categories = @collection.categories.all
+      #Category.where(shopify_collection_id: session[:shopify_collection_id])
     end
 
-    if session[:shopify_collection_id].blank?
+    if !@collection
       @product_types = []
     else
-      @product_types = ProductType.where(category_id: @categories.ids)
+      @product_types = @collection.category.product_types.all
+      #ProductType.where(category_id: @categories.ids)
     end
 
-    if session[:shopify_collection_id].blank?
+    if !@collection
       @tags = []
     else
-      @tags = Tag.where(product_type_id: @product_types.ids)
+      @tags = @collection.category.product_type.tags.all
+      #Tag.where(product_type_id: @product_types.ids)
     end
 
     #@product_types = @category.product_types.all
 
-    @product = Product.new(shopify_product_id: session[:shopify_collection_id])
+    @product = Product.new(shopify_product_id: @collection.id)
 
  end
 
@@ -57,7 +64,9 @@ class ProductsController < ShopifyApp::AuthenticatedController
   # GET /products/new
   def new
 
-    @product = Product.new(shopify_product_id: session[:shopify_collection_id])
+    @product = Product.new(shopify_product_id: @collection.id)
+
+      #session[:shopify_collection_id])
   end
 
   # GET /products/1/edit
@@ -94,12 +103,12 @@ class ProductsController < ShopifyApp::AuthenticatedController
     @product = Product.find_by_id(params[:product_id])
     @category = Category.find_by_id(params[:category_id])
 
-    @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:session[:shopify_collection_id] })
+    @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:@collection.id })
 
 
     
     if !params[:product_type_id].blank?
-      @product_type = @category.product_types.find_by_id(params[:product_type_id])
+      @product_type = @collection.category.product_types.find_by_id(params[:product_type_id])
       @tags = @product_type.tags if @product_type
     end
   end
@@ -121,24 +130,29 @@ class ProductsController < ShopifyApp::AuthenticatedController
     def set_product
       @product = Product.find(params[:product_id] || params[:id])
     end
+    def set_collection
+      @collection = @shop.collections.find(params[:collection_id] || params[:id])
+    end
 
     def set_categories
-      if session[:shopify_collection_id].blank?
+      if !@collection
         @categories = []
       else
-        @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+        @categories = @collection.category.find(params[:category_id] || params[:id])
       end
-
-      if session[:shopify_collection_id].blank?
+    end 
+    def set_product_types
+      if !@collection
         @product_types = []
       else
-        @product_types = ProductType.where(category_id: @categories.ids)
+        @product_types = @collection.category.product_types.find(params[:product_type_id] || params[:id])
       end
-
-      if session[:shopify_collection_id].blank?
+    end 
+    def set_tags
+      if !@collection
         @tags = []
       else
-        @tags = Tag.where(product_type_id: @product_types.ids)
+        @tags = @collection.category.product_type.tags.find(params[:id])
       end
     end
 

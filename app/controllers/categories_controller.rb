@@ -1,14 +1,15 @@
 class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedController -> Trying nav
+  before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /categories
   # GET /categories.json
 
   def index
-    Rails.logger.debug("set_shopify_collection_id: #{session[:shopify_collection_id]}")
+    Rails.logger.debug("collection_id: @collection.id")
 
-    if session[:shopify_collection_id].blank?
+    if !@collection
       @categories = []
     else
       @categories = @collection.categories.all
@@ -31,7 +32,7 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
   # GET /categories/new
   def new
-    @category = @collection.category.new()
+    @category = @collection.category.new(@collection)
 
     #Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
@@ -91,7 +92,9 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:category_id] || params[:id])
+      @category = @collection.category.find(params[:category_id] || params[:id])
+
+      #Category.find(params[:category_id] || params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
