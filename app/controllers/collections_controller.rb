@@ -1,4 +1,5 @@
 class CollectionsController < ShopifyApp::AuthenticatedController
+	before_action :set_shop
 	def index
 		@products = ShopifyAPI::Product.find(:all) #, params: { limit: 10 }
 		@custom_collections = ShopifyAPI::CustomCollection.find(:all) #, params: { limit: 10 }
@@ -6,7 +7,7 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 
 		# Create custom collections
 		@custom_collections.each do |c|
-			@shop.find_or_create_collection(c)  #title: c.title, collection_id: c.id)
+			@shop.find_or_create_collection(c)  
 		end
 
 		# Create smart collections
