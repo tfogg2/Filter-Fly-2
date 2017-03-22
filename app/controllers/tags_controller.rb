@@ -79,7 +79,7 @@ class TagsController < ApplicationController
     end
 
     def set_product_type
-      @product_type = @category.product_types.find(params[:product_type_id] || params[:id])
+      @product_type = @collection.category.product_types.find(params[:product_type_id] || params[:id])
     end
 
     def set_tag
