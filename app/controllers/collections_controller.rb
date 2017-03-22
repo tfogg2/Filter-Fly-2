@@ -15,5 +15,13 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 			@shop.find_or_create_collection(c)
 		end
 	end
+
+
+
+
+	def set_shop
+    
+    	@shop = Shop.find_by_shopify_domain(params[:shop])
+  	end
 	
 end
