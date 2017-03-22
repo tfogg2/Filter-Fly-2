@@ -14,4 +14,5 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 			@shop.find_or_create_collection(c)
 		end
 	end
+	
 end

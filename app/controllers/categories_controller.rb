@@ -1,15 +1,19 @@
 class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedController -> Trying nav
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_collection, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
   # GET /categories.json
+
   def index
     Rails.logger.debug("set_shopify_collection_id: #{session[:shopify_collection_id]}")
 
     if session[:shopify_collection_id].blank?
       @categories = []
     else
-      @categories = Category.where(shopify_collection_id: session[:shopify_collection_id])
+      @categories = @collection.categories.all
+
+      #Category.where(shopify_collection_id: session[:shopify_collection_id])
     end
 
 
@@ -27,7 +31,9 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
   # GET /categories/new
   def new
-    @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
+    @category = @collection.category.new()
+
+    #Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
 
   # GET /categories/1/edit
@@ -39,7 +45,9 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
 
   def create
-    @category = Category.new(category_params)
+    @category = @collection.category.new(category_params)
+
+    #Category.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -69,7 +77,7 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
-    @category = Category.find(params[:id])
+    @category = @collection.category.find(params[:id])
     @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
@@ -78,6 +86,9 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
   end
 
   private
+    def set_collection
+      @collection = @shop.collections.find(params[:collection_id] || params[:id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:category_id] || params[:id])
