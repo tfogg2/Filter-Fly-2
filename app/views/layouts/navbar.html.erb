@@ -1,6 +1,6 @@
 
 	<ul>
-    <% @customCollections.each do |collection| %>
+    <% @custom_collections.each do |collection| %>
       <li><%= collection.title %></li>
       <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
        <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
@@ -9,7 +9,7 @@
     </ul>
  
     <ul>
-    <% @smartCollections.each do |collection| %>
+    <% @smart_collections.each do |collection| %>
       <li><%= collection.title %></li>
       <button class="nav_btn"><%= link_to "Edit Navigation", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
       <button class="product_btn"><%= link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>
