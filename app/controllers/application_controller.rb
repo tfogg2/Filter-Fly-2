@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_shop
+  before_action :retrieve
 
 
   # before_action :set_shopify_collection_id
@@ -29,6 +30,10 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def retrieve(id)
+    shop = Shop.find(id)
+    ShopifyAPI::Session.new(shop.domain, shop.token)
+  end
   #def logger
    # Rails.logger.debug("///set_shopify_collection_id: #{session[:shopify_collection_id]}")
   #end
