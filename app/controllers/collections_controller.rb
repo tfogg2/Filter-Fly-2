@@ -1,5 +1,5 @@
 class CollectionsController < ShopifyApp::AuthenticatedController
-	# before_action :set_shop
+	before_action :set_shop
 	def index
 		@products = ShopifyAPI::Product.find(:all) #, params: { limit: 10 }
 		@custom_collections = ShopifyAPI::CustomCollection.find(:all) #, params: { limit: 10 }
@@ -16,12 +16,5 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 		end
 	end
 
-
-
-
-	# def set_shop
-    
- #    	@shop = Shop.find_by_shopify_domain(params[:shop])
- #  	end
 	
 end
