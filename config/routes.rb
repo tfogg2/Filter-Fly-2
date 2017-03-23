@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   mount ShopifyApp::Engine, at: '/'
   resources :products
 
+  resources :collections do
+    resources :categories do
+    	resources :product_types do
+    		resources :tags
+    	end
+    end
+  end 
 
-  resources :categories do
-  	resources :product_types do
-  		resources :tags
-  	end
-  end
-
+  
   root :to => 'collections#index'
   get 'index', to: "collections#index"
   get 'select_change', to: "products#select_change"

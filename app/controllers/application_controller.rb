@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_shop
-  before_action :self.retrieve(id)
+  before_action :retrieve
+
   # before_action :set_shopify_collection_id
   #before_action :logger
 
@@ -25,6 +26,7 @@ class ApplicationController < ActionController::Base
 
   def set_shop
     @shop = Shop.find_by_shopify_domain(params[:shop])
+
   end
 
   #def logger
