@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
   def set_shop
     @shop = Shop.find_by_shopify_domain(params[:shop])
-    ShopifyAPI::Session.new(shop.domain, shop.token)
+    ShopifyAPI::Session.new(@shop.domain, @shop.token)
   end
 
 
