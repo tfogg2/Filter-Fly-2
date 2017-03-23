@@ -2,7 +2,7 @@ class Shop < ActiveRecord::Base
   include ShopifyApp::Shop
   include ShopifyApp::SessionStorage
 
-  before_action: :retrieve
+  before_action :retrieve
 
   has_many :collections, dependent: :destroy
 	  def self.store(session)
