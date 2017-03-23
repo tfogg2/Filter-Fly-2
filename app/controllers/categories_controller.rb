@@ -99,6 +99,6 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:title, :handle, :shopify_collection_id)
+      params.require(:category).permit(:title, :handle, :shopify_collection_id, :collection_id)
     end
 end
