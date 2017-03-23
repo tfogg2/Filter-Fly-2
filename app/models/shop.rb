@@ -2,6 +2,8 @@ class Shop < ActiveRecord::Base
   include ShopifyApp::Shop
   include ShopifyApp::SessionStorage
 
+  before_action: :retrieve
+
   has_many :collections, dependent: :destroy
 	  def self.store(session)
 	   	shop = Shop.new(domain: session.url, token: session.token)
@@ -9,7 +11,7 @@ class Shop < ActiveRecord::Base
 	   	shop.id
 	  end
 
-	  def self.retrieve(id)
+	  def retrieve(id)
 	   	shop = Shop.find(id)
 	   	ShopifyAPI::Session.new(shop.domain, shop.token)
 	  end
