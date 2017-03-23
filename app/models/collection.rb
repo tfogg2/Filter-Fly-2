@@ -7,7 +7,7 @@ class Collection < ApplicationRecord
 		c = collections.find_by_shopify_collection_id(c.id)
 		return c if c
 
-		Rails.logger.debug("Collection: #{collection}")
+		#Rails.logger.debug("Collection: #{collection}")
 
 		collections.create(
 			title: collection[:title],
