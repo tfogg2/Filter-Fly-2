@@ -88,14 +88,14 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
   private
 
-    def retrieve(shopify_domain)
-      shop = Shop.find(shopify_domain)
+    def retrieve(id)
+      shop = Shop.find(id)
       ShopifyAPI::Session.new(shop.domain, shop.token)
     end
 
     def set_collection
       #current_shop = ShopifyAPI::Shop.current
-      @shop = Shop.retrieve(shopify_domain)
+      @shop = Shop.retrieve(id)
       #find_by_shopify_domain(current_shop.shopify_domain)
       @collection = @shop.collection.find(params[:collection_id] || params[:id])
     end
