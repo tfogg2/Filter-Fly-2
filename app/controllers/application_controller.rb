@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
   def set_shop
     #@shop = Shop.find_by_shopify_domain(params[:shop])
     @shop = Shop.find_by_shopify_domain(params[:shop])
+    current_shop = ShopifyAPI::Shop.current
 
   end
 

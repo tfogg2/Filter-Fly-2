@@ -93,7 +93,7 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
   
 
     def set_collection
-      current_shop = ShopifyAPI::Shop.current
+      # current_shop = ShopifyAPI::Shop.current
       #current_shop = ShopifyAPI::Shop.current
       @shop = current_shop
       #find_by_shopify_domain(current_shop.shopify_domain)
