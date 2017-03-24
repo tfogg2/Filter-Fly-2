@@ -3,6 +3,7 @@ class Shop < ActiveRecord::Base
   include ShopifyApp::SessionStorage
 
   has_many :collections, dependent: :destroy
+  before_action :with_shopify!
 	  def self.store(session)
 	   	shop = Shop.new(domain: session.url, token: session.token)
 	  	shop.save!
@@ -13,6 +14,10 @@ class Shop < ActiveRecord::Base
 	   	shop = Shop.find(id)
 	   	ShopifyAPI::Session.new(shop.domain, shop.token)
 	  end
+	  def with_shopify!
+  		session = ShopifyAPI::Session.new(shopify_domain, shopify_token)
+  		ShopifyAPI::Base.activate_session(session)
+		end
 
   	def find_or_create_collection(collection)
 		# collection is response from sohpify api
