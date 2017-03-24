@@ -88,11 +88,14 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
   private
 
+
+
   
 
     def set_collection
+      current_shop = ShopifyAPI::Shop.current
       #current_shop = ShopifyAPI::Shop.current
-      @shop = Shop.current
+      @shop = current_shop
       #find_by_shopify_domain(current_shop.shopify_domain)
       @collection = @shop.collection.find(params[:collection_id] || params[:id])
     end
