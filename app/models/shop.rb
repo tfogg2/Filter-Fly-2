@@ -3,7 +3,7 @@ class Shop < ActiveRecord::Base
   include ShopifyApp::SessionStorage
 
   has_many :collections, dependent: :destroy
-  before_action :with_shopify!
+
 	  def self.store(session)
 	   	shop = Shop.new(domain: session.url, token: session.token)
 	  	shop.save!
