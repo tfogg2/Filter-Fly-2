@@ -1,4 +1,4 @@
-class ApplicationController < ShopifyApp::AuthenticatedController #ActionController::Base
+class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_shop
@@ -28,7 +28,7 @@ class ApplicationController < ShopifyApp::AuthenticatedController #ActionControl
   def set_shop
     #@shop = Shop.find_by_shopify_domain(params[:shop])
     @shop = Shop.find_by_shopify_domain(params[:shop])
-    current_shop = ShopifyAPI::Shop.current
+    current_shop = Shop.current
 
   end
 
