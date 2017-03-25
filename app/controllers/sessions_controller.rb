@@ -1,4 +1,4 @@
-class SessionsController < ApplicationConroller
+class SessionsController <ApplicationConroller
 	def show
 		ShopifyAPI::Base.activate_session(session)
 	    response = request.env['omniauth.auth']
