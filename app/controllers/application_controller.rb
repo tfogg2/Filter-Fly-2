@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     # current_shop = ShopifyAPI::Shop.current
     # @shop = Shop.find_by_shopify_domain(current_shop.domain)
     #@shop = ShopifyAPI::Shop.current
-    session = ShopifyAPI::Session.new(shop, @tokens[shop])
+    session = ShopifyAPI::Session.new(@shop, @tokens[@shop])
     ShopifyAPI::Base.activate_session(session)
     @shop = ShopifyAPI::Shop.current
    # @shop = Shop.find_by_shopify_domain(params[:shop])
