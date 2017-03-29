@@ -11,7 +11,7 @@ class Shop < ActiveRecord::Base
   end
 
   def self.retrieve(id)
-  	return if id.blank?
+  	# return if id.blank?
    	shop = Shop.find(id)
    	ShopifyAPI::Session.new(shop.domain, shop.token)
   end
