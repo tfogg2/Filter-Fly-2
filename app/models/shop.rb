@@ -13,7 +13,7 @@ class Shop < ActiveRecord::Base
   def self.retrieve(id)
   	# return if id.blank?
    	shop = Shop.find(id)
-   	ShopifyAPI::Session.new(shop.domain, shop.token)
+   	ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
   end
   def with_shopify!
 	session = ShopifyAPI::Session.new(shopify_domain, shopify_token)
