@@ -5,7 +5,7 @@ class Shop < ActiveRecord::Base
   has_many :collections, dependent: :destroy
 
   def self.store(session)
-   	shop = Shop.new(shopify_domain: session.url, shopify_token: session.shopify_token) #session.url
+   	shop = Shop.new(domain: session.url, token: session.shopify_token) #session.url
   	shop.save!
    	shop.id
   end
