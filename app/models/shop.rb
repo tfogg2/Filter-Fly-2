@@ -4,11 +4,11 @@ class Shop < ActiveRecord::Base
 
   has_many :collections, dependent: :destroy
 
-  def self.store(session)
-   	shop = Shop.new(shopify_domain: session.url, shopify_token: session.token) #session.url
-  	shop.save!
-   	shop.id
-  end
+  # def self.store(session)
+  #  	shop = Shop.new(shopify_domain: session.url, shopify_token: session.token) #session.url
+  # 	shop.save!
+  #  	shop.id
+  # end
 
   def self.retrieve(id)
   	# return if id.blank?
