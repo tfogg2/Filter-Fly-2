@@ -5,9 +5,9 @@ class Shop < ActiveRecord::Base
   has_many :collections, dependent: :destroy
 
   def self.store(session)
-   # 	shop = Shop.new(shopify_domain: session.url, shopify_token: session.token) #session.url
-  	# shop.save!
-   # 	shop.id
+   	shop = Shop.new(shopify_domain: session.url, shopify_token: session.token) #session.url
+  	shop.save!
+   	shop.id
   end
 
   def self.retrieve(id)
@@ -15,10 +15,10 @@ class Shop < ActiveRecord::Base
    	shop = Shop.find(id)
    	ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
   end
-  def with_shopify!
-	session = ShopifyAPI::Session.new(shopify_domain, shopify_token)
-	ShopifyAPI::Base.activate_session(session)
-  end
+ #  def with_shopify!
+	# session = ShopifyAPI::Session.new(shopify_domain, shopify_token)
+	# ShopifyAPI::Base.activate_session(session)
+ #  end
 
   	def find_or_create_collection(collection)
 		# collection is response from sohpify api
