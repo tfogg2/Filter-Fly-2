@@ -26,7 +26,9 @@
 
         </div> -->
         <div id="left_panel">
-          <p class='logo'><%= link_to "Filter Fly", index_path %></p>
+            <%= link_to index_path, do %>
+                <%= image_tag('ffLogo.png') %>
+            <%- end %>
           <%= render 'shared/navbar' %>
           <ul class= "ul_nav">  
            <!--  <li><%# link_to "All Collections", index_path %></li> -->
