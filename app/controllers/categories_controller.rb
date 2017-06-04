@@ -1,5 +1,5 @@
 class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedController -> Trying nav
-  # before_action :set_collection
+  before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   
 
@@ -93,7 +93,7 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
     def set_collection
       # current_shop = ShopifyAPI::Shop.current
       
-      @collection = @shop.collection.find(params[:collection_id] || params[:id])
+      @collection = @shop.collection.find(params[:shopify_collection_id] || params[:id])
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
