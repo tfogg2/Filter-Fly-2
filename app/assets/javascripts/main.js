@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 		$.ajax({
 	      type: 'GET',
-	      url: "product_types/new",//:category_id/product_types.json",
+	      url: "product_types/new.html",//:category_id/product_types.json",
 	      success: function(type) {
 	      	$newType.html('<div> '+ type + '</div>');
 	      	
@@ -184,9 +184,9 @@ $(document).ready(function () {
 
 
 
-	var testJava = getElementById("testJava");
-	alert(testJava.value);
-	console.log("success");
+	// var testJava = getElementById("testJava");
+	// alert(testJava.value);
+	// console.log("success");
 
 	// TEST DATA TABLE //
 
