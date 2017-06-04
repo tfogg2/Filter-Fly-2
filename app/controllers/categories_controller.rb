@@ -1,5 +1,5 @@
 class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedController -> Trying nav
-  before_action :set_collection
+  # before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   
 
