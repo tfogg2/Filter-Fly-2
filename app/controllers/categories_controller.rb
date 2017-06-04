@@ -93,7 +93,7 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
     def set_collection
       # current_shop = ShopifyAPI::Shop.current
       
-      @collection = @shop.collection.find(params[:shopify_collection_id] || params[:id])
+      # @collection = @shop.collection.find(params[:shopify_collection_id] || params[:id])
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
