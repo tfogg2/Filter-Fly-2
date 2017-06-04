@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 		$.ajax({
 	      type: 'GET',
-	      url: "product_types/new.html",//:category_id/product_types.json",
+	      url: "product_types/new",//:category_id/product_types.json",
 	      success: function(type) {
 	      	$newType.html('<div> '+ type + '</div>');
 	      	
