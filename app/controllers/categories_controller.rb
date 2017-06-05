@@ -95,7 +95,7 @@ class CategoriesController < ShopifyApp::AuthenticatedController
     def set_collection
       @shop = ShopifyAPI::Shop.current
 
-      @collection = Collection.find(params[:id])
+      @collection = ShopifyCollection.find(params[:shopify_collection_id])
       
       # @collection = .find(params[:shopify_collection_id] || params[:id])
 
