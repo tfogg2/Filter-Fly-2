@@ -46,7 +46,7 @@ class CategoriesController <ApplicationController #ShopifyApp::AuthenticatedCont
 
 
   def create
-    @category = @collection.category.new(category_params)
+    @category = Category.new(category_params)
 
     #Category.new(category_params)
 
