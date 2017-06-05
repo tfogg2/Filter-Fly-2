@@ -91,7 +91,7 @@ class CategoriesController < ApplicationController
   
 
     def set_collection
-      @current_shop = ShopifyAPI::Shop.current
+      # @current_shop = ShopifyAPI::Shop.current
 
 
       
