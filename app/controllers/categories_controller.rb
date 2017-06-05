@@ -95,7 +95,8 @@ class CategoriesController <ShopifyApp::AuthenticatedController
 
 
       
-      @collection = @current_shop.where(params[:shopify_collection_id] || params[:id])
+      @collection = smart_collections.find(params[:shopify_collection_id] || params[:id])
+      @collection = custom_collections.find(params[:shopify_collection_id] || params[:id])
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
