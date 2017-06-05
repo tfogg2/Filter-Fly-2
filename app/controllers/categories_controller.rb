@@ -1,4 +1,4 @@
-class CategoriesController <ShopifyApp::AuthenticatedController 
+class CategoriesController < ApplicationController 
   before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   
@@ -95,7 +95,7 @@ class CategoriesController <ShopifyApp::AuthenticatedController
 
 
       
-      @collection = @collection.find(params[:shopify_collection_id] || params[:id])
+      @collection = @collections.find(params[:shopify_collection_id] || params[:id])
 
     end
     # Use callbacks to share common setup or constraints between actions.
