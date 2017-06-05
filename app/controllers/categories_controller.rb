@@ -46,6 +46,7 @@ class CategoriesController < ApplicationController
 
 
   def create
+
     @category = @collection.category.new(category_params)
 
     #Category.new(category_params)
@@ -95,7 +96,7 @@ class CategoriesController < ApplicationController
 
 
       
-      # @collection = @collections.find(params[:shopify_collection_id] || params[:id])
+      @collection = Collection.find(params[:shopify_collection_id] || params[:id])
 
     end
     # Use callbacks to share common setup or constraints between actions.
