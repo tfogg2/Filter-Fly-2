@@ -96,14 +96,13 @@ class CategoriesController < ApplicationController
 
 
       
-      @collection = CustomCollection.find(params[:shopify_collection_id] || params[:id]) 
-      @collection = SmartCollection.find(params[:shopify_collection_id] || params[:id])
+      # @collection = .find(params[:shopify_collection_id] || params[:id])
 
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = @collection.category.find(params[:category_id] || params[:id])
-
+      @category = Category.find(params[:category_id] || params[:id])
+      # @category = @collection.category.find(params[:category_id] || params[:id])
       #Category.find(params[:category_id] || params[:id])
     end
 
