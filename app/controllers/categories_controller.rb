@@ -1,4 +1,5 @@
-class CategoriesController < ApplicationController 
+class CategoriesController < ShopifyApp::AuthenticatedController
+  #ApplicationController 
   before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   
@@ -33,8 +34,8 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     # @category = @collection.category.new(@collection)
-
-    @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
+    @category = @collection.category.new()
+    # @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
 
   # GET /categories/1/edit
@@ -48,7 +49,7 @@ class CategoriesController < ApplicationController
   def create
 
     # @category = @collection.category.new(category_params)
-    @category = Category.new(category_params)
+    @category = @collection.category.new(category_params)
     #Category.new(category_params)
 
     respond_to do |format|
@@ -92,9 +93,9 @@ class CategoriesController < ApplicationController
   
 
     def set_collection
-      # @current_shop = ShopifyAPI::Shop.current
+      @shop = ShopifyAPI::Shop.current
 
-
+      @collection = @shop.collections.find(params[:collection_id] || params[:id])
       
       # @collection = .find(params[:shopify_collection_id] || params[:id])
 
