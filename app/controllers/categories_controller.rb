@@ -95,7 +95,7 @@ class CategoriesController < ApplicationController
 
 
       
-      @collection = @collections.find(params[:shopify_collection_id] || params[:id])
+      # @collection = @collections.find(params[:shopify_collection_id] || params[:id])
 
     end
     # Use callbacks to share common setup or constraints between actions.
