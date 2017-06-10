@@ -1,6 +1,6 @@
 class CategoriesController < ShopifyApp::AuthenticatedController
   #ApplicationController 
-  before_action :set_collection
+  # before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   
 
@@ -49,8 +49,9 @@ class CategoriesController < ShopifyApp::AuthenticatedController
   def create
 
     # @category = @collection.category.new(category_params)
-    @category = @collection.category.new(category_params)
-    #Category.new(category_params)
+    # @category = @collection.category.new(category_params)
+    @category = Category.new(category_params)
+    @category.collection_id = @collection.id
 
     respond_to do |format|
       if @category.save
@@ -92,14 +93,14 @@ class CategoriesController < ShopifyApp::AuthenticatedController
 
   
 
-    def set_collection
-      @shop = ShopifyAPI::Shop.current
+    # def set_collection
+    #   @shop = ShopifyAPI::Shop.current
 
-      @collection = ShopifyCollection.find(params[:shopify_collection_id])
+    #   @collection = ShopifyCollection.find(params[:shopify_collection_id])
       
-      # @collection = .find(params[:shopify_collection_id] || params[:id])
+    #   # @collection = .find(params[:shopify_collection_id] || params[:id])
 
-    end
+    # end
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:category_id] || params[:id])
