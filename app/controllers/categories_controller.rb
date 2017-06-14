@@ -1,8 +1,8 @@
 class CategoriesController < ShopifyApp::AuthenticatedController
-  #ApplicationController 
+  #ApplicationController
   # before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  
+
 
   # GET /categories
   # GET /categories.json
@@ -50,8 +50,8 @@ class CategoriesController < ShopifyApp::AuthenticatedController
 
     # @category = @collection.category.new(category_params)
     # @category = @collection.category.new(category_params)
-    @category = Category.new(category_params)
-    @category.collection_id = @collection.id
+    @category = @collection.categories.new(category_params)
+    
 
     respond_to do |format|
       if @category.save
@@ -91,13 +91,13 @@ class CategoriesController < ShopifyApp::AuthenticatedController
 
   private
 
-  
+
 
     # def set_collection
     #   @shop = ShopifyAPI::Shop.current
 
     #   @collection = ShopifyCollection.find(params[:shopify_collection_id])
-      
+
     #   # @collection = .find(params[:shopify_collection_id] || params[:id])
 
     # end
