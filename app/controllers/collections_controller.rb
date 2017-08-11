@@ -7,14 +7,14 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 
 		# Create custom collections
 		@custom_collections.each do |c|
-			@shop.find_or_create_collection(c)  
+			@shop.find_or_create_by(c)
 		end
 
 		# Create smart collections
 		@smart_collections.each do |c|
-			@shop.find_or_create_collection(c)
+			@shop.find_or_create_by(c)
 		end
 	end
 
-	
+
 end
