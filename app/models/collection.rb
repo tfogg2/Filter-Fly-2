@@ -2,7 +2,7 @@ class Collection < ApplicationRecord
 	belongs_to :shop
 	has_many :categories, dependent: :destroy
 
-	def find_or_create_by(collection)
+	def find_or_create_collection(collectio)
 		# collection is response from shopify api
 		c = collections.find_by_shopify_collection_id(c.id)
 		return c if c
@@ -14,7 +14,7 @@ class Collection < ApplicationRecord
 			shopify_collection_id: collection.id #[:id], # Dont know what the actual id is called
 		)
 	end
-	
+
 	def as_json
 		{
 			id: id,
