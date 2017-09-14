@@ -21,9 +21,11 @@
       <% end %>
 
       <% @smart_collections.each do |collection| %>
+      <%= link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do %>
         <div class="collection">
-          <h3 class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></h3>
+          <h3 class="collectionTitle"><%= collection.title %></h3>
         </div>
+      <%- end %>
       <% end %>
 
       <%- else %>
