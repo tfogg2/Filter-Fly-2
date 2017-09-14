@@ -24,6 +24,7 @@ body{
 	width: 200px;
 	height: 40px;
 	background: white;
+	margin: 0;
 }
 #content{
 	margin-top: 60px;
@@ -32,7 +33,7 @@ body{
 .collection{
 	background: #161616;
 	width: 200px;
-	height: 150px;
-	margin-right: 20px;
-	float: left;
+	height: 200px;
+	margin: 0px 20px 20px 0;
+	display: inline-block;
 }
