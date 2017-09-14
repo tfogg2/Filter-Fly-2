@@ -13,9 +13,11 @@
   <h1>Collections</h1>
     <%- if @custom_collections.any? or @smart_collections.any? %>
       <% @custom_collections.each do |collection| %>
-        <div class="collection">
-          <h3 class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></h3>
-        </div>
+        <%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do %>
+          <div class="collection">
+            <h3 class="collectionTitle"><%= collection.title %></h3>
+          </div>
+        <%- end %>
       <% end %>
 
       <% @smart_collections.each do |collection| %>
