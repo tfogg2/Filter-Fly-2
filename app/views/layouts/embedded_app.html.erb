@@ -19,30 +19,8 @@
   <body>
     <div class="app-wrapper">
       <div class="app-content">
-      <!--   <div id="top_panel">
-          <ul class="top_panel_nav">
-            
-          </ul>
-
-        </div> -->
-        <div id="left_panel">
-<!--             <%# link_to index_path, do %>
-                <%= image_tag('ffLogo.png') %>
-            <%# end %> -->
-          <%= render 'shared/navbar' %>
-          <ul class= "ul_nav">  
-           <!--  <li><%# link_to "All Collections", index_path %></li> -->
-
-            
-          </ul>
-          
-          <label class="nav_label support"><%= link_to "Support", index_path %></label>
-
-
-        </div>
-        <main role="main">
-          <%= yield %>
-        </main>
+        <%= render 'shared/navbar' %>
+        <%= yield %>
       </div>
     </div>
 

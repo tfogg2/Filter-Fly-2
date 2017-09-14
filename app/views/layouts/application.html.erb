@@ -6,15 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body>
-   <!--  <div id="top_panel"></div> -->
-  	<div id="left_panel">
-  		<%= render "shared/navbar" %>
-  	</div>
-  	
+  	<%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>
