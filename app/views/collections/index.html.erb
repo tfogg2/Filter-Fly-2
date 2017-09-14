@@ -9,16 +9,13 @@
   </script>
 <% end %>
 
-<div id="navbar">
-  <%= render 'shared/navbar' %>
-</div>
 <div id="collection_index">
   <h1>Collections</h1>
   <legend><%= link_to "Background", home_path %></legend>
-    
+
       <!-- <div class="tbl-header">
         <table cellpadding="0" cellspacing="0">
-        
+
           <thead>
             <tr class="th-row">
               <th>Title</th>
@@ -28,20 +25,20 @@
               <th>Tags</th>
 
               <th>Products</th>
-              <th colspan="3"></th> 
+              <th colspan="3"></th>
 
             </tr>
           </thead>
-        
+
         </table>
       </div> -->
       <div class="table">
       <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
-        
+
           <%- if @custom_collections.any? or @smart_collections.any? %>
           <tbody >
-     
+
             <% @custom_collections.each do |collection| %>
               <tr class="row">
                 <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
@@ -52,7 +49,7 @@
                <!--  <td><%# collection.categories.count %>0</td>
                 <td><%# collection.categories.count %>0</td> -->
                  <!-- <td><button class="product_btn"><%# link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-   -->           
+   -->
             <% end %>
           </tbody>
 
@@ -82,4 +79,3 @@
     <div id="begin"><h2>You should create these on shopify and then return.</h2></div>
   <%- end %>
 </div>
-
