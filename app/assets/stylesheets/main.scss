@@ -31,9 +31,15 @@ body{
 	padding: 20px;
 }
 .collection{
+	border-radius: 3px;
 	background: #161616;
 	width: 170px;
 	height: 140px;
 	margin: 0px 20px 20px 0;
 	display: inline-block;
+}
+.collection h3 a{
+	color: white;
+	text-align: center;
+	padding-top:20px;
 }
