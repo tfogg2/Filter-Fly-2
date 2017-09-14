@@ -21,9 +21,18 @@ body{
 }
 .right-nav{
 	float: right;
-	width: 100px;
+	width: 200px;
 	height: 40px;
+	background: white;
 }
 #content{
+	margin-top: 60px;
 	padding: 20px;
+}
+.collection{
+	background: #161616;
+	width: 200px;
+	height: 150px;
+	margin-right: 20px;
+	float: left;
 }

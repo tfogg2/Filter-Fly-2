@@ -11,67 +11,22 @@
 
 <div id="collection_index">
   <h1>Collections</h1>
-  <legend><%= link_to "Background", home_path %></legend>
+    <%- if @custom_collections.any? or @smart_collections.any? %>
+      <% @custom_collections.each do |collection| %>
+        <div class="collection">
+          <h3 class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></h3>
+        </div>
+      <% end %>
 
-      <!-- <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0">
+      <% @smart_collections.each do |collection| %>
+        <div class="collection">
+          <h3 class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></h3>
+        </div>
+      <% end %>
 
-          <thead>
-            <tr class="th-row">
-              <th>Title</th>
-              <th>Filters</th>
-              <th>Categories</th>
-              <th>Types</th>
-              <th>Tags</th>
+      <%- else %>
 
-              <th>Products</th>
-              <th colspan="3"></th>
-
-            </tr>
-          </thead>
-
-        </table>
-      </div> -->
-      <div class="table">
-      <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-
-          <%- if @custom_collections.any? or @smart_collections.any? %>
-          <tbody >
-
-            <% @custom_collections.each do |collection| %>
-              <tr class="row">
-                <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
-               </tr>
-  <!--               <td><button class="product_btn"><%# link_to "Filters", categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button>  -->
-
-
-               <!--  <td><%# collection.categories.count %>0</td>
-                <td><%# collection.categories.count %>0</td> -->
-                 <!-- <td><button class="product_btn"><%# link_to "Products", products_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></button></td>
-   -->
-            <% end %>
-          </tbody>
-
-            <%# paginate @custom_collections  %>
-
-
-
-          <tbody>
-            <% @smart_collections.each do |collection| %>
-            <tr class="row">
-                <td class="collectionTitle"><%= link_to collection.title, categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) %></td>
-              </tr>
-            <% end %>
-
-            <%# paginate @smart_collections  %>
-          <%- else %>
-
-          <%- end %>
-        </tbody>
-      </table>
-
-  </div>
+      <%- end %>
   </div>
   <%- if @custom_collections.any? or @smart_collections.any? %>
     <div id="begin"><h2>Choose a collection to begin.</h2></div>
