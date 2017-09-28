@@ -2,8 +2,8 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 	# before_action :set_shop
 	def index
 		@products = ShopifyAPI::Product.find(:all) #, params: { limit: 10 }
-		@custom_collections = ShopifyAPI::CustomCollection.find(:all) #, params: { limit: 10 }
-		@smart_collections = ShopifyAPI::SmartCollection.find(:all) #, params: { limit: 10 }
+		@custom_collections = ShopifyAPI::CustomCollection.search(params[:search]) #.find(:all) #, params: { limit: 10 }
+		@smart_collections = ShopifyAPI::SmartCollection.search(params[:search]) #.find(:all) #, params: { limit: 10 }
 
 		@collections = @custom_collections && @smart_collections
 
