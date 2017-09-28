@@ -22,15 +22,12 @@
         .collection
           h3.collectionTitle
             = collection.title
-        - - end
-      - @smart_collections.each do |collection|
-        = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
-          .collection
-            h3.collectionTitle
-              = collection.title
-          - - end
-      - else
-        - - end
+    - @smart_collections.each do |collection|
+      = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
+        .collection
+          h3.collectionTitle
+            = collection.title
+
 - if @custom_collections.any? or @smart_collections.any?
   #begin
     h2
@@ -39,4 +36,3 @@
   #begin
     h2
       | You should create these on shopify and then return.
-  - - end
