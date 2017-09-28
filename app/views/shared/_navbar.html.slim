@@ -17,9 +17,6 @@
         - else
           label.nav_label
             = link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title])
-          - - end
-          - - end
-          - # end
           - if @category && @product_types && !@product_type
             label.nav_label.selected
               = link_to "Types", category_product_types_path
@@ -27,15 +24,11 @@
             - if @product_type
               label.nav_label
                 = link_to "Types", category_product_types_path
-              - - end
-              - - end
-              - # if @product_type
-              - # end
               - if @product_type && @tags
                 label.nav_label.selected
                   = link_to "Tags", category_product_type_tags_path
               - else
-                - - end
+
     button.product_btn
       = link_to "Products", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]), {class: "product_nav"}
   label.nav_label.support
@@ -43,4 +36,3 @@
   - # if @products
   - # end
 - else
-  - - end
