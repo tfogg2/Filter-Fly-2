@@ -20,10 +20,10 @@
           = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
             .project-messages
                 = collection.title
-    .conversation-header
+  .conversation-header
 
-    #conversation
-      h1 Start a conversation
+  #conversation
+    h1 Start a conversation
 
 
 - if @custom_collections.any? or @smart_collections.any?
