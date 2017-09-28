@@ -1,5 +1,5 @@
-= form_tag collectionss_path, :method => :get, :id => "collections_search" do |f|
-    span.search-icon = image_tag('search-icon.svg') 
+= form_tag root_path, :method => :get, :id => "collections_search" do |f|
+    span.search-icon = image_tag('search-icon.svg')
     = text_field_tag :search, params[:search], :autofocus => false, placeholder: "Search", :autocomplete => :off
     span.clear &times;
 end

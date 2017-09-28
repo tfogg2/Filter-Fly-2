@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
 
   root :to => 'collections#index'
+
   get 'home', to: "collections#home"
   get 'index', to: "collections#index"
   get 'select_change', to: "products#select_change"
