@@ -11,22 +11,22 @@
       #search-modal
 
     #project-list
+      - if @custom_collections.any? or @smart_collections.any?
+        - @custom_collections.each do |collection|
+          = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
+            .collection
+              h3.collectionTitle
+                = collection.title
+        - @smart_collections.each do |collection|
+          = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
+            .collection
+              h3.collectionTitle
+                = collection.title
+    .conversation-header
 
+    #conversation
+      h1 Start a conversation
 
-#collection_index
-  h1
-    | Collections
-  - if @custom_collections.any? or @smart_collections.any?
-    - @custom_collections.each do |collection|
-      = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
-        .collection
-          h3.collectionTitle
-            = collection.title
-    - @smart_collections.each do |collection|
-      = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
-        .collection
-          h3.collectionTitle
-            = collection.title
 
 - if @custom_collections.any? or @smart_collections.any?
   #begin

@@ -35,8 +35,8 @@ a:hover{
 	margin: 0 20px;
 }
 #content{
-	background: #fff;
-	padding: 10px 20px;
+	// // background: #fff;
+	// padding: 10px 20px;
 	margin: 70px 0px 10px 0px;
 
 }
@@ -116,4 +116,31 @@ a:hover{
   background: white;
   // border-bottom: 1px solid #e0e0e0;
   box-sizing: border-box;
+}
+.conversation-header{
+  margin-left: 24%;
+  margin-bottom: 0;
+  padding: 15px 0;
+  padding-left: 1%;
+  border-left: none;
+  height: 80px;
+  background: #fff;
+  box-sizing: border-box;
+  width: 76%;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+.conversation-header p{
+  margin-left: 25px;
+}
+#conversation{
+  float: right;
+  width: 75%;
+  text-align: left;
+  height: calc(100vh - 225px);
+  overflow: auto;
+  padding: 0 1%;
+  background: #fff;
+  box-sizing: border-box;
+  border-right: 1px solid #e0e0e0;
 }
