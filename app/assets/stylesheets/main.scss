@@ -4,6 +4,8 @@ body{
 }
 a{
 	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	font-family: Open Sans,open-sans,sans-serif;
 }
 a:hover{
 	background: none;
@@ -150,4 +152,16 @@ a:hover{
   height: 35px;
   padding: 20px;
   border-bottom: .5px solid #f1f1f1;
+}
+.p-name{
+  color: #272727;
+  margin: 5px 0;
+  font-size: 16px;
+}
+.p-name a{
+  text-decoration: none;
+}
+.id:hover .p-name{
+  text-decoration: underline;
+  color: #66b5e4;
 }
