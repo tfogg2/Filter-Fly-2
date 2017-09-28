@@ -24,7 +24,14 @@ class Collection < ApplicationRecord
 	end
 
 
-	def self.search(search)
+	def @custom_collections.search(search)
+		if search
+			where('title iLIKE ?', "%#{search}%").order("name ASC")
+		else
+			all
+		end
+	end
+	def @smart_collections.search(search)
 		if search
 			where('title iLIKE ?', "%#{search}%").order("name ASC")
 		else
