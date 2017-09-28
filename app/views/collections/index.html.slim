@@ -23,13 +23,16 @@
   .conversation-header
 
   #conversation
-    h1 Start a conversation
-
+    - if @custom_collections.any? or @smart_collections.any?
+      h1 Choose a collection to begin.
+    - else
+    
+      h1 You should create these on shopify and then return.
 
 - if @custom_collections.any? or @smart_collections.any?
   #begin
     h2
-      | Choose a collection to begin.
+      |
 - else
   #begin
     h2
