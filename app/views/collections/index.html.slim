@@ -24,10 +24,11 @@
 
   #conversation
     - if @custom_collections.any? or @smart_collections.any?
-      h1 Choose a collection to begin.
+      .create_messages
+        h1 Choose a collection to begin.
     - else
-
-      h1 You should create these on shopify and then return.
+      .create_messages
+        h1 You should create these on shopify and then return.
 
 - if @custom_collections.any? or @smart_collections.any?
   #begin
