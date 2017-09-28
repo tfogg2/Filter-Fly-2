@@ -5,7 +5,7 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 		@custom_collections = ShopifyAPI::CustomCollection.find(:all) #, params: { limit: 10 }
 		@smart_collections = ShopifyAPI::SmartCollection.find(:all) #, params: { limit: 10 }
 
-		@collections = (@custom_collections && @smart_collections).search(params[:search])
+		@collections = @custom_collections && @smart_collections
 
 		# @collections_search = @collections.search(params[:search])
 		# Create custom collections
@@ -19,5 +19,9 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 		end
 	end
 
+	def search
+		@custom_collections = ShopifyAPI::CustomCollection.search(params[:search]) #, params: { limit: 10 }
+		@smart_collections = ShopifyAPI::SmartCollection.search(params[:search])
+	end
 
 end
