@@ -14,13 +14,11 @@
       - if @custom_collections.any? or @smart_collections.any?
         - @custom_collections.each do |collection|
           = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
-            .collection
-              h3.collectionTitle
+            .project-messages
                 = collection.title
         - @smart_collections.each do |collection|
           = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
-            .collection
-              h3.collectionTitle
+            .project-messages
                 = collection.title
     .conversation-header
 
