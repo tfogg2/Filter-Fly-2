@@ -2,7 +2,7 @@ class Collection < ApplicationRecord
 	belongs_to :shop
 	has_many :categories, dependent: :destroy
 
-	def find_or_create_collection(collectio)
+	def find_or_create_collection(collection)
 		# collection is response from shopify api
 		c = collections.find_by_shopify_collection_id(c.id)
 		return c if c
@@ -21,5 +21,14 @@ class Collection < ApplicationRecord
 			title: title,
 			categories: categories.as_json
 		}
+	end
+
+
+	def self.search(search)
+		if search
+			where('title iLIKE ?', "%#{search}%").order("name ASC")
+		else
+			all
+		end
 	end
 end
