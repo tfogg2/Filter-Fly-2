@@ -12,6 +12,8 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'pg'
 
+gem "slim-rails"
+
 gem 'kaminari'
 gem 'simple_form'
 # Use Uglifier as compressor for JavaScript assets
@@ -59,11 +61,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do 
+group :production do
 	gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-

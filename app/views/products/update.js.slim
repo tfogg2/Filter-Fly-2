@@ -1,0 +1,5 @@
+| $("#form-element-
+= @product ?  @product.id : 'nil'
+| ").replaceWith("
+= j render('products/form_element', {product: @product, category: @product.category, product_type: @product.product_type, tags: @product.tags})
+| "); $('.chosen-select').chosen({ no_results_text: 'No results matched', width: '120px', allow_single_deselect: true, overflow_hidden: false });

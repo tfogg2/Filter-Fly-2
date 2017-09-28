@@ -1,0 +1,12 @@
+#product_form
+  - if @shopify_products.any?
+    - @shopify_products.each do |shopify_product|
+      #newFormElement
+        p
+          = shopify_product.title
+        - - product = @products.select{|p| p.shopify_product_id == shopify_product.id.to_s }[0]
+        = render 'products/form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags}
+      - # render 'products/simple_form_element', {shopify_product: shopify_product, product: product, category: product.category, product_type: product.product_type, tags: product.tags }
+  - else
+    - - end
+- # LINE 15, ADD PRODUCT TYPES IF @CATEGORY HAS ANY ----> product_types: if @category.product_types.any? == @category.product_types else product_types == [] end}

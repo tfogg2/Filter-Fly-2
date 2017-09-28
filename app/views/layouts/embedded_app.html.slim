@@ -1,0 +1,33 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    - application_name = ShopifyApp.configuration.application_name
+    title
+      = application_name.presence || 'Embedded Shopify App Example'
+    = stylesheet_link_tag 'application'
+    script[src="https://cdn.shopify.com/s/assets/external/app.js"]
+    script[type="text/javascript"]
+      |  ShopifyApp.init({ apiKey: 'ef2b4e3a8c09d66e0eece4c732b271fb', shopOrigin: 'https://CURRENT_LOGGED_IN_SHOP.myshopify.com' }); 
+    = javascript_include_tag 'application', "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    .app-wrapper
+      .app-content
+        = render 'shared/navbar'
+        #navbar
+          .inner-nav
+            .logo
+            ul.right-nav
+
+        #content
+          = yield
+    = render 'layouts/flash_messages'
+    |  <script src="https://cdn.shopify.com/s/assets/external/app.js?
+    = Time.now.strftime('%Y%m%d%H')
+    | ">
+    script[type="text/javascript"]
+      |  ShopifyApp.init({ apiKey: "<ruby code="= ShopifyApp.configuration.api_key"></ruby>", shopOrigin: <ruby code="= "https://#{ @shop_session.url }" if @shop_session"></ruby>, debug: <ruby code="= Rails.env.development? ? 'true' : 'false'"></ruby>, forceRedirect: true }); 
+    - if content_for?(:javascript)
+      #ContentForJavascript[data-turbolinks-temporary]
+        = yield :javascript

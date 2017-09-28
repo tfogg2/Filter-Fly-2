@@ -1,0 +1,20 @@
+.page
+  = render 'shared/breadcrumb'
+  #collection_index
+    p#notice
+      = notice
+    p
+      strong
+        | Product type:
+      = @tag.product_type.title
+    p
+      strong
+        | Title:
+      = @tag.title
+    p
+      strong
+        | Handle:
+      = @tag.handle
+    = link_to 'Edit', edit_category_product_type_tag_path(@category, @product_type, @tag)
+    |  | 
+    = link_to 'Back', category_product_type_tags_path(@category, @product_type)

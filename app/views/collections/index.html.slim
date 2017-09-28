@@ -1,0 +1,42 @@
+- content_for :javascript do
+  script[type="text/javascript"]
+    |  ShopifyApp.ready(function(){ ShopifyApp.Bar.initialize({ title: "Home", icon: "<ruby code="= asset_path('favicon.ico')"></ruby>" }); });
+
+
+#conversation-box
+  #project-message-box
+    #search-projects
+
+    #modal-dialog
+      #search-modal
+
+    #project-list
+
+
+#collection_index
+  h1
+    | Collections
+  - if @custom_collections.any? or @smart_collections.any?
+    - @custom_collections.each do |collection|
+      = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
+        .collection
+          h3.collectionTitle
+            = collection.title
+        - - end
+      - @smart_collections.each do |collection|
+        = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title) do
+          .collection
+            h3.collectionTitle
+              = collection.title
+          - - end
+      - else
+        - - end
+- if @custom_collections.any? or @smart_collections.any?
+  #begin
+    h2
+      | Choose a collection to begin.
+- else
+  #begin
+    h2
+      | You should create these on shopify and then return.
+  - - end

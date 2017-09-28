@@ -1,0 +1,15 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @category.title
+p
+  strong
+    | Handle:
+  = @category.handle
+= link_to 'Product Types', category_product_types_path(@category)
+|  | 
+= link_to 'Edit', edit_category_path(@category)
+|  | 
+= link_to 'Back', categories_path

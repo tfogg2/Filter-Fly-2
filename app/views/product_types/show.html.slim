@@ -1,0 +1,19 @@
+p#notice
+  = notice
+p
+  strong
+    | Category:
+  = @product_type.category.title
+p
+  strong
+    | Title:
+  = @product_type.title
+p
+  strong
+    | Handle:
+  = @product_type.handle
+= link_to 'Tags', category_product_type_tags_path(@category, @product_type)
+|  | 
+= link_to 'Edit', edit_category_product_type_path(@category, @product_type)
+|  | 
+= link_to 'Back', category_product_types_path(@category)

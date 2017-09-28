@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | Product type:
+  = @product.product_type.title
+p
+  strong
+    | Category:
+  = @product.category.title
+p
+  strong
+    | Shopify product id:
+  = @product.shopify_product_id
+= link_to 'Edit', edit_product_path(@product)
+|  | 
+= link_to 'Back', products_path

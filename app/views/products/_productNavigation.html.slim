@@ -1,0 +1,26 @@
+table
+  thead
+    tr
+      th
+        | Shopify Product Id 
+      th
+        | Product Id 
+      th
+        | Category Id 
+      th
+        | Product Type Id 
+      th[colspan="4"]
+  tbody
+    - @products.each do |product|
+      .products
+
+      tr
+        td
+          = product.shopify_product_id
+        td
+          = product.id
+        td
+          = product.category_id
+        td
+          = product.product_type_id
+  br

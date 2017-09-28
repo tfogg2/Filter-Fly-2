@@ -1,0 +1,46 @@
+- if session[:shopify_collection_title] && session[:shopify_collection_id]
+  .ul_nav
+    p.logo
+      = link_to "Filter Fly", index_path
+    .primary_nav
+      label.nav_label.collection_label
+        = link_to session[:shopify_collection_title], categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title])
+      - # if ["products"].include?(params[:controller])
+      - # else
+      - # end
+      - # if @category
+      - # end
+      - if !["products"].include?(params[:controller])
+        - if !@category && !@product_type && !@tag
+          label.nav_label.selected
+            = link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title])
+        - else
+          label.nav_label
+            = link_to "Categories", categories_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title])
+          - - end
+          - - end
+          - # end
+          - if @category && @product_types && !@product_type
+            label.nav_label.selected
+              = link_to "Types", category_product_types_path
+          - else
+            - if @product_type
+              label.nav_label
+                = link_to "Types", category_product_types_path
+              - - end
+              - - end
+              - # if @product_type
+              - # end
+              - if @product_type && @tags
+                label.nav_label.selected
+                  = link_to "Tags", category_product_type_tags_path
+              - else
+                - - end
+    button.product_btn
+      = link_to "Products", products_path(shopify_collection_id: session[:shopify_collection_id], shopify_collection_title: session[:shopify_collection_title]), {class: "product_nav"}
+  label.nav_label.support
+    = link_to "Support", index_path
+  - # if @products
+  - # end
+- else
+  - - end

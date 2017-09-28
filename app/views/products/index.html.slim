@@ -1,0 +1,16 @@
+= render 'shared/breadcrumb'
+#collection_index
+  p#notice
+    = notice
+  h1
+    | Products
+  - if @shopify_products.any?
+    = render 'products/form'
+    #begin
+      h2
+        | Add filtering to your shopify products.
+  - else
+    #begin
+      h2
+        | You should create these on shopify and then return.
+    - - end

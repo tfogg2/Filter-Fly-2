@@ -1,0 +1,3 @@
+- content_for :javascript do
+  script[type="text/javascript"]
+    |  var eventName = typeof(Turbolinks) !== 'undefined' ? 'page:change' : 'DOMContentLoaded'; document.addEventListener(eventName, function() { <ruby code=" if flash[:notice] "> ShopifyApp.flashNotice("<ruby code="= j flash[:notice].html_safe"></ruby>"); </ruby> <ruby code=" if flash[:error] "> ShopifyApp.flashError("<ruby code="= j flash[:error].html_safe"></ruby>"); </ruby> }); 

@@ -1,0 +1,88 @@
+- # form_for @product, method: :GET, action: :update do |f|
+  - - category = category || product.category
+  - - product_type = product_type || product.product_type
+  - - shopify_product = shopify_product
+  - - tags = product.tags
+  |  <form class='ajax-form' id="form-element-
+  = product ? product.id : "nil"
+  | " data-product-id='
+  = product.id
+  | '> 
+  - # shopify_product.title
+  - if @categories.any?
+    div
+      select.sel.selectable.category.chosen-select[name="product[category_id]"]
+        - @categories.each do |cat|
+          - if category && cat.id == category.id
+            |  <option value="
+            = cat.id
+            | " selected="selected">
+            = cat.title
+          - else
+            |  <option value="
+            = cat.id
+            | ">
+            = cat.title
+            - - end
+            - - end
+  - else
+    - - end
+    p
+      - # product_type.tags.ids.inspect if product_type
+    - if category
+      select.sel.selectable.product_type.chosen-select[name="product[product_type_id]"]
+        - category.product_types.each do |type|
+          - if product_type && type.id == product_type.id
+            |  <option value="
+            = type.id
+            | " selected="selected">
+            = type.title
+          - else
+            |  <option value="
+            = type.id
+            | ">
+            = type.title
+            - - end
+            - - end
+    - else
+      select.sel.product_type.chosen-select
+
+      - - end
+      - if product_type
+        p
+          - # product_type.tags.inspect
+        select.sel.tag.chosen-select[name="product[tags][]" multiple]
+          - product_type.tags.each do |tag|
+            p
+              - # tag.inspect
+            - if !tags.blank? && tags.ids.include?(tag.id)
+              |  <option value="
+              = tag.id
+              | " selected="selected">
+              = tag.title
+            - else
+              |  <option value="
+              = tag.id
+              | ">
+              = tag.title
+              - - end
+              - - end
+      - else
+        select.sel.tag.chosen-select[multiple]
+
+        - - end
+        - if @categories.any?
+          = submit_tag ("Save"), {class: "save_btn"}
+          - - end
+          - # @product_types.each do |type|
+            p
+              - # type.category_id
+            - # end
+            - # end
+            - # if !tags.blank? && product_type.tags.ids.include?(tag.id)
+            - # form_for @product do |f|
+              - # f.select :category, 
+              - 			Category.all.map { |u| [u.title, u.id] },
+              -                { include_blank: divue },
+              -                { class: 'chosen-select' }
+              - # end
