@@ -59,7 +59,7 @@ a:hover{
 }
 #conversation-box{
   // border-top: 1px solid #d6d6d6;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 90px);
   min-width: 950px;
   width: calc(100vw - 20px);
   margin: 10px;
@@ -111,7 +111,7 @@ a:hover{
 
 }
 #project-list{
-  height: calc(100vh - 146px);
+  height: calc(100vh - 160px);
   overflow: scroll;
   background: white;
   // border-bottom: 1px solid #e0e0e0;
@@ -137,7 +137,7 @@ a:hover{
   float: right;
   width: 75%;
   text-align: left;
-  height: calc(100vh - 225px);
+  height: calc(100vh - 160px);
   overflow: auto;
   padding: 0 1%;
   background: #fff;
