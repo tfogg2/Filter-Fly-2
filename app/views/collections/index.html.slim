@@ -20,6 +20,9 @@
           = link_to collection_categories_path(collection), data:{'collection-id': collection.collection_id}, class:'id' do
             .project-messages
                 p.p-name = collection.title
+        - @collections.each do |collection|
+          .project-messages
+              p.p-name = collection.title
   .conversation-header
 
 
