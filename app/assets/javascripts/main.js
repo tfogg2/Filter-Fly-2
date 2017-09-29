@@ -175,7 +175,7 @@ $(document).ready(function () {
 	});
 
 	$('.id').on('click', function(){
-
+		$getScript('categories/form');
 		$('.conversation-header').html('<div> = render "categories/form" </div>');
 		return false;
 	});
