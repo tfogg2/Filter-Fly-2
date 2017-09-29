@@ -14,8 +14,8 @@
       - if @collections.any?
         - @collections.each do |collection|
           = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
-          .project-messages
-              p.p-name = collection.title
+            .project-messages
+                p.p-name = collection.title
   .conversation-header
 
 
