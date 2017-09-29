@@ -174,7 +174,7 @@ $(document).ready(function () {
 		})
 	});
 
-	$('#id').on('click', function(){
+	$('.id').on('click', function(){
 		$('.conversation-header').append('= render "categories/form"');
 		return false;
 	});

@@ -17,7 +17,6 @@ p#notice
                   = link_to 'Edit', edit_category_path(category)
                 td
                   = button_to 'X', category, data: { confirm: 'Are you sure?' }, method: :delete
-    - - end
     button.modalBtn
       | New Category
     #myModal.modal
@@ -33,6 +32,6 @@ p#notice
       #begin
         h2
           | Create and select a category to continue.
-      - - end
-- # link_to 'Product Types', category_product_types_path(category)
-- # category.handle
+
+//- # link_to 'Product Types', category_product_types_path(category)
+//- # category.handle
