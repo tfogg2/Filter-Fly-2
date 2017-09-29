@@ -34,7 +34,7 @@ class CategoriesController < ShopifyApp::AuthenticatedController
   # GET /categories/new
   def new
     # @category = @collection.category.new(@collection)
-    @category = @collection.category.new()
+    @category = @collection.categories.new()
     # @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
 
@@ -51,7 +51,7 @@ class CategoriesController < ShopifyApp::AuthenticatedController
     # @category = @collection.category.new(category_params)
     # @category = @collection.category.new(category_params)
     @category = @collection.categories.new(category_params)
-    
+
 
     respond_to do |format|
       if @category.save
