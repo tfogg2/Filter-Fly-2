@@ -20,12 +20,13 @@ p#notice
 
 
     #conversation
-      #project-list
-        - if @categories.any?
-          - @categories.each do |category|
-            = link_to category_categories_path(category), data:{'category-id': category.id}, class:'category' do
-              .project-messages
-                  p.p-name = category.title
+      #project-message-box
+        #project-list
+          - if @categories.any?
+            - @categories.each do |category|
+              = link_to category_categories_path(category), data:{'category-id': category.id}, class:'category' do
+                .project-messages
+                    p.p-name = category.title
 
 
 //- # link_to 'Product Types', category_product_types_path(category)
