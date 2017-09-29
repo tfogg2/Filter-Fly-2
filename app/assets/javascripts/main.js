@@ -183,7 +183,7 @@ $(document).ready(function () {
 				$('.conversation-header').append(data);
 			}
 		});
-		return false;
+		// return false;
 
 		// $getScript('categories/form.js.erb', function(script){
 		//
