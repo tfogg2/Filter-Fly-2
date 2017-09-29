@@ -175,11 +175,20 @@ $(document).ready(function () {
 	});
 
 	$('.id').on('click', function(){
-		$getScript('categories/form.js.erb', function(script){
-
-		})
-
+		$.ajax({
+			type: 'GET',
+			url: 'categories/new'
+			success: function(data){
+				$('.conversation-header').append(data);
+			}
+		});
 		return false;
+
+		// $getScript('categories/form.js.erb', function(script){
+		//
+		// })
+		//
+		// return false;
 	});
 
 
