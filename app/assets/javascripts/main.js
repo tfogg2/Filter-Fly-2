@@ -169,8 +169,9 @@ $(document).ready(function () {
 	$('.clear').hide();
 	$('#collections_search').mouseenter( function(){
 		$('.clear').show();
-	})$(this).mouseleave(function(){
-		$('.clear').hide();
+		$(this).mouseleave(function(){
+			$('.clear').hide();
+		})
 	});
 
 
