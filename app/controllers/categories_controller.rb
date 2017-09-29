@@ -110,7 +110,7 @@ class CategoriesController < ShopifyApp::AuthenticatedController
     end
 
     def set_collection
-      @collection = Collection.find(params[:collection_id])
+      @collection = Collection.find(params[:shopify_collection_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
