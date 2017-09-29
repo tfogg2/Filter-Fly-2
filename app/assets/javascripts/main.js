@@ -177,9 +177,9 @@ $(document).ready(function () {
 	$('.id').on('click', function(){
 		$getScript('categories/form.js.erb', function(script){
 
-		});
-		
-		return false;
+		})
+
+		return false
 	});
 
 
