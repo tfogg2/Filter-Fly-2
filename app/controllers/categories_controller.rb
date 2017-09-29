@@ -1,6 +1,6 @@
 class CategoriesController < ShopifyApp::AuthenticatedController
   #ApplicationController
-  # before_action :set_collection, only: [:new, :create]
+  before_action :set_collection, only: [:new, :create]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 
@@ -109,9 +109,9 @@ class CategoriesController < ShopifyApp::AuthenticatedController
       #Category.find(params[:category_id] || params[:id])
     end
 
-    # def set_collection
-    #   @collection = Collection.find(params[:shopify_collection_id])
-    # end
+    def set_collection
+      @collection = Collection.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
