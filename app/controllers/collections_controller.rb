@@ -7,6 +7,8 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 
 		@collections = @custom_collections && @smart_collections
 
+		@categories = @collections.categories
+
 		# @collections_search = @collections.search(params[:search])
 		# Create custom collections
 		@custom_collections.each do |c|
