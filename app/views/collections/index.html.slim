@@ -13,15 +13,15 @@
     #project-list
       - if @custom_collections.any? or @smart_collections.any?
         - @custom_collections.each do |collection|
-          = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title), class:'id' do
+          = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title), data:{'collection-id': collection.id}, class:'id' do
             .project-messages
                 p.p-name = collection.title
         - @smart_collections.each do |collection|
-          = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title), class:'id' do
+          = link_to categories_path(shopify_collection_id:collection.id, shopify_collection_title:collection.title), data:{'collection-id': collection.id}, class:'id' do
             .project-messages
                 p.p-name = collection.title
   .conversation-header
-    
+
 
   #conversation
     - if @custom_collections.any? or @smart_collections.any?

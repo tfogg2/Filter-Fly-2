@@ -175,9 +175,10 @@ $(document).ready(function () {
 	});
 
 	$('.id').on('click', function(){
+		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
-			url: 'categories/new',
+			url: 'collections' + collection_id + 'categories/new',
 			success: function(data){
 				$('.conversation-header').append(data);
 			}
