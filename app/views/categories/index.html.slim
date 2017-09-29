@@ -1,4 +1,4 @@
-= render 'shared/breadcrumb'
+/= render 'shared/breadcrumb'
 p#notice
   = notice
 
@@ -8,7 +8,7 @@ p#notice
         = render 'collections/search'
       #modal-dialog
         #search-modal
-        
+
       #project-list
         - if @collections.any?
           - @collections.each do |collection|
@@ -27,37 +27,6 @@ p#notice
               .project-messages
                   p.p-name = category.title
 
-#category_index
-  h1
-    | Categories
-  - if @categories.any?
-    .table
-      .tbl-content
-        table[cellpadding="0" cellspacing="0" border="0"]
-          tbody
-            - @categories.each do |category|
-              tr.row
-                td
-                  = link_to category.title, category_product_types_path(category)
-                td
-                  = link_to 'Edit', edit_category_path(category)
-                td
-                  = button_to 'X', category, data: { confirm: 'Are you sure?' }, method: :delete
-    button.modalBtn
-      | New Category
-    #myModal.modal
-      .modal-content
-        span.close
-          | ×
-        #newCategory
-    - if @categories.any?
-      #begin
-        h2
-          | Select a category to continue.
-    - else
-      #begin
-        h2
-          | Create and select a category to continue.
 
 //- # link_to 'Product Types', category_product_types_path(category)
 //- # category.handle
