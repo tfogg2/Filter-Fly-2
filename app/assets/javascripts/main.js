@@ -175,10 +175,11 @@ $(document).ready(function () {
 	});
 
 	$('.id').on('click', function(){
-		return false;
-		$getScript('categories/form.js.erb')
-			.done(function(script){
+		$getScript('categories/form.js.erb', function(script){
+
 		});
+		
+		return false;
 	});
 
 
