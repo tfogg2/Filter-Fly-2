@@ -178,12 +178,12 @@ $(document).ready(function () {
 		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
-			url: 'collections/' + collection_id + '/categories/new',
+			url: 'collections/' + collection_id + '/categories',
 			success: function(data){
 				$('.conversation-header').append(data);
 			}
 		});
-		// return false;
+		return false;
 
 		// $getScript('categories/form.js.erb', function(script){
 		//
