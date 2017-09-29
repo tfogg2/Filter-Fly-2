@@ -18,6 +18,8 @@ class CategoriesController < ShopifyApp::AuthenticatedController
       #Category.where(shopify_collection_id: session[:shopify_collection_id])
     end
 
+    @collections = Collection.all
+
 
     # Trying Nav
     #@custom_collections = ShopifyAPI::CustomCollection.find(:all, params: { limit: 10 },shopify_collection_id: session[:shopify_collection_id])

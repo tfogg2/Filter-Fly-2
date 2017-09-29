@@ -8,17 +8,24 @@ p#notice
         = render 'collections/search'
       #modal-dialog
         #search-modal
+        
+      #project-list
+        - if @collections.any?
+          - @collections.each do |collection|
+            = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
+              .project-messages
+                  p.p-name = collection.title
 
+    .conversation-header
+
+
+    #conversation
       #project-list
         - if @categories.any?
           - @categories.each do |category|
             = link_to category_categories_path(category), data:{'category-id': category.id}, class:'category' do
               .project-messages
                   p.p-name = category.title
-    .conversation-header
-
-
-    #conversation
 
 #category_index
   h1
