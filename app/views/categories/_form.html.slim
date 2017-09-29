@@ -6,7 +6,7 @@
           = pluralize(@category.errors.count, "error")
           |  prohibited this category from being saved:
         ul
-          - category.errors.full_messages.each do |message|
+          - @category.errors.full_messages.each do |message|
             li
               = message
     = f.hidden_field :collection_id
