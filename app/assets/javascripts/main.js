@@ -166,9 +166,9 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.close').hide();
+	$('.clear').hide();
 	$('#collections_search').on('click', function(){
-		$('.close').show();
+		$('.clear').show();
 	});
 
 
