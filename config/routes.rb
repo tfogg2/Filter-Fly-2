@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   mount ShopifyApp::Engine, at: '/'
   resources :products
-
-  resources :categories do
-  	resources :product_types do
-  		resources :tags
-  	end
+  resources :collections do
+    resources :categories do
+    	resources :product_types do
+    		resources :tags
+    	end
+    end
   end
 
 
