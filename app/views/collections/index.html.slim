@@ -18,8 +18,7 @@
                 p.p-name = collection.title
         - @smart_collections.each do |collection|
           = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
-          /shopify_collection_id:collection.id, shopify_collection_title:collection.title
-            .project-messages
+          
                 p.p-name = collection.title
   .conversation-header
 
