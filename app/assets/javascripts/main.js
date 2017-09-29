@@ -166,7 +166,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$('#search').focus(function(){
+	$('#search').mousedown(function(){
 		$('.close').show();
 	});
 
