@@ -166,7 +166,8 @@ $(document).ready(function () {
 		});
 	});
 
-	$('#search').mousedown(function(){
+	$('.close').hide();
+	$('#collections_search').on('click', function(){
 		$('.close').show();
 	});
 
