@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	
+
 	$test = $('#test');
 	$newCat = $('#newCategory');
 	$newType = $('#newType');
@@ -9,7 +9,7 @@ $(document).ready(function () {
 	$typeSelect = $('#product_product_type_id');
 	$tagSelect = $('#product_tags');
 	//$formSelect = $('#formSelect');
-	//MODAL 
+	//MODAL
 
 	// Get the modal
 	var modal = document.getElementById('myModal');
@@ -20,7 +20,7 @@ $(document).ready(function () {
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
 
-	// When the user clicks on the button, open the modal 
+	// When the user clicks on the button, open the modal
 	$('.modalBtn').click( function(){
 	    modal.style.display = "block";
 	});
@@ -60,7 +60,7 @@ $(document).ready(function () {
 	      url: "/categories/new.html",//:category_id/product_types.json",
 	      success: function(data) {
 	      	$newCat.html('<div> '+ data + '</div>');
-	      	
+
 		  	}
 		});
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
 	      url: "product_types/new.html",//:category_id/product_types.json",
 	      success: function(type) {
 	      	$newType.html('<div> '+ type + '</div>');
-	      	
+
 		  	}
 		});
 		$.ajax({
@@ -77,10 +77,10 @@ $(document).ready(function () {
 	      url: "tags/new",//:category_id/product_types.json",
 	      success: function(tag) {
 	      	$newTag.html('<div> '+ tag + '</div>');
-	      	
+
 		  	}
 		});
-			
+
 	});
 
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
 	var $leftNavHeight = $leftNav.height();
 	var $index = $('#index');
 
-	
+
 	//
 	// Ajax product form submission
 	//
@@ -102,13 +102,13 @@ $(document).ready(function () {
 			data: form_values,
 			url: '/products/'+$(this).data("product-id"),
 			success: function(data){
-				
+
 			}
 		});
 
 		return false;
 	});
-	
+
 
 //_SELECT_CHANGE.JS.ERB //
 	// $(document).on('change', ".category_select select", function(){
@@ -141,14 +141,14 @@ $(document).ready(function () {
 		// 	$(tag).each(function(i, selected){
   // 			foo[i] = $(selected).val();
 		// });
-		
-		
+
+
 
 		$.ajax({
 			type: 'GET',
 			url: '/select_change?product_id=' + sel.data("product-id") + "&category_id="+category_id + "&product_type_id="+product_type_id + "&tags_ids="+tag,
 			success: function(data){
-				
+
 			}
 		});
 		return false;
@@ -165,7 +165,11 @@ $(document).ready(function () {
 
 		});
 	});
-	 
+
+	$('#search').focus(function(){
+		$('.close').show();
+	});
+
 
 
 
@@ -204,33 +208,33 @@ $(document).ready(function () {
 
 
 
-/* Sample JavaScript file added with ScriptTag resource. 
+/* Sample JavaScript file added with ScriptTag resource.
 This sample file is meant to teach best practices.
-Your app will load jQuery if it's not defined. 
-Your app will load jQuery if jQuery is defined but is too old, e.g. < 1.7. 
-Your app does not change the definition of $ or jQuery outside the app. 
+Your app will load jQuery if it's not defined.
+Your app will load jQuery if jQuery is defined but is too old, e.g. < 1.7.
+Your app does not change the definition of $ or jQuery outside the app.
 Example: if a Shopify theme uses jQuery 1.4.2, both of these statements run in the console will still return '1.4.2'
 once the app is installed, even if the app uses jQuery 1.9.1:
-jQuery.fn.jquery => "1.4.2" 
+jQuery.fn.jquery => "1.4.2"
 $.fn.jquery -> "1.4.2"
 */
 
-/* Using a self-executing anonymous function - (function(){})(); - so that all variables and functions defined within 
+/* Using a self-executing anonymous function - (function(){})(); - so that all variables and functions defined within
 aren’t available to the outside world. */
 
 // (function(){
-  
+
 // /* Load Script function we may need to load jQuery from the Google's CDN */
 // /* That code is world-reknown. */
 // /* One source: http://snipplr.com/view/18756/loadscript/ */
 
 // var loadScript = function(url, callback){
- 
+
 //   var script = document.createElement("script");
 //   script.type = "text/javascript";
 
 //   // If the browser is Internet Explorer.
-//   if (script.readyState){ 
+//   if (script.readyState){
 //     script.onreadystatechange = function(){
 //       if (script.readyState == "loaded" || script.readyState == "complete"){
 //         script.onreadystatechange = null;
@@ -246,7 +250,7 @@ aren’t available to the outside world. */
 
 //   script.src = url;
 //   document.getElementsByTagName("head")[0].appendChild(script);
-    
+
 // };
 
 // /* This is my app's JavaScript */
@@ -290,7 +294,7 @@ aren’t available to the outside world. */
 
 
 
-//End of  sample js for shopify 
+//End of  sample js for shopify
 
 
 
@@ -317,67 +321,67 @@ aren’t available to the outside world. */
 	// 	console.log(inputId);
 	// 	var $tr = $(this).closest("tr");
 	// 	console.log($tr);
-		
+
 
 	// 	$.ajax({
 	// 		type: 'GET',
 	// 		url: '/select_change?product_id=' + productId + "&category_id="+inputId, // + "&product_type_id="+product_type_id, //+ "&tags_ids="+tag,
 	// 		success: function(data){
-				
+
 	// 		}
 	// 	});
 	// 	return false;
 
 	// });
 
-	
+
 
 
 
 
 	//$(".category-selectable").on('click', function(e){
 
-		
+
 		//var categoryNav = $(this).data("category-id");
-		
+
 		//$('#productType').hide();
 
 		// e.preventDefault();
-		
+
 
 		// $.ajax({
 		// 	type: 'GET',
-		// 	url: '/categories/' + categoryNav + '/product_types', 
+		// 	url: '/categories/' + categoryNav + '/product_types',
 		// 	success: function(data){
-				
+
 		// 		$('#productType').html(data);
-				
+
 		// 	}
 		// });
 		// $.ajax({
 		// 	type: 'GET',
-		// 	url: '/navbar_select?category_id=' + categoryNav, 
+		// 	url: '/navbar_select?category_id=' + categoryNav,
 		// 	success: function(data){
-				
-				
+
+
 		// 	}
 		// });
 		// return false;
-		
+
 
 	//});
-	
-
-
-	
-	
 
 
 
-	
-	// Configure Chosen 
 
-	
+
+
+
+
+
+	// Configure Chosen
+
+
 
 
 
@@ -391,10 +395,10 @@ aren’t available to the outside world. */
 	//       url: "/product_types/new.html",//:category_id/product_types.json",
 	//       success: function(type) {
 	//       	$newType.html('<div> '+ type + '</div>');
-	      	
+
 	// 	  	}
 	// 	});
-		
+
 	// });
 
 	// $('.modalBtn').click( function(){
@@ -403,10 +407,10 @@ aren’t available to the outside world. */
 	//       url: "/tags/new.html",//:category_id/product_types.json",
 	//       success: function(tag) {
 	//       	$newTag.html('<div> '+ tag + '</div>');
-	      	
+
 	// 	  	}
 	// 	});
-		
+
 	// });
 
 	// $("#formSelect").children(".sel1").on('change', function(){
@@ -439,14 +443,14 @@ aren’t available to the outside world. */
  //      url: "products/:id",//:category_id/product_types.json",
  //      success: function(data) {
  //      	$productShow.html('<div> '+ data + '</div>');
-      	
+
 	//   	}
 	// 	});
-		
+
 	// });
 
 	// $categorySelect.on('change', function() {
- 	  		
+
  // 	  		$category = $(this).val();
 
  // 	  		$.ajax({
@@ -461,12 +465,12 @@ aren’t available to the outside world. */
 	// 	      		$('#productTypeShow').hide();
 	// 			  	}
 	// 			});
- 	  		
- 	  		
- 	  		
+
+
+
  // 	});
 	// $('.categorySelect').children().on('change', function() {
-	  		
+
 	//   		//$category = $(this).val();
 	//   		$.ajax({
  //      		type: 'GET',
@@ -481,13 +485,13 @@ aren’t available to the outside world. */
 	// 		  	}
 
 	// 		});
- 	  		
-	  
- 	  		
+
+
+
  // 	});
-	
+
 	// $typeSelect.on('change', function() {
- 	  		
+
  // 	  		$typeId = $(this).val();
 
  // 	  		$.ajax({
@@ -501,7 +505,7 @@ aren’t available to the outside world. */
 	// 	      		$('#productTypeShow').html('<div> '+ data + '</div>');
 	// 			  	}
 	// 			});
- 	  	
+
  // 		});
 
 
@@ -542,14 +546,14 @@ aren’t available to the outside world. */
 
 
 
-	
+
 	// $chosen = $('#chosen');
 	// $chosen.append( $('#test-chosen'));
-	
 
 
 
-			
+
+
 	// $('#product_category').on('change', function() {
  //  		alert( this.value );
  //  		var cat = $(this).val();
@@ -594,7 +598,7 @@ aren’t available to the outside world. */
 
 
 
-	
+
 
 
 
@@ -607,7 +611,7 @@ aren’t available to the outside world. */
 //     });
 // });
 // $categorySelect.on('change', function() {
- 	  		
+
 //  	  		//$category = $(this).val();
 //  	  		$.ajax({
 // 	      		type: 'GET',
@@ -621,7 +625,7 @@ aren’t available to the outside world. */
 
 // 				  	}
 // 				});$.ajaxstop();
- 	  		
 
- 	  		
+
+
 //  	});
