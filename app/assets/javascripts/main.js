@@ -177,7 +177,7 @@ $(document).ready(function () {
 	$('.id').on('click', function(){
 		$.ajax({
 			type: 'GET',
-			url: 'categories/new'
+			url: 'categories/new',
 			success: function(data){
 				$('.conversation-header').append(data);
 			}
