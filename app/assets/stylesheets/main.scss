@@ -192,3 +192,18 @@ a:hover{
   box-sizing: border-box;
   margin-top: 4px;
 }
+#collections_search.focus{
+  box-shadow: inset 0px 0 5px rgba(0,0,0,.3);
+  border: 1px solid #66b5e4;
+  outline: 0;
+}
+#search{
+  font-size: 14px;
+  width: 80%;
+  height: 37px;
+  padding: 0px 10px;
+  border: none;
+  float: right;
+  outline: 0;
+  background: none;
+}
