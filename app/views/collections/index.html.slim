@@ -21,6 +21,7 @@
             .project-messages
                 p.p-name = collection.title
   .conversation-header
+    = render 'categories/form'
 
   #conversation
     - if @custom_collections.any? or @smart_collections.any?
