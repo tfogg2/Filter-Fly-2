@@ -1,12 +1,12 @@
 .new
-  = simple_form_for (category), :url => new_category_path do |f|
-    - if category.errors.any?
+  = simple_form_for @category, :url => new_category_path do |f|
+    - if @category.errors.any?
       #error_explanation
         h2
-          = pluralize(category.errors.count, "error")
+          = pluralize(@category.errors.count, "error")
           |  prohibited this category from being saved:
         ul
-          - category.errors.full_messages.each do |message|
+          - @category.errors.full_messages.each do |message|
             li
               = message
     = f.hidden_field :collection_id
