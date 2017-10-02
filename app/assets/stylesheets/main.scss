@@ -79,12 +79,12 @@ a:hover{
   float: right;
   width: 75%;
   text-align: left;
-  height: calc(100vh - 225px);
+  height: calc(100vh - 160px);
   overflow: auto;
   padding: 0;
   background: #fff;
   box-sizing: border-box;
-  border-right: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
 }
 #project-message-box{
   width: 25%;
