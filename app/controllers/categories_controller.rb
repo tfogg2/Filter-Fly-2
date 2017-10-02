@@ -49,9 +49,8 @@ class CategoriesController < ShopifyApp::AuthenticatedController
 
 
   def create
-
-
-    @category = Category.new(category_params)
+    @collection = Collection.find(params[:id])
+    @category = @collection.categories.new(category_params)
 
 
     respond_to do |format|
