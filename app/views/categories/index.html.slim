@@ -26,7 +26,7 @@ p#notice
       #project-list
         - if @categories.any?
           - @categories.each do |category|
-            = link_to collection_categories_path(@collection), data:{'category-id': category.id}, class:'category' do
+            = link_to collection_category_product_type_path(@collection, category), data:{'category-id': category.id}, class:'category' do
               .project-messages
                   p.p-name = category.title
 
