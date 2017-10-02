@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :collections do
     resources :categories do
+      post 'create', to: "categories#create", as: 'create'
     	resources :product_types do
     		resources :tags
     	end
