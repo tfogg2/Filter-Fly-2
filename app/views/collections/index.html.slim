@@ -13,7 +13,7 @@
     #project-list
       - if @collections.any?
         - @collections.each do |collection|
-          = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, data:{'shopify-collection-id': collection.shopify_collection_id}, class:'id' do
+          = link_to collection_categories_path(collection), data:{'collection-id': collection.id 'shopify-collection-id': collection.shopify_collection_id}, class:'id' do
             .project-messages
                 p.p-name = collection.title
   .conversation-header
