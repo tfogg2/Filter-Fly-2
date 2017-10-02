@@ -9,14 +9,15 @@ class CategoriesController < ShopifyApp::AuthenticatedController
 
   def index
     Rails.logger.debug("collection_id: @collection.id")
+    @categories = @collection.categories.all
 
-    if !@collection
-      @categories = []
-    else
-      @categories = @collection.categories.all
-
-      #Category.where(shopify_collection_id: session[:shopify_collection_id])
-    end
+    # if !@collection
+    #   @categories = []
+    # else
+    #   @categories = @collection.categories.all
+    #
+    #   #Category.where(shopify_collection_id: session[:shopify_collection_id])
+    # end
 
     @collections = Collection.all
 
