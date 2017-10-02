@@ -1,36 +1,11 @@
-= render 'shared/breadcrumb'
+/= render 'shared/breadcrumb'
 p#notice
   = notice
-#collection_index
-  h1
-    | Product Types
-  - if @product_types.any?
-    .table
-      .tbl-content
-        table[cellpadding="0" cellspacing="0" border="0"]
-          tbody
-            - @product_types.each do |product_type|
-              tr.row
-                td
-                  = link_to product_type.title, category_product_type_tags_path(@category, product_type), { :class=>"product_type_title" }
-                td
-                  = link_to 'Edit', edit_category_product_type_path(@category, product_type)
-                td
-                  = button_to 'X', category_product_type_path(@category, product_type), method: :delete, data: { confirm: 'Are you sure?' }
-    - - end
-    button#newBtn.modalBtn
-      | New Product Type
-    #myModal.modal
-      .modal-content
-        span.close
-          | ×
-        #newType
+
+#category-box
+  #project-list
     - if @product_types.any?
-      #begin
-        h2
-          | Select a type to continue.
-    - else
-      #begin
-        h2
-          | Create and select a type to continue.
-      - - end
+      - @product_types.each do |type|
+        = link_to collection_category_product_type_path(@category, type), data:{'type-id': type.id}, class:'type' do
+          .project-messages
+              p.p-name = type.title
