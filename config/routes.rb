@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount ShopifyApp::Engine, at: '/'
-  mount ActionCable.server => '/cable'
+  mount ActionCable.server, at: '/cable'
   resources :products
   resources :collections do
     resources :categories do
