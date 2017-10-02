@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   #ApplicationController
-  before_action :set_collection, only: [:new, :create]
+  before_action :set_collection
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 
