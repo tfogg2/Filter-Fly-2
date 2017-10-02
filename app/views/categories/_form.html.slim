@@ -1,5 +1,5 @@
 .new
-  = simple_form_for [@collection, @category] do |f|
+  = simple_form_for [@collection, @category], :url => new_collection_category_path do |f|
     - if @category.errors.any?
       #error_explanation
         h2
