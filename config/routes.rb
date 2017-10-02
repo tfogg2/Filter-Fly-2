@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   mount ShopifyApp::Engine, at: '/'
   resources :products
   resources :collections do
-    post 'create_category', to: "categories#create", as: "collection_categories"
     resources :categories do
     	resources :product_types do
     		resources :tags
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
 
 
   root :to => 'collections#index'
+  post 'create_category', to: "categories#create", as: "create_collection_categories"
   get 'search', to: "collections#search", as: 'search'
   get 'home', to: "collections#home"
   get 'index', to: "collections#index"
