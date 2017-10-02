@@ -25,7 +25,7 @@
     - if @custom_collections.any? or @smart_collections.any?
       .create_messages
         h1 Choose a collection to begin.
-        = link_to "New Category", new_collection_categories_path
+        = link_to "New Category", new_collection_category_path
     - else
       .create_messages
         h1 You should create these on shopify and then return.
