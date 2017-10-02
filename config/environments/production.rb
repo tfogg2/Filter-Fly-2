@@ -25,7 +25,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
-  config.action_cable.url = "wss://filterfly2.herokuapp.com/cable"
+  # config.action_cable.url = "wss://filterfly2.herokuapp.com/cable"
 
   config.web_socket_server_url = "wss://filterfly2.herokuapp.com/cable"
 
