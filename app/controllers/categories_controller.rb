@@ -50,14 +50,13 @@ class CategoriesController < ShopifyApp::AuthenticatedController
 
   def create
 
-    # @category = @collection.category.new(category_params)
-    # @category = @collection.category.new(category_params)
+
     @category = @collection.categories.new(category_params)
 
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_path(@category), notice: 'Category was successfully created.' }
+        format.html { redirect_to collection_categories_path(@category), notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }

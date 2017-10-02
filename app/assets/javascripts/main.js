@@ -180,7 +180,7 @@ $(document).ready(function () {
 			type: 'GET',
 			url: '/collections/' + collection_id + '/categories/new',
 			success: function(data){
-				$('.conversation-header').html( $('#newForm') );
+				$('.conversation-header').html('#newForm');
 			}
 		});
 
