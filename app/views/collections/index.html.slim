@@ -15,9 +15,9 @@
       - if @collections.any?
         - @collections.each do |collection|
           = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
-          = link_to "New Category", new_collection_category_path(collection)
             .project-messages
                 p.p-name = collection.title
+          = link_to "New Category", new_collection_category_path(collection)
   .conversation-header
 
 
