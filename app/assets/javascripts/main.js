@@ -178,9 +178,10 @@ $(document).ready(function () {
 		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
+			data: $('#newForm'),
 			url: '/collections/' + collection_id + '/categories/new',
 			success: function(data){
-				$('.conversation-header').html('#newForm');
+				$('.conversation-header').html(data);
 			}
 		});
 
