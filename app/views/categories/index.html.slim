@@ -25,10 +25,10 @@ p#notice
     #category-box
       #project-list
         - if @collection.categories.any?
-          #categories
-            = render partial: 'category', collection: @collection.categories
+          = render partial: 'category', collection: @collection.categories
+          div class="panel-body hidden" id="categories" data-conversation-id= @conversation.id data-user-name= current_user.name
         -else
-        
+
           #categories.hidden
 
         /  - @categories.each do |category|
