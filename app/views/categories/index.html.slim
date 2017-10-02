@@ -24,11 +24,11 @@ p#notice
   #conversation
     #category-box
       #project-list
-        - if @categories.any?
+        - if @collection.categories.any?
           #categories
             = render partial: 'category', collection: @collection.categories
         -else
-
+        
           #categories.hidden
 
         /  - @categories.each do |category|
