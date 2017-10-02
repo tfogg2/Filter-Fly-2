@@ -178,10 +178,11 @@ $(document).ready(function () {
 		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
-			data: $('#newForm'),
+			data: $(),
 			url: '/collections/' + collection_id + '/categories/new',
 			success: function(data){
-				$('.conversation-header').html(data);
+				form = $(data).find('#newForm');
+				$('.conversation-header').html(form);
 			}
 		});
 
