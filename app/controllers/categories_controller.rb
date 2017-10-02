@@ -37,7 +37,6 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     # @category = @collection.category.new(@collection)
-    @collection = Collection.find(params[:id])
     @category = @collection.categories.new()
     # @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
@@ -51,7 +50,6 @@ class CategoriesController < ApplicationController
 
 
   def create
-    @collection = Collection.find(params[:collection_id])
     @category = @collection.categories.new(category_params)
 
 
