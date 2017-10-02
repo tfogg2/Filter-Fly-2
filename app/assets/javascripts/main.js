@@ -175,7 +175,7 @@ $(document).ready(function () {
 	});
 
 	$('.id').on('click', function(){
-		var collection_id = $(this).data('shopifu-collection-id');
+		var collection_id = $(this).data('shopify-collection-id');
 		$.ajax({
 			type: 'GET',
 			url: '/collections/' + collection_id + '/categories/new',
