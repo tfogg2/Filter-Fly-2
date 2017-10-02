@@ -51,8 +51,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = @collection.categories.new(category_params)
-
-
+    
     respond_to do |format|
       if @category.save
         ActionCable.server.broadcast 'categories',

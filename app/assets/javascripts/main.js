@@ -205,19 +205,19 @@ $(document).ready(function () {
 		return false;
 	});
 
-	$('.category').on('click', function(){
-		var collection_id = $(this).parent('.id').data('collection-id');
-		var category_id = $(this).data('category-id');
-		$.ajax({
-			type: 'GET',
-			url: '/collections/' + collection_id + '/categories/' + category_id + '/product_types',
-			success: function(data){
-				index = $(data).find('#category-box');
-				$('#conversation').html(index);
-			}
-		});
-		return false;
-	});
+	// $('.category').on('click', function(){
+	// 	var collection_id = $(this).parent('.id').data('collection-id');
+	// 	var category_id = $(this).data('category-id');
+	// 	$.ajax({
+	// 		type: 'GET',
+	// 		url: '/collections/' + collection_id + '/categories/' + category_id + '/product_types',
+	// 		success: function(data){
+	// 			index = $(data).find('#category-box');
+	// 			$('#conversation').html(index);
+	// 		}
+	// 	});
+	// 	return false;
+	// });
 
 
 
