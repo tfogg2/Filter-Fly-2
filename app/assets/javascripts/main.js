@@ -179,12 +179,20 @@ $(document).ready(function () {
 		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
-			data: $(),
 			url: '/collections/' + collection_id + '/categories/new',
 			success: function(data){
 				form = $(data).find('#newForm');
 				$('.conversation-header').html(form);
 				$('.create_messages').hide();
+			}
+		});
+
+		$.ajax({
+			type: 'GET',
+			url: '/collections/' + collection_id + '/categories',
+			success: function(data){
+				index = $(data).find('#category-box');
+				$('#conversation').html(index);
 			}
 		});
 
