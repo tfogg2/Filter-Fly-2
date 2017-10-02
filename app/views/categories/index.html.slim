@@ -26,7 +26,7 @@ p#notice
       #project-list
         - if @collection.categories.any?
           = render partial: 'category', collection: @collection.categories
-          div class="panel-body hidden" id="categories" data-conversation-id= @conversation.id data-user-name= current_user.name
+          div class="panel-body hidden" id="categories" data-conversation-id= @collection.id 
         -else
 
           #categories.hidden
