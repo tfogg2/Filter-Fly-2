@@ -3,6 +3,7 @@
     |  ShopifyApp.ready(function(){ ShopifyApp.Bar.initialize({ title: "Home", icon: "<ruby code="= asset_path('favicon.ico')"></ruby>" }); });
 
 
+
 #conversation-box
   #project-message-box
     #search-projects
@@ -19,10 +20,12 @@
   .conversation-header
 
 
+
   #conversation
     - if @custom_collections.any? or @smart_collections.any?
       .create_messages
         h1 Choose a collection to begin.
+        = link_to "New Category", new_collection_categories_path
     - else
       .create_messages
         h1 You should create these on shopify and then return.
