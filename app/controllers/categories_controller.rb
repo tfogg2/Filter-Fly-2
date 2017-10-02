@@ -52,13 +52,13 @@ class CategoriesController < ApplicationController
   def create
     @category = @collection.categories.new(category_params)
 
-    respond_to do |format|
-      if @category.save
-        ActionCable.server.broadcast 'categories',
-          title: @category.title
-        head :ok
-    
-      end
+    if @category.save
+      ActionCable.server.broadcast 'categories',
+        title: @category.title,
+        collection_id: @category.collection_id
+      head :ok
+    else
+
     end
   end
 
