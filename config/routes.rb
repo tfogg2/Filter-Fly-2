@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :collections do
     resources :categories do
+      post 'create_category', to: "categories#create", as: "create_category"
     	resources :product_types do
     		resources :tags
     	end
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   get 'index', to: "collections#index"
   get 'select_change', to: "products#select_change"
   get 'navbar_select', to: "shared#navbar_select"
-  post 'create_category', to: "categories#create", as: "create_category"
+
 
   namespace :api do
     get 'collections', to: "collections#index"
