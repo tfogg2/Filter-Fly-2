@@ -6,7 +6,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
   before_action :set_categories, only: [:update, :select_change]
   before_action :set_product_types, only: [:update, :select_change]
   before_action :set_tags, only: [:update, :select_change]
-  
+
 
  def index
     Rails.logger.debug("set_shopify_product_id: #{session[:shopify_collection_id]}")
@@ -15,15 +15,15 @@ class ProductsController < ShopifyApp::AuthenticatedController
       @products = []
     else
       @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id: @collection.id })
-      
+
       #creating product for each shopify product
       @shopify_products.each do |shopify_product|
         @product = Product.find_or_create_by(shopify_product_id: shopify_product.id )
         @products = Product.all
          #Rails.logger.debug("product: #{product.errors.inspect}")
       end
-    end 
-      
+    end
+
 
       # Rails.logger.debug("@shopify_products: #{@shopify_products.inspect}")
       # Rails.logger.debug("---")
@@ -106,7 +106,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
     @shopify_products = ShopifyAPI::Product.find(:all, params: { limit: 10, collection_id:@collection.id })
 
 
-    
+
     if !params[:product_type_id].blank?
       @product_type = @collection.category.product_types.find_by_id(params[:product_type_id])
       @tags = @product_type.tags if @product_type
@@ -140,14 +140,14 @@ class ProductsController < ShopifyApp::AuthenticatedController
       else
         @categories = @collection.category.find(params[:category_id] || params[:id])
       end
-    end 
+    end
     def set_product_types
       if !@collection
         @product_types = []
       else
         @product_types = @collection.category.product_types.find(params[:product_type_id] || params[:id])
       end
-    end 
+    end
     def set_tags
       if !@collection
         @tags = []
