@@ -15,6 +15,7 @@
       - if @collections.any?
         - @collections.each do |collection|
           = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
+          = link_to "New Category", new_collection_category_path(collection)
             .project-messages
                 p.p-name = collection.title
   .conversation-header
@@ -25,7 +26,7 @@
     - if @custom_collections.any? or @smart_collections.any?
       .create_messages
         h1 Choose a collection to begin.
-        = link_to "New Category", new_collection_category_path
+
     - else
       .create_messages
         h1 You should create these on shopify and then return.
