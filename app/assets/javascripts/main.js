@@ -178,7 +178,7 @@ $(document).ready(function () {
 		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
-			url: 'categories/new',
+			url: '/categories/new',
 			success: function(data){
 				$('.conversation-header').append(data);
 			}
