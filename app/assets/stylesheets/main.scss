@@ -235,11 +235,12 @@ a:hover{
   background: none;
 }
 .category_btn{
+	width: 22%;
+	height: 40px;
 	font-size: 14px;
 	box-sizing: border-box;
-	height: 40px;
   padding: 0px 10px;
-	border: 1px solid #e0e0e0;
+	border: none;
 	background: #CA3358;
 	color: white;
 	border-radius: 5px;

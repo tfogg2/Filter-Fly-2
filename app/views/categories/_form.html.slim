@@ -10,6 +10,7 @@
             li
               = message
     = f.hidden_field :collection_id
+    = f.hidden_field :shopify_collection_id
     = f.input :title, label: false, :placeholder => "Title", class:"category_title"
     - # f.input :handle
     = f.button :submit, class: "category_btn"
