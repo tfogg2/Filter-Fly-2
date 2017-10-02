@@ -57,9 +57,7 @@ class CategoriesController < ApplicationController
         ActionCable.server.broadcast 'categories',
           title: @category.title
         head :ok
-      else
-        format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+    
       end
     end
   end
