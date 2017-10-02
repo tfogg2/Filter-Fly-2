@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   #ApplicationController
-  # before_action :set_collection, only: [:new, :create]
+  before_action :set_collection, only: [:new, :create]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   def new
     # @category = @collection.category.new(@collection)
     @collection = Collection.find(params[:id])
-    @category = Category.new()
+    @category = @collection.categories.new()
     # @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
 
@@ -51,7 +51,7 @@ class CategoriesController < ApplicationController
 
 
   def create
-    @collection = Collection.find(params[:id])
+    @collection = Collection.find(params[:collection_id])
     @category = @collection.categories.new(category_params)
 
 
@@ -110,9 +110,9 @@ class CategoriesController < ApplicationController
       #Category.find(params[:category_id] || params[:id])
     end
 
-    # def set_collection
-    #   @collection = Collection.find(params[:id])
-    # end
+    def set_collection
+      @collection = Collection.find(params[:collection_id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
