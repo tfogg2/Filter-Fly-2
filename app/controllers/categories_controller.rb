@@ -56,9 +56,8 @@ class CategoriesController < ApplicationController
       if @category.save
         ActionCable.server.broadcast 'categories',
           title: @category.title
-        head :ok
-        # format.html { redirect_to collection_categories_path(@category), notice: 'Category was successfully created.' }
-        # format.json { render :show, status: :created, location: @category }
+        format.html { redirect_to collection_categories_path(@category), notice: 'Category was successfully created.' }
+        format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
