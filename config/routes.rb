@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   mount ShopifyApp::Engine, at: '/'
   resources :products
   resources :collections do
+    post 'create_category', to: "categories#create", as: "collection_categories"
     resources :categories do
-      post 'create_category', to: "categories#create", as: "create_category"
     	resources :product_types do
     		resources :tags
     	end
