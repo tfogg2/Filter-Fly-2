@@ -36,7 +36,7 @@ class CategoriesController < ShopifyApp::AuthenticatedController
   # GET /categories/new
   def new
     # @category = @collection.category.new(@collection)
-    @category = @collection.categories.new()
+    @category = Category.new()
     # @category = Category.new(shopify_collection_id: session[:shopify_collection_id])
   end
 
