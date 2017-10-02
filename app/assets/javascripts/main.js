@@ -175,6 +175,7 @@ $(document).ready(function () {
 	});
 
 	$('.id').on('click', function(){
+		$(this).addClass('selected');
 		var collection_id = $(this).data('collection-id');
 		$.ajax({
 			type: 'GET',
@@ -183,6 +184,7 @@ $(document).ready(function () {
 			success: function(data){
 				form = $(data).find('#newForm');
 				$('.conversation-header').html(form);
+				$('.create_messages').hide();
 			}
 		});
 
