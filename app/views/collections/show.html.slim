@@ -1,3 +1,5 @@
 #category-box
   #project-list
-    = render 'categories'
+    - @collection.categories.each do |category|
+    p.p-name = category.title
+    end

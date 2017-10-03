@@ -211,7 +211,7 @@ $(document).ready(function () {
 		//
 		// })
 		//
-		return false;
+		// return false;
 	});
 
 	// $('.category').on('click', function(){
