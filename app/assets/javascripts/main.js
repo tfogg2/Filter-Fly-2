@@ -196,6 +196,15 @@ $(document).ready(function () {
 		// 	}
 		// });
 
+		$.ajax({
+			type: 'GET',
+			url: '/collections/' + collection_id,
+			success: function(data){
+				index = $(data).find('#category-list');
+				$('#conversation').html(index);
+			}
+		});
+
 
 
 		// $getScript('categories/form.js.erb', function(script){
