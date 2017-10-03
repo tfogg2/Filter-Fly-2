@@ -27,6 +27,7 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 	end
 
 	def show
+		@collections = Collection.all
 		@collection = Collection.find(params[:id])
 	end
 
