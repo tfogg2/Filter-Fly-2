@@ -13,7 +13,6 @@
 
     #project-list
       - if @collections.any?
-
         - @collections.each do |collection|
           = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
             .project-messages
@@ -23,6 +22,8 @@
 
 
   #conversation
+    #category-list
+    = render 'categories'
     - if @collections.any?
       .create_messages
         h1 Choose a collection to begin.

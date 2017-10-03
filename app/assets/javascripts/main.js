@@ -187,14 +187,14 @@ $(document).ready(function () {
 			}
 		});
 
-		$.ajax({
-			type: 'GET',
-			url: '/collections/' + collection_id + '/categories',
-			success: function(data){
-				index = $(data).find('#category-box');
-				$('#conversation').html(index);
-			}
-		});
+		// $.ajax({
+		// 	type: 'GET',
+		// 	url: '/collections/' + collection_id + '/categories',
+		// 	success: function(data){
+		// 		index = $(data).find('#category-box');
+		// 		$('#conversation').html(index);
+		// 	}
+		// });
 
 
 

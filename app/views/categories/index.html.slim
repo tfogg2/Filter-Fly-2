@@ -2,31 +2,12 @@
 p#notice
   = notice
 
-
-
-#conversation-box
-  #project-message-box
-    #search-projects
-      = render 'collections/search'
-    #modal-dialog
-      #search-modal
-
-    #project-list
-      - if @collections.any?
-        - @collections.each do |collection|
-          = link_to collection_categories_path(collection), data:{'collection-id': collection.id}, class:'id' do
-            .project-messages
-                p.p-name = collection.title
-
-  .conversation-header
-
-
   #conversation
     #category-box
       #project-list
         - if @collection.categories.any?
           = render partial: 'category', collection: @collection.categories
-          div class="panel-body hidden" id="categories" data-conversation-id= @collection.id 
+          div class="panel-body hidden" id="categories" data-conversation-id= @collection.id
         -else
 
           #categories.hidden
