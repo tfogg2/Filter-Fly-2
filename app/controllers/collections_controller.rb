@@ -1,5 +1,6 @@
 class CollectionsController < ShopifyApp::AuthenticatedController
 	# before_action :set_shop
+	before_action :set_collection, only: [:show, :edit, :update, :destroy]
 	def index
 		@products = ShopifyAPI::Product.find(:all) #, params: { limit: 10 }
 		@custom_collections = ShopifyAPI::CustomCollection.find(:all) #, params: { limit: 10 }
@@ -27,6 +28,10 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 
 	def show
 		@collection = Collection.find(params[:id])
+	end
+
+	def set_collection
+		@collection = Collection.find(params[:collection_id])
 	end
 
 end
