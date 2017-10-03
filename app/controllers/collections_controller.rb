@@ -31,7 +31,7 @@ class CollectionsController < ShopifyApp::AuthenticatedController
 	end
 
 	def set_collection
-		@collection = Collection.find(params[:collection_id])
+		@collection = Collection.find(params[:id])
 	end
 
 end
