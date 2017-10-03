@@ -1,3 +1,4 @@
-= link_to collection_category_product_types_path(category.id, @collection), data:{'category-id': category.id}, class:'category' do
-  .project-messages
-      p.p-name = category.title
+- for category in @categories
+  = link_to collection_category_product_types_path(category.id, @collection), data:{'category-id': category.id}, class:'category' do
+    .project-messages
+        p.p-name = category.title
