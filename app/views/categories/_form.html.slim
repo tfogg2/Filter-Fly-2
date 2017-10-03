@@ -1,5 +1,5 @@
 .new
-  = simple_form_for @category, remote: true do |f|
+  = simple_form_for [@collection, @category], remote: true, :method => :post, :action => "create", :url => collection_categories_path do |f|
     - if @category.errors.any?
       #error_explanation
         h2
