@@ -200,18 +200,17 @@ $(document).ready(function () {
 			type: 'GET',
 			url: '/collections/' + collection_id,
 			success: function(data){
-				index = $(data).find('#category-list');
+				index = $(data).find('#category-box');
 				$('#conversation').html(index);
 			}
 		});
-
 
 
 		// $getScript('categories/form.js.erb', function(script){
 		//
 		// })
 		//
-		// return false;
+		return false;
 	});
 
 	// $('.category').on('click', function(){
