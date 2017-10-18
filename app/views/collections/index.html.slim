@@ -14,7 +14,6 @@
     #project-list
       - if @collections.any?
         - @collections.each do |collection|
-          = link_to "show", collection_path(collection) 
           = link_to collection_path(collection), data:{'collection-id': collection.id}, class:'id' do
             .project-messages
                 p.p-name = collection.title

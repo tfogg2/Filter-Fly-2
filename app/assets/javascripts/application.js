@@ -16,5 +16,3 @@
 //= require chosen.jquery
 //= require main
 //= require_self
-
-
